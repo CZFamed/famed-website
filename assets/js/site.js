@@ -239,15 +239,50 @@
 
       if (cfg.formEndpoint) {
         setStatus(zh ? "提交中…" : "Sending…", "");
+        var submitBtn = $('button[type="submit"]', form);
+        if (submitBtn) submitBtn.disabled = true;
+        function done() { if (submitBtn) submitBtn.disabled = false; }
+
+        /* Formspree 专用字段：
+           _subject  → 邮件标题（否则收件箱里全是默认标题）
+           _replyto  → 点"回复"直接回给买家，不依赖后台配 Reply-To
+           _language → 出错/自动回复的语种
+           _gotcha   → 蜜罐，由表单里的隐藏字段带上来，填了就被丢弃 */
+        var payload = Object.assign({}, data, {
+          _subject: subject,
+          _replyto: data.email || "",
+          _language: zh ? "zh" : "en"
+        });
+
         fetch(cfg.formEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(data)
+          body: JSON.stringify(payload)
         }).then(function (r) {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          form.reset();
-          setStatus(msg.sent, "ok");
+          return r.json().catch(function () { return {}; }).then(function (body) {
+            if (r.ok && body.ok !== false) {
+              form.reset();
+              setStatus(msg.sent, "ok");
+              done();
+              return;
+            }
+            // 字段级错误：把对应输入框标红，让买家知道改哪一项
+            var errors = body.errors || [];
+            if (errors.length) {
+              errors.forEach(function (err) {
+                var field = err && err.field && $('[name="' + err.field + '"]', form);
+                if (field) field.classList.add("is-invalid");
+              });
+              done();
+              setStatus(msg.err, "err");
+              return;
+            }
+            // 表单级错误（邮箱未验证、被限流、接口挂了）只有 body.error：
+            // 交给下面的 catch，回退到"打开邮件客户端"，别让询盘丢了
+            throw new Error(body.error || "HTTP " + r.status);
+          });
         }).catch(function () {
+          done();
           setStatus(msg.fail, "err");
           window.location.href = "mailto:" + MAIL_TO + "?subject=" +
             encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));

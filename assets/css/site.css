@@ -784,6 +784,9 @@ select.form__input {
 .form__input.is-invalid { border-color: #dc2626; box-shadow: 0 0 0 4px rgba(220, 38, 38, .1); }
 
 /* 询盘表单里的“直接发邮件到外贸邮箱”那一块 */
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn:disabled { opacity: .62; cursor: not-allowed; transform: none; box-shadow: none; }
+
 .form__direct {
   margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line-strong);
 }

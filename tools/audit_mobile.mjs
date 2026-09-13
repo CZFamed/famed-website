@@ -226,7 +226,8 @@ async function main() {
   const offs = new Map();
   for (const row of report)
     for (const o of row.offenders || []) {
-      if (o.el.includes("skip-link")) continue;
+      // 这两类是刻意移出屏幕的（无障碍跳转链接、表单蜜罐），不算溢出
+      if (o.el.includes("skip-link") || o.el.includes("form__hp")) continue;
       const k = `${row.device} | ${row.page} | ${o.el} | ${o.text.slice(0, 18)}`;
       if (!offs.has(k)) offs.set(k, o);
     }

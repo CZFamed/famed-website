@@ -56,31 +56,15 @@ if (-not $IncludeNonSource) {
   }
 }
 
-# 2. 初始化 / 更新 git 仓库
+# 2. 初始化 git 仓库（没有 remote 也照样把改动提交到本地，方便核对）
 if (-not (Test-Path (Join-Path $Staging ".git"))) {
   git -C $Staging init -b main | Out-Null
 }
-
-# git 往 stderr 写东西时，$ErrorActionPreference = "Stop" 会把它当成致命错误，这里临时放宽
-$prevEap = $ErrorActionPreference
-$ErrorActionPreference = "Continue"
 
 if ($RepoUrl) {
   $existing = @(git -C $Staging remote 2>$null)
   if ($existing -contains "origin") { git -C $Staging remote set-url origin $RepoUrl }
   else { git -C $Staging remote add origin $RepoUrl }
-}
-$remotes = @(git -C $Staging remote 2>$null)
-$remote = ""
-if ($remotes -contains "origin") { $remote = (git -C $Staging remote get-url origin 2>$null) }
-$ErrorActionPreference = $prevEap
-
-if (-not $remote) {
-  Write-Host ""
-  Write-Host "发布副本已经准备好（$Staging），但还没有配置 GitHub 仓库地址。" -ForegroundColor Yellow
-  Write-Host "在 GitHub 上建好空仓库后，执行（会弹一次浏览器登录）：" -ForegroundColor Yellow
-  Write-Host "  powershell -File tools\publish_github.ps1 -RepoUrl https://github.com/用户名/仓库.git"
-  exit 2
 }
 
 git -C $Staging add -A
@@ -92,7 +76,23 @@ if ($staged -gt 0) {
   Write-Host "没有新改动，直接推送当前提交"
 }
 
+# git 往 stderr 写东西时，$ErrorActionPreference = "Stop" 会把它当成致命错误，这里临时放宽
+$prevEap = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+$remotes = @(git -C $Staging remote 2>$null)
+$remote = ""
+if ($remotes -contains "origin") { $remote = (git -C $Staging remote get-url origin 2>$null) }
+$ErrorActionPreference = $prevEap
+
 # 3. 推送
+if (-not $remote) {
+  Write-Host ""
+  Write-Host "发布副本已经在 $Staging 提交好了，但还没有配置 GitHub 仓库地址。" -ForegroundColor Yellow
+  Write-Host "在 GitHub 建好空仓库后执行（会弹一次浏览器登录）：" -ForegroundColor Yellow
+  Write-Host "  powershell -File tools\publish_github.ps1 -RepoUrl https://github.com/用户名/仓库.git"
+  exit 2
+}
+
 git -C $Staging push -u origin main
 Write-Host ""
 Write-Host "完成：$remote"

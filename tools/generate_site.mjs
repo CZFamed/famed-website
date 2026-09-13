@@ -167,7 +167,7 @@ function head(c, { file, title, desc, ogImage = "og/og-default" }) {
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 <script>
   /* 询盘表单收件地址等运行期配置（改这里或改 tools/content.mjs → SITE.email） */
-  window.SITE_CONFIG = { mailTo: "${SITE.email}", formEndpoint: "" };
+  window.SITE_CONFIG = { mailTo: "${SITE.email}", formEndpoint: "${SITE.formEndpoint}" };
 </script>
 </head>
 <body class="lang-${c.lang}">
@@ -333,8 +333,11 @@ function inquiryForm(c, idPrefix) {
   </div>
   <div class="form__actions">
     <button class="btn btn--primary" type="submit">${esc(c.t(f.submit))}</button>
-    <p class="form__hint form__hint--note">${esc(c.t(UI.formDemoNote).replace("{email}", SITE.email))}</p>
+    ${c.t(UI.formDemoNote)
+      ? `<p class="form__hint form__hint--note">${esc(c.t(UI.formDemoNote).replace("{email}", SITE.email))}</p>`
+      : ""}
   </div>
+  <input class="form__hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
   <div class="form__direct">
     <p class="form__direct-text">${esc(c.t(UI.formMailHint))}</p>
     <p class="form__direct-row">

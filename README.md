@@ -131,43 +131,48 @@ python tools/build_assets.py --clean    # 先清空脚本管理的输出目录�
 生成器还会把它写进每个页面的 `window.SITE_CONFIG.mailTo`，询盘脚本优先读这个配置，
 不再依赖 JS 里的硬编码兜底。
 
-**当前行为（演示模式）**：点提交后校验必填项，然后把填好的内容交给访客自己的邮件客户端
-（`mailto:`，收件人已经是 `czfamed1@outlook.com`），保证信息不丢。为了让"邮件客户端没配好"
-的访客也能联系上，表单下方还多了一行**直接发邮件**入口（邮箱地址可点击、可一键复制）。
-页面上有一行小字向访客说明这是演示模式，**正式上线前请删掉这行提示**
-（`tools\content.mjs` → `UI.formDemoNote`）。
-
-### 想让询盘「自动」进 Outlook 邮箱，三条路
-
-纯静态页面自己发不了邮件，必须有一个中间环节把表单转成邮件。按投入从低到高：
-
-1. **表单中继服务**（最省事，15 分钟接好）：注册 Formspree / Web3Forms / FormSubmit，
-   把收件邮箱填 `czfamed1@outlook.com`，拿到接口地址后改 `tools\content.mjs` 或页面里的配置：
+**当前行为（已接 Formspree，询盘自动进 Outlook）**：点提交后校验必填项，然后 `fetch` POST 到
+Formspree，由它转成邮件发到 `czfamed1@outlook.com`；成功后表单会清空并提示"已提交（发往 czfamed1@outlook.com）"。
+接口地址配在 `tools\content.mjs` → `SITE.formEndpoint`，改一处全站生效：
 
 ```html
 <script>
   window.SITE_CONFIG = {
-    formEndpoint: "https://你的表单接口地址",
+    formEndpoint: "https://formspree.io/f/meaqbowe",
     mailTo: "czfamed1@outlook.com"
   };
 </script>
 ```
 
-   填了 `formEndpoint` 后，脚本自动切换成 `fetch` 提交，提交失败时才回退到 `mailto:`。
-   注意国外中继服务在国内访问偶尔不稳，建议同时保留"直接发邮件"入口。
+配套的细节（都在 `assets\js\site.js`）：
 
-2. **自建一个小接口**（最稳，可存档）：在国内服务器或云函数上放一个 HTTP 接口，
+- 提交体除表单字段外，还带 Formspree 的 `_subject`（邮件标题含产品与公司名）、
+  `_replyto`（在 Outlook 点"回复"直接回买家）、`_language`（中/英）。
+- 表单里有一个蜜罐字段 `_gotcha`（CSS 移出屏幕），机器人填了就会被 Formspree 丢弃，
+  不需要 JS 校验；要更严格可以在 Formspree 后台再开 reCAPTCHA。
+- 提交期间提交按钮会置灰，避免买家连点产生重复询盘。
+- 出错分两种处理：**字段级错误**（Formspree 返回 `errors[]`）会把对应输入框标红、就地提示，
+  不打断买家；**表单级错误**（邮箱未验证、被限流、接口不可用）才回退到"打开访客的邮件客户端"，
+  收件人仍是 `czfamed1@outlook.com`，保证询盘不丢。
+- 表单下方始终保留**直接发邮件**入口（邮箱可点击、可一键复制），作为最后兜底。
+
+> 注意：`formEndpoint` 置空字符串，就会回到"打开访客邮件客户端"的兜底模式；
+> 那种情况下记得把 `tools\content.mjs` → `UI.formDemoNote` 的文案恢复（现在为空）。
+
+### 换服务商 / 加保险，另外两条路
+
+1. **自建一个小接口**（最稳，可存档）：在国内服务器或云函数上放一个 HTTP 接口，
    收到 JSON 后用 SMTP（`smtp-mail.outlook.com:587`，用这个 Outlook 账号的
    应用密码登录）把询盘发到 `czfamed1@outlook.com`，同时写一份到数据库/表格。
    接口地址填进上面的 `formEndpoint` 即可。
 
-3. **Microsoft Forms + Power Automate**（不用写代码，全在微软生态里）：
+2. **Microsoft Forms + Power Automate**（不用写代码，全在微软生态里）：
    用公司 Outlook 账号建一个 Microsoft Form 收集询盘，再用 Power Automate 建一个
    「表单有新回复 → 发送邮件到 czfamed1@outlook.com」的流程，把 Form 嵌到联系页。
 
 提交内容是 JSON：`name / company / country / email / phone / interest / quantity / message`，
-接口需返回 HTTP 2xx。表单已内置蜜罐之外的必填校验，
-**上线时建议再加一个隐藏字段做垃圾提交过滤**。
+接口需返回 HTTP 2xx。表单已内置必填校验与蜜罐，**上线后建议在 Formspree 后台
+打开 reCAPTCHA，并把首封邮件标为"非垃圾"**。
 
 改完记住：`node tools/generate_site.mjs` 重新生成页面，再跑一遍
 `node tools/audit_inquiry.mjs` 确认收件邮箱没跑偏。

@@ -19,6 +19,8 @@ export const SITE = {
   whatsapp: "8615031735404",
   email: "czfamed1@outlook.com",
   emailService: "czfamed1@outlook.com",
+  // 询盘表单的接收接口（Formspree）。置空字符串即回到"打开访客邮件客户端"的兜底模式。
+  formEndpoint: "https://formspree.io/f/meaqbowe",
   domain: "https://www.famedcasting.com", // PLACEHOLDER 域名待注册/确认
   icp: "冀ICP备00000000号-1", // PLACEHOLDER 备案号待确认
   // 地址
@@ -104,8 +106,11 @@ export const UI = {
     zh: "感谢提交，询盘已生成。我们的外贸团队会在一个工作日内回复。",
   },
   formDemoNote: {
-    en: "Demo mode: this prototype is not connected to a mail server yet. Submitting opens a pre-filled message in your mail client, addressed to {email}, so nothing is lost. Wire it to your form endpoint before launch.",
-    zh: "演示模式：本原型尚未接入邮件服务。提交时会用你的邮件客户端打开一封已填好的询盘邮件，收件人是 {email}，确保信息不丢。上线前请接到正式表单接口。",
+    // 已接入 Formspree：这里保持为空，表单下方不再显示"演示模式"提示。
+    // 如果哪天要回到"打开访客邮件客户端"的兜底模式（SITE.formEndpoint 置空），
+    // 把下面两句恢复即可。
+    en: "",
+    zh: "",
   },
   formMailHint: {
     en: "Inquiries go straight to our export mailbox. If the mail window does not open, write to us directly:",

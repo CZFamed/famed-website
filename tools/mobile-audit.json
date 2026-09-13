@@ -1,0 +1,1082 @@
+[
+  {
+    "device": "320-小屏安卓",
+    "page": "index.html",
+    "vw": 320,
+    "docScrollWidth": 320,
+    "docScrollHeightAfterImages": 16888,
+    "bodyScrollWidth": 320,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9817,
+        "w": 182,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "320-小屏安卓",
+    "page": "contact.html",
+    "vw": 320,
+    "docScrollWidth": 320,
+    "docScrollHeightAfterImages": 5105,
+    "bodyScrollWidth": 320,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9817,
+        "w": 182,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 35,
+        "h": 22,
+        "text": "Home"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "320-小屏安卓",
+    "page": "zh/index.html",
+    "vw": 320,
+    "docScrollWidth": 320,
+    "docScrollHeightAfterImages": 15400,
+    "bodyScrollWidth": 320,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9866,
+        "w": 133,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 28,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "320-小屏安卓",
+    "page": "zh/contact.html",
+    "vw": 320,
+    "docScrollWidth": 320,
+    "docScrollHeightAfterImages": 4741,
+    "bodyScrollWidth": 320,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9866,
+        "w": 133,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 22,
+        "text": "首页"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 28,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "390-iPhone",
+    "page": "index.html",
+    "vw": 390,
+    "docScrollWidth": 390,
+    "docScrollHeightAfterImages": 17270,
+    "bodyScrollWidth": 390,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9817,
+        "w": 182,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "390-iPhone",
+    "page": "contact.html",
+    "vw": 390,
+    "docScrollWidth": 390,
+    "docScrollHeightAfterImages": 4805,
+    "bodyScrollWidth": 390,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9817,
+        "w": 182,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 35,
+        "h": 22,
+        "text": "Home"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "390-iPhone",
+    "page": "zh/index.html",
+    "vw": 390,
+    "docScrollWidth": 390,
+    "docScrollHeightAfterImages": 16186,
+    "bodyScrollWidth": 390,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9866,
+        "w": 133,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 28,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "390-iPhone",
+    "page": "zh/contact.html",
+    "vw": 390,
+    "docScrollWidth": 390,
+    "docScrollHeightAfterImages": 4528,
+    "bodyScrollWidth": 390,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9866,
+        "w": 133,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 8.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 22,
+        "text": "首页"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 28,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "768-平板竖屏",
+    "page": "index.html",
+    "vw": 768,
+    "docScrollWidth": 768,
+    "docScrollHeightAfterImages": 10041,
+    "bodyScrollWidth": 768,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9812,
+        "w": 187,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 9.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 116,
+        "h": 19,
+        "text": "Machine Tool Parts"
+      },
+      {
+        "el": "a",
+        "w": 181,
+        "h": 19,
+        "text": "Construction Machinery Parts"
+      },
+      {
+        "el": "a",
+        "w": 221,
+        "h": 19,
+        "text": "Pump & Valve Housings and Bodies"
+      },
+      {
+        "el": "a",
+        "w": 58,
+        "h": 19,
+        "text": "About Us"
+      },
+      {
+        "el": "a",
+        "w": 71,
+        "h": 19,
+        "text": "Capabilities"
+      },
+      {
+        "el": "a",
+        "w": 44,
+        "h": 19,
+        "text": "Quality"
+      },
+      {
+        "el": "a",
+        "w": 76,
+        "h": 19,
+        "text": "Applications"
+      },
+      {
+        "el": "a",
+        "w": 68,
+        "h": 19,
+        "text": "Certificates"
+      },
+      {
+        "el": "a",
+        "w": 34,
+        "h": 19,
+        "text": "News"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 19,
+        "text": "FAQ"
+      },
+      {
+        "el": "a",
+        "w": 48,
+        "h": 19,
+        "text": "Contact"
+      },
+      {
+        "el": "a",
+        "w": 83,
+        "h": 19,
+        "text": "Privacy Policy"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 77,
+        "h": 22,
+        "text": "Privacy Policy"
+      },
+      {
+        "el": "a",
+        "w": 47,
+        "h": 22,
+        "text": "Sitemap"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 22,
+        "text": "中文"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "768-平板竖屏",
+    "page": "contact.html",
+    "vw": 768,
+    "docScrollWidth": 768,
+    "docScrollHeightAfterImages": 4024,
+    "bodyScrollWidth": 768,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9812,
+        "w": 187,
+        "text": "Skip to main content"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 9.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 35,
+        "h": 22,
+        "text": "Home"
+      },
+      {
+        "el": "a",
+        "w": 116,
+        "h": 19,
+        "text": "Machine Tool Parts"
+      },
+      {
+        "el": "a",
+        "w": 181,
+        "h": 19,
+        "text": "Construction Machinery Parts"
+      },
+      {
+        "el": "a",
+        "w": 221,
+        "h": 19,
+        "text": "Pump & Valve Housings and Bodies"
+      },
+      {
+        "el": "a",
+        "w": 58,
+        "h": 19,
+        "text": "About Us"
+      },
+      {
+        "el": "a",
+        "w": 71,
+        "h": 19,
+        "text": "Capabilities"
+      },
+      {
+        "el": "a",
+        "w": 44,
+        "h": 19,
+        "text": "Quality"
+      },
+      {
+        "el": "a",
+        "w": 76,
+        "h": 19,
+        "text": "Applications"
+      },
+      {
+        "el": "a",
+        "w": 68,
+        "h": 19,
+        "text": "Certificates"
+      },
+      {
+        "el": "a",
+        "w": 34,
+        "h": 19,
+        "text": "News"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 19,
+        "text": "FAQ"
+      },
+      {
+        "el": "a",
+        "w": 48,
+        "h": 19,
+        "text": "Contact"
+      },
+      {
+        "el": "a",
+        "w": 83,
+        "h": 19,
+        "text": "Privacy Policy"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 77,
+        "h": 22,
+        "text": "Privacy Policy"
+      },
+      {
+        "el": "a",
+        "w": 47,
+        "h": 22,
+        "text": "Sitemap"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 22,
+        "text": "中文"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 80,
+        "h": 23,
+        "text": "Privacy policy"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "768-平板竖屏",
+    "page": "zh/index.html",
+    "vw": 768,
+    "docScrollWidth": 768,
+    "docScrollHeightAfterImages": 9325,
+    "bodyScrollWidth": 768,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9863,
+        "w": 136,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 9.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 70,
+        "h": 19,
+        "text": "机床零部件"
+      },
+      {
+        "el": "a",
+        "w": 98,
+        "h": 19,
+        "text": "工程机械零部件"
+      },
+      {
+        "el": "a",
+        "w": 140,
+        "h": 19,
+        "text": "泵阀壳体与本体零部件"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "关于我们"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "制造能力"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "质量控制"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "应用领域"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "资质荣誉"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "新闻资讯"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "常见问题"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "联系我们"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "隐私政策"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 52,
+        "h": 22,
+        "text": "隐私政策"
+      },
+      {
+        "el": "a",
+        "w": 47,
+        "h": 22,
+        "text": "Sitemap"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 22,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  },
+  {
+    "device": "768-平板竖屏",
+    "page": "zh/contact.html",
+    "vw": 768,
+    "docScrollWidth": 768,
+    "docScrollHeightAfterImages": 3887,
+    "bodyScrollWidth": 768,
+    "offenders": [
+      {
+        "el": "a.skip-link",
+        "left": -9999,
+        "right": -9863,
+        "w": 136,
+        "text": "跳到主要内容"
+      }
+    ],
+    "scrollers": [],
+    "bigScroll": [],
+    "smallText": [
+      {
+        "el": "small",
+        "fs": 9.5,
+        "text": "CANGZHOU FAMED"
+      }
+    ],
+    "smallTargets": [
+      {
+        "el": "a.topbar__link",
+        "w": 113,
+        "h": 23,
+        "text": "150-3173-5404"
+      },
+      {
+        "el": "a",
+        "w": 26,
+        "h": 22,
+        "text": "首页"
+      },
+      {
+        "el": "a",
+        "w": 70,
+        "h": 19,
+        "text": "机床零部件"
+      },
+      {
+        "el": "a",
+        "w": 98,
+        "h": 19,
+        "text": "工程机械零部件"
+      },
+      {
+        "el": "a",
+        "w": 140,
+        "h": 19,
+        "text": "泵阀壳体与本体零部件"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "关于我们"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "制造能力"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "质量控制"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "应用领域"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "资质荣誉"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "新闻资讯"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "常见问题"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "联系我们"
+      },
+      {
+        "el": "a",
+        "w": 56,
+        "h": 19,
+        "text": "隐私政策"
+      },
+      {
+        "el": "a",
+        "w": 119,
+        "h": 24,
+        "text": "+86 150 3173 5404"
+      },
+      {
+        "el": "a",
+        "w": 150,
+        "h": 24,
+        "text": "czfamed1@outlook.com"
+      },
+      {
+        "el": "a",
+        "w": 52,
+        "h": 22,
+        "text": "隐私政策"
+      },
+      {
+        "el": "a",
+        "w": 47,
+        "h": 22,
+        "text": "Sitemap"
+      },
+      {
+        "el": "a",
+        "w": 16,
+        "h": 22,
+        "text": "EN"
+      },
+      {
+        "el": "a.cookies__link",
+        "w": 54,
+        "h": 23,
+        "text": "隐私政策"
+      }
+    ],
+    "brokenImgs": [],
+    "fixedBad": [],
+    "navState": "nav=none burger=flex"
+  }
+]

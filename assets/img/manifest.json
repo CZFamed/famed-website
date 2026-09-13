@@ -1,0 +1,2045 @@
+{
+ "generated": "2026-09-12 15:21:47",
+ "items": [
+  {
+   "slot": "hero",
+   "out": "hero/hero-home",
+   "src": "厂区_场景/厂房/1.jpg",
+   "src_size": "3968x2976",
+   "out_size": "2400x1100",
+   "rag_description": "消失模铸造车间内景：蓝色除尘系统与黄色铸件周转区",
+   "files": [
+    [
+     "hero/hero-home.jpg",
+     "hero/hero-home.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "hero",
+   "out": "hero/hero-home-alt",
+   "src": "厂区_场景/厂房/2251dd58506fe701b09c608bb4f3e097.jpg",
+   "src_size": "1920x1080",
+   "out_size": "2400x1100",
+   "rag_description": "铸造车间内部全景，通道两侧摆放蓝色金属箱体与排风管道",
+   "files": [
+    [
+     "hero/hero-home-alt.jpg",
+     "hero/hero-home-alt.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-about",
+   "src": "厂区_场景/厂房/9a773cb3fc77360e98642d9f5703ba48.jpg",
+   "src_size": "1920x1080",
+   "out_size": "2000x800",
+   "rag_description": "大型钢结构厂房内地面堆放多件弧形铸件毛坯，工人戴安全帽在作业区旁活动",
+   "files": [
+    [
+     "banner/banner-about.jpg",
+     "banner/banner-about.webp"
+    ],
+    [
+     "banner/banner-about-t.jpg",
+     "banner/banner-about-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-products",
+   "src": "铸件/阀体/IMG_20241122_160745.jpg",
+   "src_size": "4096x3072",
+   "out_size": "2000x800",
+   "rag_description": "车间内大量灰色阀体成品整齐码放于木托盘",
+   "files": [
+    [
+     "banner/banner-products.jpg",
+     "banner/banner-products.webp"
+    ],
+    [
+     "banner/banner-products-t.jpg",
+     "banner/banner-products-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-capabilities",
+   "src": "生产流程/机加工/IMG_20201012_094906.jpg",
+   "src_size": "2736x3648",
+   "out_size": "2000x800",
+   "rag_description": "机加工作业区一排大型数控加工中心整齐排列",
+   "files": [
+    [
+     "banner/banner-capabilities.jpg",
+     "banner/banner-capabilities.webp"
+    ],
+    [
+     "banner/banner-capabilities-t.jpg",
+     "banner/banner-capabilities-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-quality",
+   "src": "铸件/箱体_支座/IMG_20231029_095938.jpg",
+   "src_size": "3072x4096",
+   "out_size": "2000x800",
+   "rag_description": "大型灰铁箱体铸件正在进行三维扫描检测",
+   "files": [
+    [
+     "banner/banner-quality.jpg",
+     "banner/banner-quality.webp"
+    ],
+    [
+     "banner/banner-quality-t.jpg",
+     "banner/banner-quality-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-applications",
+   "src": "铸件/箱体_支座/IMG_20201202_160824.jpg",
+   "src_size": "2736x3648",
+   "out_size": "2000x800",
+   "rag_description": "车间内多排大型黄色配重铸件整齐排列",
+   "files": [
+    [
+     "banner/banner-applications.jpg",
+     "banner/banner-applications.webp"
+    ],
+    [
+     "banner/banner-applications-t.jpg",
+     "banner/banner-applications-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-certificates",
+   "src": "厂区_场景/厂房/7.jpg",
+   "src_size": "1718x1619",
+   "out_size": "2000x800",
+   "rag_description": "公司招牌墙：沧州菲美得机械有限公司大门形象",
+   "files": [
+    [
+     "banner/banner-certificates.jpg",
+     "banner/banner-certificates.webp"
+    ],
+    [
+     "banner/banner-certificates-t.jpg",
+     "banner/banner-certificates-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-news",
+   "src": "厂区_场景/厂房/12.jpg",
+   "src_size": "3120x4160",
+   "out_size": "2000x800",
+   "rag_description": "在建新厂房：混凝土框架结构裸露楼面",
+   "files": [
+    [
+     "banner/banner-news.jpg",
+     "banner/banner-news.webp"
+    ],
+    [
+     "banner/banner-news-t.jpg",
+     "banner/banner-news-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-faq",
+   "src": "铸件/阀体/IMG_20250419_083631.jpg",
+   "src_size": "3120x4160",
+   "out_size": "2000x800",
+   "rag_description": "新建红色钢结构仓库内成排阀体铸件待发货",
+   "files": [
+    [
+     "banner/banner-faq.jpg",
+     "banner/banner-faq.webp"
+    ],
+    [
+     "banner/banner-faq-t.jpg",
+     "banner/banner-faq-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "banner",
+   "out": "banner/banner-contact",
+   "src": "厂区_场景/厂房/918a90491ef1a1b22294f4be4c18f38e.jpg",
+   "src_size": "1920x1080",
+   "out_size": "2000x800",
+   "rag_description": "厂区户外除尘设备与砖砌厂房外景",
+   "files": [
+    [
+     "banner/banner-contact.jpg",
+     "banner/banner-contact.webp"
+    ],
+    [
+     "banner/banner-contact-t.jpg",
+     "banner/banner-contact-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "og",
+   "out": "og/og-default",
+   "src": "厂区_场景/厂房/1.jpg",
+   "src_size": "3968x2976",
+   "out_size": "1200x630",
+   "rag_description": "消失模铸造车间内景：蓝色除尘系统与黄色铸件周转区",
+   "files": [
+    [
+     "og/og-default.jpg",
+     "og/og-default.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/scan-1",
+   "src": "铸件/箱体_支座/IMG_20231029_095938.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "大型灰铁箱体铸件正在进行三维扫描检测",
+   "files": [
+    [
+     "process/scan-1.jpg",
+     "process/scan-1.webp"
+    ],
+    [
+     "process/scan-1-t.jpg",
+     "process/scan-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/scan-2",
+   "src": "铸件/箱体_支座/IMG_20231029_095947.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "吊运状态下的大型箱体铸件三维扫描检测",
+   "files": [
+    [
+     "process/scan-2.jpg",
+     "process/scan-2.webp"
+    ],
+    [
+     "process/scan-2-t.jpg",
+     "process/scan-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/scan-3",
+   "src": "加工件/壳体/mmexport1700357244017.jpg",
+   "src_size": "2881x2770",
+   "out_size": "1200x900",
+   "rag_description": "Volvo 品牌大型铸钢件吊装与手持扫描检测",
+   "files": [
+    [
+     "process/scan-3.jpg",
+     "process/scan-3.webp"
+    ],
+    [
+     "process/scan-3-t.jpg",
+     "process/scan-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/foam-forming-1",
+   "src": "生产流程/发泡/生成流程_发泡_1.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "单台立式发泡成型机特写",
+   "files": [
+    [
+     "process/foam-forming-1.jpg",
+     "process/foam-forming-1.webp"
+    ],
+    [
+     "process/foam-forming-1-t.jpg",
+     "process/foam-forming-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/foam-forming-2",
+   "src": "生产流程/发泡/生成流程_发泡_2.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "发泡工段多台成型机并列作业",
+   "files": [
+    [
+     "process/foam-forming-2.jpg",
+     "process/foam-forming-2.webp"
+    ],
+    [
+     "process/foam-forming-2-t.jpg",
+     "process/foam-forming-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/foam-forming-3",
+   "src": "生产流程/发泡/生成流程_发泡_3.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "发泡成型机开模作业近景，模腔内白模清晰可见",
+   "files": [
+    [
+     "process/foam-forming-3.jpg",
+     "process/foam-forming-3.webp"
+    ],
+    [
+     "process/foam-forming-3-t.jpg",
+     "process/foam-forming-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pattern-1",
+   "src": "生产流程/白模/IMG_20230712_080849.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "白模车间内工人正在进行泡沫模样的手工修整与组装",
+   "files": [
+    [
+     "process/pattern-1.jpg",
+     "process/pattern-1.webp"
+    ],
+    [
+     "process/pattern-1-t.jpg",
+     "process/pattern-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pattern-2",
+   "src": "生产流程/白模/微信图片_20260911075254_26_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间内工人手工修整白色泡沫白模工件",
+   "files": [
+    [
+     "process/pattern-2.jpg",
+     "process/pattern-2.webp"
+    ],
+    [
+     "process/pattern-2-t.jpg",
+     "process/pattern-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pattern-3",
+   "src": "生产流程/白模/mmexport1664677938541.jpg",
+   "src_size": "4032x3024",
+   "out_size": "1200x900",
+   "rag_description": "工人正在对一件大型复杂白模进行检查或组装定位",
+   "files": [
+    [
+     "process/pattern-3.jpg",
+     "process/pattern-3.webp"
+    ],
+    [
+     "process/pattern-3-t.jpg",
+     "process/pattern-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/slurry-1",
+   "src": "生产流程/涂装线/微信图片_20260911074619_20_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间圆形大浆池盛灰色浆料，机械臂伸入其中，两名工人在旁操作",
+   "files": [
+    [
+     "process/slurry-1.jpg",
+     "process/slurry-1.webp"
+    ],
+    [
+     "process/slurry-1-t.jpg",
+     "process/slurry-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/slurry-2",
+   "src": "生产流程/涂装线/微信图片_20260911074627_21_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "涂装线现场：成排铸件表面覆白色涂层，金属架挂满浆料",
+   "files": [
+    [
+     "process/slurry-2.jpg",
+     "process/slurry-2.webp"
+    ],
+    [
+     "process/slurry-2-t.jpg",
+     "process/slurry-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/slurry-3",
+   "src": "生产流程/涂装线/微信图片_20260911074857_23_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间内带轮料架挂满浅灰色涂层铸件，批量化涂装后摆放状态",
+   "files": [
+    [
+     "process/slurry-3.jpg",
+     "process/slurry-3.webp"
+    ],
+    [
+     "process/slurry-3-t.jpg",
+     "process/slurry-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pouring-1",
+   "src": "铸件/箱体_支座/3246a53caad53ec7a6afd8986e00775d.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "铸造车间内排列蓝色砂箱，起重机吊运浇包进行浇注作业",
+   "files": [
+    [
+     "process/pouring-1.jpg",
+     "process/pouring-1.webp"
+    ],
+    [
+     "process/pouring-1-t.jpg",
+     "process/pouring-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pouring-2",
+   "src": "厂区_场景/厂房/3b7e1081d04015a9758fbfdc8fdec4e8.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "铸造厂房内，行车吊运盛有铁水的浇包，两侧成排摆放方形金属箱体",
+   "files": [
+    [
+     "process/pouring-2.jpg",
+     "process/pouring-2.webp"
+    ],
+    [
+     "process/pouring-2-t.jpg",
+     "process/pouring-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pouring-3",
+   "src": "厂区_场景/厂房/6dd0532a8a692aec50f04a38532630dd.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间内大型加热炉炉门开启，炉膛通红",
+   "files": [
+    [
+     "process/pouring-3.jpg",
+     "process/pouring-3.webp"
+    ],
+    [
+     "process/pouring-3-t.jpg",
+     "process/pouring-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/cleaning-1",
+   "src": "厂区_场景/厂房/10.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "喷砂/清理工段：洁净板房群与大型银色除尘风管走廊",
+   "files": [
+    [
+     "process/cleaning-1.jpg",
+     "process/cleaning-1.webp"
+    ],
+    [
+     "process/cleaning-1-t.jpg",
+     "process/cleaning-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/cleaning-2",
+   "src": "厂区_场景/厂房/11.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "喷砂清理房特写：透过观察窗可见员工作业",
+   "files": [
+    [
+     "process/cleaning-2.jpg",
+     "process/cleaning-2.webp"
+    ],
+    [
+     "process/cleaning-2-t.jpg",
+     "process/cleaning-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/cleaning-3",
+   "src": "厂区_场景/厂房/7d80df09df3859c13c59d95001b007aa.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间内一敞开箱式高温炉，吊钩悬挂工件，现场高温作业中",
+   "files": [
+    [
+     "process/cleaning-3.jpg",
+     "process/cleaning-3.webp"
+    ],
+    [
+     "process/cleaning-3-t.jpg",
+     "process/cleaning-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-1",
+   "src": "生产流程/机加工/IMG_20201012_094906.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "机加工作业区一排大型数控加工中心整齐排列",
+   "files": [
+    [
+     "process/machining-1.jpg",
+     "process/machining-1.webp"
+    ],
+    [
+     "process/machining-1-t.jpg",
+     "process/machining-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-2",
+   "src": "厂区_场景/厂房/5.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "机加工车间：大型数控镗铣床加工厚壁铸铁箱体",
+   "files": [
+    [
+     "process/machining-2.jpg",
+     "process/machining-2.webp"
+    ],
+    [
+     "process/machining-2-t.jpg",
+     "process/machining-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-3",
+   "src": "生产流程/机加工/微信图片_20260911075618_31_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "一名工人戴黄色安全帽，在卧式加工中心前操作数控面板",
+   "files": [
+    [
+     "process/machining-3.jpg",
+     "process/machining-3.webp"
+    ],
+    [
+     "process/machining-3-t.jpg",
+     "process/machining-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/paint-1",
+   "src": "厂区_场景/厂房/18.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "喷涂线作业实景：两件大型黄色铸件悬挂在输送链下方",
+   "files": [
+    [
+     "process/paint-1.jpg",
+     "process/paint-1.webp"
+    ],
+    [
+     "process/paint-1-t.jpg",
+     "process/paint-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/paint-2",
+   "src": "生产流程/涂装线/1582768321676.jpg",
+   "src_size": "640x480",
+   "out_size": "1200x900",
+   "rag_description": "消失模涂装线多个封闭喷涂工位沿车间一字排开",
+   "files": [
+    [
+     "process/paint-2.jpg",
+     "process/paint-2.webp"
+    ],
+    [
+     "process/paint-2-t.jpg",
+     "process/paint-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/paint-3",
+   "src": "加工件/机床件/IMG_20250927_104404.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "一件机床床身铸件已完成最终包装，整体用透明塑料缠绕膜包裹",
+   "files": [
+    [
+     "process/paint-3.jpg",
+     "process/paint-3.webp"
+    ],
+    [
+     "process/paint-3-t.jpg",
+     "process/paint-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-01",
+   "src": "厂区_场景/厂房/6.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "宽敞明亮的机加工车间全景：一排数控机床沿墙布置",
+   "files": [
+    [
+     "gallery/factory-01.jpg",
+     "gallery/factory-01.webp"
+    ],
+    [
+     "gallery/factory-01-t.jpg",
+     "gallery/factory-01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-02",
+   "src": "厂区_场景/厂房/16.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "机加工车间：三台数控加工中心（保沪A）并列布置",
+   "files": [
+    [
+     "gallery/factory-02.jpg",
+     "gallery/factory-02.webp"
+    ],
+    [
+     "gallery/factory-02-t.jpg",
+     "gallery/factory-02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-03",
+   "src": "厂区_场景/厂房/4.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "机加工车间内景：数控加工中心与工件堆场",
+   "files": [
+    [
+     "gallery/factory-03.jpg",
+     "gallery/factory-03.webp"
+    ],
+    [
+     "gallery/factory-03-t.jpg",
+     "gallery/factory-03-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-04",
+   "src": "厂区_场景/厂房/19.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "钢结构空置厂房：宽阔整洁的二楼车间平台",
+   "files": [
+    [
+     "gallery/factory-04.jpg",
+     "gallery/factory-04.webp"
+    ],
+    [
+     "gallery/factory-04-t.jpg",
+     "gallery/factory-04-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-05",
+   "src": "厂区_场景/厂房/1582768668884.jpg",
+   "src_size": "640x480",
+   "out_size": "1200x900",
+   "rag_description": "车间主通道：绿色地坪与满墙宣传栏标语",
+   "files": [
+    [
+     "gallery/factory-05.jpg",
+     "gallery/factory-05.webp"
+    ],
+    [
+     "gallery/factory-05-t.jpg",
+     "gallery/factory-05-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-06",
+   "src": "厂区_场景/厂房/688d191deaadf5815b8f0992ba25b305.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "厂房内成堆铸件毛坯与木质模箱，上方悬行车吊钩",
+   "files": [
+    [
+     "gallery/factory-06.jpg",
+     "gallery/factory-06.webp"
+    ],
+    [
+     "gallery/factory-06-t.jpg",
+     "gallery/factory-06-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-07",
+   "src": "厂区_场景/厂房/24a72a24ba2dd8fe1d45f5ac59b2f6ff.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "铸造厂房内景，地面散放灰色铸件，工人穿行，天车吊钩垂挂",
+   "files": [
+    [
+     "gallery/factory-07.jpg",
+     "gallery/factory-07.webp"
+    ],
+    [
+     "gallery/factory-07-t.jpg",
+     "gallery/factory-07-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-08",
+   "src": "厂区_场景/厂房/fb5cf86c3a5de63e4de98aa7eb7bab67.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "铸造车间内蓝色流水线造型区设备与安全标语实景",
+   "files": [
+    [
+     "gallery/factory-08.jpg",
+     "gallery/factory-08.webp"
+    ],
+    [
+     "gallery/factory-08-t.jpg",
+     "gallery/factory-08-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-09",
+   "src": "厂区_场景/厂房/2.jpg",
+   "src_size": "3968x2976",
+   "out_size": "1200x900",
+   "rag_description": "消失模浇铸区侧视：蓝色除尘管道与黄色周转料斗群",
+   "files": [
+    [
+     "gallery/factory-09.jpg",
+     "gallery/factory-09.webp"
+    ],
+    [
+     "gallery/factory-09-t.jpg",
+     "gallery/factory-09-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-10",
+   "src": "厂区_场景/厂房/3.jpg",
+   "src_size": "2976x3968",
+   "out_size": "1200x900",
+   "rag_description": "消失模铸件冷却区：一排黄色铸件壳体架空于铁架之上",
+   "files": [
+    [
+     "gallery/factory-10.jpg",
+     "gallery/factory-10.webp"
+    ],
+    [
+     "gallery/factory-10-t.jpg",
+     "gallery/factory-10-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-11",
+   "src": "厂区_场景/厂房/IMG_20260528_150612.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "机加工车间：消失模成品铸件堆场与多台数控机床",
+   "files": [
+    [
+     "gallery/factory-11.jpg",
+     "gallery/factory-11.webp"
+    ],
+    [
+     "gallery/factory-11-t.jpg",
+     "gallery/factory-11-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-12",
+   "src": "厂区_场景/厂房/微信图片_20260911075650_33_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "厂房内一台大型立式机床，立柱上方两条电缆拖链呈拱形排布",
+   "files": [
+    [
+     "gallery/factory-12.jpg",
+     "gallery/factory-12.webp"
+    ],
+    [
+     "gallery/factory-12-t.jpg",
+     "gallery/factory-12-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-13",
+   "src": "厂区_场景/厂房/微信图片_20260911075744_37_18.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "车间内铸件成垛码放，大型机床位于中后部",
+   "files": [
+    [
+     "gallery/factory-13.jpg",
+     "gallery/factory-13.webp"
+    ],
+    [
+     "gallery/factory-13-t.jpg",
+     "gallery/factory-13-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-14",
+   "src": "厂区_场景/厂房/9.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "白模发泡车间作业现场：比亚迪电动叉车与两名现场作业人员",
+   "files": [
+    [
+     "gallery/factory-14.jpg",
+     "gallery/factory-14.webp"
+    ],
+    [
+     "gallery/factory-14-t.jpg",
+     "gallery/factory-14-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-15",
+   "src": "厂区_场景/厂房/8.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "白模发泡车间现场办公区：质量管理看板与办公桌",
+   "files": [
+    [
+     "gallery/factory-15.jpg",
+     "gallery/factory-15.webp"
+    ],
+    [
+     "gallery/factory-15-t.jpg",
+     "gallery/factory-15-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-16",
+   "src": "厂区_场景/厂房/14.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "新厂房外立面：三层混凝土建筑与大面积玻璃窗",
+   "files": [
+    [
+     "gallery/factory-16.jpg",
+     "gallery/factory-16.webp"
+    ],
+    [
+     "gallery/factory-16-t.jpg",
+     "gallery/factory-16-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/01",
+   "src": "加工件/机床件/IMG_20201111_135023.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "机床类大型铸铁床身的顶部俯视照片，可见两侧长导轨面和内部交叉筋板结构",
+   "files": [
+    [
+     "products/machine-tool-parts/01.jpg",
+     "products/machine-tool-parts/01.webp"
+    ],
+    [
+     "products/machine-tool-parts/01-t.jpg",
+     "products/machine-tool-parts/01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/02",
+   "src": "加工件/机床件/IMG_20201111_135051.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "大型机床床身铸铁毛坯的俯视图，可见两侧导轨安装面和多个矩形开口",
+   "files": [
+    [
+     "products/machine-tool-parts/02.jpg",
+     "products/machine-tool-parts/02.webp"
+    ],
+    [
+     "products/machine-tool-parts/02-t.jpg",
+     "products/machine-tool-parts/02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/03",
+   "src": "铸件/箱体_支座/IMG_20220801_155453.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "大型长条形机床床身铸件车间照片",
+   "files": [
+    [
+     "products/machine-tool-parts/03.jpg",
+     "products/machine-tool-parts/03.webp"
+    ],
+    [
+     "products/machine-tool-parts/03-t.jpg",
+     "products/machine-tool-parts/03-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/04",
+   "src": "加工件/机床件/IMG_20201111_135040.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "机床立柱或滑座类大型铸铁件的正面照，两侧带有长导轨面",
+   "files": [
+    [
+     "products/machine-tool-parts/04.jpg",
+     "products/machine-tool-parts/04.webp"
+    ],
+    [
+     "products/machine-tool-parts/04-t.jpg",
+     "products/machine-tool-parts/04-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/05",
+   "src": "加工件/机床件/IMG_20250914_095347.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "一摞机床立柱或横梁类长条形铸件整齐码放在木托盘上",
+   "files": [
+    [
+     "products/machine-tool-parts/05.jpg",
+     "products/machine-tool-parts/05.webp"
+    ],
+    [
+     "products/machine-tool-parts/05-t.jpg",
+     "products/machine-tool-parts/05-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/06",
+   "src": "加工件/机床件/IMG_20250914_095357.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "多件机床滑座或连接件类铸件散放在木托盘上",
+   "files": [
+    [
+     "products/machine-tool-parts/06.jpg",
+     "products/machine-tool-parts/06.webp"
+    ],
+    [
+     "products/machine-tool-parts/06-t.jpg",
+     "products/machine-tool-parts/06-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/07",
+   "src": "加工件/其他/IMG_20220608_160244.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "车间地坪上一件 H 形灰铁机加工件，台面写有检验标记",
+   "files": [
+    [
+     "products/machine-tool-parts/07.jpg",
+     "products/machine-tool-parts/07.webp"
+    ],
+    [
+     "products/machine-tool-parts/07-t.jpg",
+     "products/machine-tool-parts/07-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/08",
+   "src": "加工件/其他/IMG_20220608_160305.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "大型灰铁床身铸件正面特写，端面铸有清晰编号",
+   "files": [
+    [
+     "products/machine-tool-parts/08.jpg",
+     "products/machine-tool-parts/08.webp"
+    ],
+    [
+     "products/machine-tool-parts/08-t.jpg",
+     "products/machine-tool-parts/08-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/09",
+   "src": "加工件/机床件/微信图片_20260910160059_4_18.jpg",
+   "src_size": "1706x1279",
+   "out_size": "1200x900",
+   "rag_description": "车间内大型加工中心与成排机床类铸件待加工周转现场",
+   "files": [
+    [
+     "products/machine-tool-parts/09.jpg",
+     "products/machine-tool-parts/09.webp"
+    ],
+    [
+     "products/machine-tool-parts/09-t.jpg",
+     "products/machine-tool-parts/09-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/10",
+   "src": "加工件/机床件/IMG_20250914_091940.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "一件喷涂灰色底漆的机床床身铸件近景，顶面结构复杂",
+   "files": [
+    [
+     "products/machine-tool-parts/10.jpg",
+     "products/machine-tool-parts/10.webp"
+    ],
+    [
+     "products/machine-tool-parts/10-t.jpg",
+     "products/machine-tool-parts/10-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/11",
+   "src": "加工件/机床件/IMG_20250927_104417.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "大型机床铸件成品车间全景，中后景整齐排列大量同款产品",
+   "files": [
+    [
+     "products/machine-tool-parts/11.jpg",
+     "products/machine-tool-parts/11.webp"
+    ],
+    [
+     "products/machine-tool-parts/11-t.jpg",
+     "products/machine-tool-parts/11-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/machine-tool-parts/12",
+   "src": "加工件/机床件/IMG_20250927_104404.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "一件机床床身铸件已完成最终包装，整体用透明塑料缠绕膜包裹，放置在蓝色木托盘上待运",
+   "files": [
+    [
+     "products/machine-tool-parts/12.jpg",
+     "products/machine-tool-parts/12.webp"
+    ],
+    [
+     "products/machine-tool-parts/12-t.jpg",
+     "products/machine-tool-parts/12-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/01",
+   "src": "铸件/箱体_支座/IMG_20201202_160802.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一件大型黄色工程机械配重铸件，结构复杂且带多处安装凸台",
+   "files": [
+    [
+     "products/construction-machinery-parts/01.jpg",
+     "products/construction-machinery-parts/01.webp"
+    ],
+    [
+     "products/construction-machinery-parts/01-t.jpg",
+     "products/construction-machinery-parts/01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/02",
+   "src": "铸件/箱体_支座/IMG_20201120_083836.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一排黄色楔形配重铸件整齐摆放在水泥地面上",
+   "files": [
+    [
+     "products/construction-machinery-parts/02.jpg",
+     "products/construction-machinery-parts/02.webp"
+    ],
+    [
+     "products/construction-machinery-parts/02-t.jpg",
+     "products/construction-machinery-parts/02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/03",
+   "src": "铸件/箱体_支座/IMG_20191129_100946.jpg",
+   "src_size": "3968x2976",
+   "out_size": "1200x900",
+   "rag_description": "一件黄色弧形配重铸件正面外观，两端带吊装环",
+   "files": [
+    [
+     "products/construction-machinery-parts/03.jpg",
+     "products/construction-machinery-parts/03.webp"
+    ],
+    [
+     "products/construction-machinery-parts/03-t.jpg",
+     "products/construction-machinery-parts/03-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/04",
+   "src": "铸件/箱体_支座/IMG_20181107_095836.jpg",
+   "src_size": "3968x2976",
+   "out_size": "1200x900",
+   "rag_description": "一块 HT200 灰铁配重铸件，表面铸有 FAMED 和编号标识",
+   "files": [
+    [
+     "products/construction-machinery-parts/04.jpg",
+     "products/construction-machinery-parts/04.webp"
+    ],
+    [
+     "products/construction-machinery-parts/04-t.jpg",
+     "products/construction-machinery-parts/04-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/05",
+   "src": "铸件/箱体_支座/IMG_20220510_142351.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "车间内数十件大型灰铁配重块整齐排列",
+   "files": [
+    [
+     "products/construction-machinery-parts/05.jpg",
+     "products/construction-machinery-parts/05.webp"
+    ],
+    [
+     "products/construction-machinery-parts/05-t.jpg",
+     "products/construction-machinery-parts/05-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/06",
+   "src": "铸件/箱体_支座/IMG_20231027_092553.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "带重量标识的大型配重铁铸件",
+   "files": [
+    [
+     "products/construction-machinery-parts/06.jpg",
+     "products/construction-machinery-parts/06.webp"
+    ],
+    [
+     "products/construction-machinery-parts/06-t.jpg",
+     "products/construction-machinery-parts/06-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/07",
+   "src": "铸件/阀体/IMG_20260202_084733.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "两台精加工后的大型支臂/阀座类铸件展示金属本色",
+   "files": [
+    [
+     "products/construction-machinery-parts/07.jpg",
+     "products/construction-machinery-parts/07.webp"
+    ],
+    [
+     "products/construction-machinery-parts/07-t.jpg",
+     "products/construction-machinery-parts/07-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/08",
+   "src": "铸件/阀体/IMG_20260202_084740.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "精加工支臂类铸件俯拍：镗孔与法兰加工面细节",
+   "files": [
+    [
+     "products/construction-machinery-parts/08.jpg",
+     "products/construction-machinery-parts/08.webp"
+    ],
+    [
+     "products/construction-machinery-parts/08-t.jpg",
+     "products/construction-machinery-parts/08-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/09",
+   "src": "铸件/箱体_支座/IMG_20220331_133514.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "黄色涂装对称式箱体支座铸件正面展示",
+   "files": [
+    [
+     "products/construction-machinery-parts/09.jpg",
+     "products/construction-machinery-parts/09.webp"
+    ],
+    [
+     "products/construction-machinery-parts/09-t.jpg",
+     "products/construction-machinery-parts/09-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/10",
+   "src": "铸件/箱体_支座/IMG_20220619_080008.jpg",
+   "src_size": "3648x2736",
+   "out_size": "1200x900",
+   "rag_description": "大型复杂灰铁机架/底座铸件俯视展示",
+   "files": [
+    [
+     "products/construction-machinery-parts/10.jpg",
+     "products/construction-machinery-parts/10.webp"
+    ],
+    [
+     "products/construction-machinery-parts/10-t.jpg",
+     "products/construction-machinery-parts/10-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/11",
+   "src": "加工件/壳体/mmexport1736255440375.jpg",
+   "src_size": "1492x1120",
+   "out_size": "1200x900",
+   "rag_description": "DONLY（东力）品牌减速机箱体——正面三法兰口展示",
+   "files": [
+    [
+     "products/construction-machinery-parts/11.jpg",
+     "products/construction-machinery-parts/11.webp"
+    ],
+    [
+     "products/construction-machinery-parts/11-t.jpg",
+     "products/construction-machinery-parts/11-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/construction-machinery-parts/12",
+   "src": "铸件/箱体_支座/IMG_20240618_091917.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "灰铁齿轮箱体铸件正面特写",
+   "files": [
+    [
+     "products/construction-machinery-parts/12.jpg",
+     "products/construction-machinery-parts/12.webp"
+    ],
+    [
+     "products/construction-machinery-parts/12-t.jpg",
+     "products/construction-machinery-parts/12-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/01",
+   "src": "铸件/阀体/IMG_20240927_143533.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "两台大型 Y 型多接口阀体铸件并排摆放于车间地面",
+   "files": [
+    [
+     "products/pump-valve-parts/01.jpg",
+     "products/pump-valve-parts/01.webp"
+    ],
+    [
+     "products/pump-valve-parts/01-t.jpg",
+     "products/pump-valve-parts/01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/02",
+   "src": "铸件/阀体/IMG_20240928_142713.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "三台黑色涂装 Y 型阀体整齐排列于车间墙边",
+   "files": [
+    [
+     "products/pump-valve-parts/02.jpg",
+     "products/pump-valve-parts/02.webp"
+    ],
+    [
+     "products/pump-valve-parts/02-t.jpg",
+     "products/pump-valve-parts/02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/03",
+   "src": "铸件/阀体/IMG_20241010_084724.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "两台大型多支管阀体毛坯立于车间地面",
+   "files": [
+    [
+     "products/pump-valve-parts/03.jpg",
+     "products/pump-valve-parts/03.webp"
+    ],
+    [
+     "products/pump-valve-parts/03-t.jpg",
+     "products/pump-valve-parts/03-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/04",
+   "src": "铸件/阀体/IMG_20250730_145417.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "喷丸态 Y 型三通阀体近景：通腔与铸出型号清晰可见",
+   "files": [
+    [
+     "products/pump-valve-parts/04.jpg",
+     "products/pump-valve-parts/04.webp"
+    ],
+    [
+     "products/pump-valve-parts/04-t.jpg",
+     "products/pump-valve-parts/04-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/05",
+   "src": "铸件/阀体/IMG_20241122_162316.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "灰色涂装大口径阀体成排放置并以打包带固定",
+   "files": [
+    [
+     "products/pump-valve-parts/05.jpg",
+     "products/pump-valve-parts/05.webp"
+    ],
+    [
+     "products/pump-valve-parts/05-t.jpg",
+     "products/pump-valve-parts/05-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/06",
+   "src": "铸件/阀体/IMG_20260208_085822.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "表面涂覆黄色防锈底漆的机加工阀体铸件整齐码放",
+   "files": [
+    [
+     "products/pump-valve-parts/06.jpg",
+     "products/pump-valve-parts/06.webp"
+    ],
+    [
+     "products/pump-valve-parts/06-t.jpg",
+     "products/pump-valve-parts/06-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/07",
+   "src": "加工件/壳体/mmexport1750064675842.jpg",
+   "src_size": "4284x5712",
+   "out_size": "1200x900",
+   "rag_description": "罗茨泵/压缩机壳体——8 字形双腔精镗端面",
+   "files": [
+    [
+     "products/pump-valve-parts/07.jpg",
+     "products/pump-valve-parts/07.webp"
+    ],
+    [
+     "products/pump-valve-parts/07-t.jpg",
+     "products/pump-valve-parts/07-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/08",
+   "src": "加工件/壳体/mmexport1750064685600.jpg",
+   "src_size": "4284x5712",
+   "out_size": "1200x900",
+   "rag_description": "罗茨泵壳体——圆柱主体侧面及多接口特征",
+   "files": [
+    [
+     "products/pump-valve-parts/08.jpg",
+     "products/pump-valve-parts/08.webp"
+    ],
+    [
+     "products/pump-valve-parts/08-t.jpg",
+     "products/pump-valve-parts/08-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/09",
+   "src": "加工件/壳体/IMG_20250616_160558.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "大型阀体法兰端面特写——双腔 8 字形内孔结构",
+   "files": [
+    [
+     "products/pump-valve-parts/09.jpg",
+     "products/pump-valve-parts/09.webp"
+    ],
+    [
+     "products/pump-valve-parts/09-t.jpg",
+     "products/pump-valve-parts/09-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/10",
+   "src": "加工件/壳体/image_1781528187576.jpg",
+   "src_size": "2160x3840",
+   "out_size": "1200x900",
+   "rag_description": "HISKM KH75 数控加工中心及阀体加工现场全景",
+   "files": [
+    [
+     "products/pump-valve-parts/10.jpg",
+     "products/pump-valve-parts/10.webp"
+    ],
+    [
+     "products/pump-valve-parts/10-t.jpg",
+     "products/pump-valve-parts/10-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/11",
+   "src": "加工件/壳体/IMG_20260618_110947.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "DN300 齿轮状外缘蝶阀阀体批量成品",
+   "files": [
+    [
+     "products/pump-valve-parts/11.jpg",
+     "products/pump-valve-parts/11.webp"
+    ],
+    [
+     "products/pump-valve-parts/11-t.jpg",
+     "products/pump-valve-parts/11-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/12",
+   "src": "加工件/壳体/mmexport1747366657507.jpg",
+   "src_size": "4284x5712",
+   "out_size": "1200x900",
+   "rag_description": "蝶阀阀体铸件毛坯——蝶形双耳外形俯拍",
+   "files": [
+    [
+     "products/pump-valve-parts/12.jpg",
+     "products/pump-valve-parts/12.webp"
+    ],
+    [
+     "products/pump-valve-parts/12-t.jpg",
+     "products/pump-valve-parts/12-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/13",
+   "src": "铸件/管件/IMG_20220908_144610.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一件 Y 型分叉三通管件的成品近景照片",
+   "files": [
+    [
+     "products/pump-valve-parts/13.jpg",
+     "products/pump-valve-parts/13.webp"
+    ],
+    [
+     "products/pump-valve-parts/13-t.jpg",
+     "products/pump-valve-parts/13-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "products/pump-valve-parts/14",
+   "src": "铸件/箱体_支座/IMG_20201012_094832.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "多件大型弯头法兰管件套件堆放在木托盘上",
+   "files": [
+    [
+     "products/pump-valve-parts/14.jpg",
+     "products/pump-valve-parts/14.webp"
+    ],
+    [
+     "products/pump-valve-parts/14-t.jpg",
+     "products/pump-valve-parts/14-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/scan-box",
+   "src": "铸件/箱体_支座/IMG_20231029_095938.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "大型灰铁箱体铸件正在进行三维扫描检测",
+   "files": [
+    [
+     "quality/scan-box.jpg",
+     "quality/scan-box.webp"
+    ],
+    [
+     "quality/scan-box-t.jpg",
+     "quality/scan-box-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/scan-hoist",
+   "src": "铸件/箱体_支座/IMG_20231029_095947.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "吊运状态下的大型箱体铸件三维扫描检测",
+   "files": [
+    [
+     "quality/scan-hoist.jpg",
+     "quality/scan-hoist.webp"
+    ],
+    [
+     "quality/scan-hoist-t.jpg",
+     "quality/scan-hoist-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/scan-hand",
+   "src": "加工件/壳体/mmexport1700357244017.jpg",
+   "src_size": "2881x2770",
+   "out_size": "1200x900",
+   "rag_description": "Volvo 品牌大型铸钢件吊装与手持扫描检测",
+   "files": [
+    [
+     "quality/scan-hand.jpg",
+     "quality/scan-hand.webp"
+    ],
+    [
+     "quality/scan-hand-t.jpg",
+     "quality/scan-hand-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/cmm",
+   "src": "生产流程/涂装线/IMG_20201012_094750.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一台 ZEISS 桥式三坐标测量机（CMM）置于计量室内",
+   "files": [
+    [
+     "quality/cmm.jpg",
+     "quality/cmm.webp"
+    ],
+    [
+     "quality/cmm-t.jpg",
+     "quality/cmm-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/record",
+   "src": "加工件/其他/IMG_20220609_173232.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "喷涂黑色涂料后的灰铁箱体件摆在木托上，工人正在做检验记录",
+   "files": [
+    [
+     "quality/record.jpg",
+     "quality/record.webp"
+    ],
+    [
+     "quality/record-t.jpg",
+     "quality/record-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "quality/packing",
+   "src": "加工件/机床件/IMG_20250927_104404.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "一件机床床身铸件已完成最终包装，整体用透明塑料缠绕膜包裹",
+   "files": [
+    [
+     "quality/packing.jpg",
+     "quality/packing.webp"
+    ],
+    [
+     "quality/packing-t.jpg",
+     "quality/packing-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "people/training-01",
+   "src": "人员/IMG_20260702_151016.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "公司内部会议/培训现场",
+   "files": [
+    [
+     "people/training-01.jpg",
+     "people/training-01.webp"
+    ],
+    [
+     "people/training-01-t.jpg",
+     "people/training-01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "people/training-02",
+   "src": "人员/mmexport1664677852782.jpg",
+   "src_size": "4032x3024",
+   "out_size": "1200x900",
+   "rag_description": "公司内部培训/技术交流会议",
+   "files": [
+    [
+     "people/training-02.jpg",
+     "people/training-02.webp"
+    ],
+    [
+     "people/training-02-t.jpg",
+     "people/training-02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "wide",
+   "out": "about/gate",
+   "src": "厂区_场景/厂房/7.jpg",
+   "src_size": "1718x1619",
+   "out_size": "1600x900",
+   "rag_description": "公司招牌墙：沧州菲美得机械有限公司大门形象",
+   "files": [
+    [
+     "about/gate.jpg",
+     "about/gate.webp"
+    ],
+    [
+     "about/gate-t.jpg",
+     "about/gate-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "wide",
+   "out": "news/news-expansion",
+   "src": "厂区_场景/厂房/13.jpg",
+   "src_size": "4160x3120",
+   "out_size": "1600x900",
+   "rag_description": "在建新厂房二层：混凝土框架与远处钢结构屋面并存",
+   "files": [
+    [
+     "news/news-expansion.jpg",
+     "news/news-expansion.webp"
+    ],
+    [
+     "news/news-expansion-t.jpg",
+     "news/news-expansion-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "wide",
+   "out": "news/news-coating",
+   "src": "生产流程/涂装线/1582768321676.jpg",
+   "src_size": "640x480",
+   "out_size": "1600x900",
+   "rag_description": "消失模涂装线多个封闭喷涂工位沿车间一字排开",
+   "files": [
+    [
+     "news/news-coating.jpg",
+     "news/news-coating.webp"
+    ],
+    [
+     "news/news-coating-t.jpg",
+     "news/news-coating-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "wide",
+   "out": "news/news-hitech",
+   "src": "厂区_场景/厂房/6.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1600x900",
+   "rag_description": "宽敞明亮的机加工车间全景：一排数控机床沿墙布置",
+   "files": [
+    [
+     "news/news-hitech.jpg",
+     "news/news-hitech.webp"
+    ],
+    [
+     "news/news-hitech-t.jpg",
+     "news/news-hitech-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "wide",
+   "out": "news/news-techrenov",
+   "src": "加工件/机床件/IMG_20250914_091930.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1600x900",
+   "rag_description": "多件机床床身类铸件在厂房外或半开放场地整齐堆放，表面喷涂均匀的灰色防锈底漆",
+   "files": [
+    [
+     "news/news-techrenov.jpg",
+     "news/news-techrenov.webp"
+    ],
+    [
+     "news/news-techrenov-t.jpg",
+     "news/news-techrenov-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-01",
+   "src": "铸件/阀体/IMG_20241122_162316.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "灰色涂装大口径阀体成排放置并以打包带固定",
+   "files": [
+    [
+     "featured/ship-01.jpg",
+     "featured/ship-01.webp"
+    ],
+    [
+     "featured/ship-01-t.jpg",
+     "featured/ship-01-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-02",
+   "src": "铸件/箱体_支座/IMG_20201202_160802.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一件大型黄色工程机械配重铸件，结构复杂且带多处安装凸台",
+   "files": [
+    [
+     "featured/ship-02.jpg",
+     "featured/ship-02.webp"
+    ],
+    [
+     "featured/ship-02-t.jpg",
+     "featured/ship-02-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-03",
+   "src": "加工件/机床件/IMG_20250927_104417.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "大型机床铸件成品车间全景",
+   "files": [
+    [
+     "featured/ship-03.jpg",
+     "featured/ship-03.webp"
+    ],
+    [
+     "featured/ship-03-t.jpg",
+     "featured/ship-03-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-04",
+   "src": "加工件/壳体/IMG_20260618_110947.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "DN300 齿轮状外缘蝶阀阀体批量成品",
+   "files": [
+    [
+     "featured/ship-04.jpg",
+     "featured/ship-04.webp"
+    ],
+    [
+     "featured/ship-04-t.jpg",
+     "featured/ship-04-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-05",
+   "src": "铸件/箱体_支座/IMG_20240618_091917.jpg",
+   "src_size": "3072x4096",
+   "out_size": "1200x900",
+   "rag_description": "灰铁齿轮箱体铸件正面特写",
+   "files": [
+    [
+     "featured/ship-05.jpg",
+     "featured/ship-05.webp"
+    ],
+    [
+     "featured/ship-05-t.jpg",
+     "featured/ship-05-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "featured/ship-06",
+   "src": "铸件/管件/IMG_20220908_144610.jpg",
+   "src_size": "2736x3648",
+   "out_size": "1200x900",
+   "rag_description": "一件 Y 型分叉三通管件的成品近景照片",
+   "files": [
+    [
+     "featured/ship-06.jpg",
+     "featured/ship-06.webp"
+    ],
+    [
+     "featured/ship-06-t.jpg",
+     "featured/ship-06-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "cert",
+   "out": "certs/hitech-enterprise",
+   "src": "资质证书/01-高新技术企业证书.jpg",
+   "src_size": "2048x1405",
+   "out_size": "1400x1000",
+   "rag_description": "国家高新技术企业证书：证书编号 GR202313000812，2023 年 10 月 16 日由河北省科学技术厅、河北省财政厅、国家税务总局河北省税务局批准，有效期三年",
+   "files": [
+    [
+     "certs/hitech-enterprise.jpg",
+     "certs/hitech-enterprise.webp"
+    ],
+    [
+     "certs/hitech-enterprise-t.jpg",
+     "certs/hitech-enterprise-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "cert",
+   "out": "certs/tech-sme",
+   "src": "资质证书/02-河北省科技型中小企业.jpg",
+   "src_size": "1754x1240",
+   "out_size": "1400x1000",
+   "rag_description": "河北省科技型中小企业证书：认定编号 SKX202312J1560037，河北省科学技术厅 2023 年 12 月 14 日发证，有效期 3 年",
+   "files": [
+    [
+     "certs/tech-sme.jpg",
+     "certs/tech-sme.webp"
+    ],
+    [
+     "certs/tech-sme-t.jpg",
+     "certs/tech-sme-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "cert",
+   "out": "certs/green-foundry",
+   "src": "资质证书/03-绿色铸造示范企业-荣誉证书.jpg",
+   "src_size": "1200x757",
+   "out_size": "1400x1000",
+   "rag_description": "绿色铸造示范企业荣誉证书：河北省铸造行业协会 2018 年 10 月颁发",
+   "files": [
+    [
+     "certs/green-foundry.jpg",
+     "certs/green-foundry.webp"
+    ],
+    [
+     "certs/green-foundry-t.jpg",
+     "certs/green-foundry-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "certp",
+   "out": "certs/iso9001",
+   "src": "资质证书/04-ISO9001质量管理体系认证证书.jpg",
+   "src_size": "1562x2200",
+   "out_size": "1130x1500",
+   "rag_description": "质量管理体系认证证书：GB/T19001-2016 / ISO9001:2015，证书编号 785Q1250263R1M，天津证通公信认证有限公司 2025 年 9 月 6 日颁发，有效期至 2028 年 9 月 5 日",
+   "files": [
+    [
+     "certs/iso9001.jpg",
+     "certs/iso9001.webp"
+    ],
+    [
+     "certs/iso9001-t.jpg",
+     "certs/iso9001-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "cert",
+   "out": "certs/discharge-permit",
+   "src": "资质证书/05-排污许可证.jpg",
+   "src_size": "2200x1636",
+   "out_size": "1400x1000",
+   "rag_description": "排污许可证正本：证书编号 91130981784093371Y001C，有效期限 2026 年 4 月 10 日至 2031 年 4 月 9 日，沧州市行政审批局 2026 年 4 月 10 日核发",
+   "files": [
+    [
+     "certs/discharge-permit.jpg",
+     "certs/discharge-permit.webp"
+    ],
+    [
+     "certs/discharge-permit-t.jpg",
+     "certs/discharge-permit-t.webp"
+    ]
+   ]
+  }
+ ]
+}

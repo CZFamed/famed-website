@@ -94,5 +94,13 @@ if (-not $remote) {
 }
 
 git -C $Staging push -u origin main
+if ($LASTEXITCODE -ne 0) {
+  # 曾经踩过：直连 GitHub 被重置时 git 失败，但脚本不看退出码，照样打印"完成"
+  Write-Host ""
+  Write-Host "推送失败（git 退出码 $LASTEXITCODE）。" -ForegroundColor Red
+  Write-Host "发布副本已经提交好了，改动没丢；网络恢复后在本目录重跑一次本脚本即可。" -ForegroundColor Yellow
+  Write-Host "若直连 GitHub 被重置，可先开代理再重试。" -ForegroundColor Yellow
+  exit 1
+}
 Write-Host ""
 Write-Host "完成：$remote"

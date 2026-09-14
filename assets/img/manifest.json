@@ -50,7 +50,7 @@
   {
    "slot": "banner",
    "out": "banner/banner-products",
-   "src": "铸件/阀体/IMG_20241122_160745.jpg",
+   "src": "铸件/壳体/IMG_20241122_160745.jpg",
    "src_size": "4096x3072",
    "out_size": "2000x800",
    "rag_description": "车间内大量灰色阀体成品整齐码放于木托盘",
@@ -158,7 +158,7 @@
   {
    "slot": "banner",
    "out": "banner/banner-faq",
-   "src": "铸件/阀体/IMG_20250419_083631.jpg",
+   "src": "铸件/壳体/IMG_20250419_083631.jpg",
    "src_size": "3120x4160",
    "out_size": "2000x800",
    "rag_description": "新建红色钢结构仓库内成排阀体铸件待发货",
@@ -370,7 +370,7 @@
   {
    "slot": "card",
    "out": "process/slurry-1",
-   "src": "生产流程/涂装线/微信图片_20260911074619_20_18.jpg",
+   "src": "生产流程/黄模/微信图片_20260911074619_20_18.jpg",
    "src_size": "1920x1080",
    "out_size": "1200x900",
    "rag_description": "车间圆形大浆池盛灰色浆料，机械臂伸入其中，两名工人在旁操作",
@@ -388,7 +388,7 @@
   {
    "slot": "card",
    "out": "process/slurry-2",
-   "src": "生产流程/涂装线/微信图片_20260911074627_21_18.jpg",
+   "src": "生产流程/黄模/微信图片_20260911074627_21_18.jpg",
    "src_size": "1920x1080",
    "out_size": "1200x900",
    "rag_description": "涂装线现场：成排铸件表面覆白色涂层，金属架挂满浆料",
@@ -406,7 +406,7 @@
   {
    "slot": "card",
    "out": "process/slurry-3",
-   "src": "生产流程/涂装线/微信图片_20260911074857_23_18.jpg",
+   "src": "生产流程/黄模/微信图片_20260911074857_23_18.jpg",
    "src_size": "1920x1080",
    "out_size": "1200x900",
    "rag_description": "车间内带轮料架挂满浅灰色涂层铸件，批量化涂装后摆放状态",
@@ -424,7 +424,7 @@
   {
    "slot": "card",
    "out": "process/pouring-1",
-   "src": "铸件/箱体_支座/3246a53caad53ec7a6afd8986e00775d.jpg",
+   "src": "生产流程/浇筑/3246a53caad53ec7a6afd8986e00775d.jpg",
    "src_size": "1920x1080",
    "out_size": "1200x900",
    "rag_description": "铸造车间内排列蓝色砂箱，起重机吊运浇包进行浇注作业",
@@ -1252,7 +1252,7 @@
   {
    "slot": "card",
    "out": "products/construction-machinery-parts/07",
-   "src": "铸件/阀体/IMG_20260202_084733.jpg",
+   "src": "铸件/壳体/IMG_20260202_084733.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "两台精加工后的大型支臂/阀座类铸件展示金属本色",
@@ -1270,7 +1270,7 @@
   {
    "slot": "card",
    "out": "products/construction-machinery-parts/08",
-   "src": "铸件/阀体/IMG_20260202_084740.jpg",
+   "src": "铸件/壳体/IMG_20260202_084740.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "精加工支臂类铸件俯拍：镗孔与法兰加工面细节",
@@ -1360,7 +1360,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/01",
-   "src": "铸件/阀体/IMG_20240927_143533.jpg",
+   "src": "铸件/壳体/IMG_20240927_143533.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "两台大型 Y 型多接口阀体铸件并排摆放于车间地面",
@@ -1378,7 +1378,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/02",
-   "src": "铸件/阀体/IMG_20240928_142713.jpg",
+   "src": "铸件/壳体/IMG_20240928_142713.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "三台黑色涂装 Y 型阀体整齐排列于车间墙边",
@@ -1396,7 +1396,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/03",
-   "src": "铸件/阀体/IMG_20241010_084724.jpg",
+   "src": "铸件/壳体/IMG_20241010_084724.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "两台大型多支管阀体毛坯立于车间地面",
@@ -1414,7 +1414,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/04",
-   "src": "铸件/阀体/IMG_20250730_145417.jpg",
+   "src": "铸件/壳体/IMG_20250730_145417.jpg",
    "src_size": "4096x3072",
    "out_size": "1200x900",
    "rag_description": "喷丸态 Y 型三通阀体近景：通腔与铸出型号清晰可见",
@@ -1432,7 +1432,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/05",
-   "src": "铸件/阀体/IMG_20241122_162316.jpg",
+   "src": "铸件/壳体/IMG_20241122_162316.jpg",
    "src_size": "4096x3072",
    "out_size": "1200x900",
    "rag_description": "灰色涂装大口径阀体成排放置并以打包带固定",
@@ -1450,7 +1450,7 @@
   {
    "slot": "card",
    "out": "products/pump-valve-parts/06",
-   "src": "铸件/阀体/IMG_20260208_085822.jpg",
+   "src": "铸件/壳体/IMG_20260208_085822.jpg",
    "src_size": "3072x4096",
    "out_size": "1200x900",
    "rag_description": "表面涂覆黄色防锈底漆的机加工阀体铸件整齐码放",
@@ -1846,7 +1846,7 @@
   {
    "slot": "card",
    "out": "featured/ship-01",
-   "src": "铸件/阀体/IMG_20241122_162316.jpg",
+   "src": "铸件/壳体/IMG_20241122_162316.jpg",
    "src_size": "4096x3072",
    "out_size": "1200x900",
    "rag_description": "灰色涂装大口径阀体成排放置并以打包带固定",

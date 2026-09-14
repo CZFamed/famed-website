@@ -1,5 +1,5 @@
 # 部署到 Cloudflare Workers 时不上传的文件与目录。
-# 依据《交付说明》§五「上线时只上传 *.html、zh\、assets\、sitemap.xml、robots.txt」。
+# 依据《交付说明》§五「上线时只上传 *.html、zh\、assets\、robots.txt」。
 
 # 生成器与素材分析产物，不属于网站本身
 tools/

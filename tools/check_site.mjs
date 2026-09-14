@@ -132,29 +132,6 @@ if (fs.existsSync(cssDir)) {
 }
 notes.push(`CSS 内共检查 ${cssRefs} 处 url() 引用`);
 
-/* ------------------------------------------- 检查 4：sitemap 与页面是否对应 */
-
-const sitemap = path.join(ROOT, "sitemap.xml");
-if (!fs.existsSync(sitemap)) {
-  problems.push("缺少 sitemap.xml");
-} else {
-  const xml = fs.readFileSync(sitemap, "utf8");
-  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
-  const strip = (u) => decodeURIComponent(u.replace(/^https?:\/\/[^/]+/, "").replace(/^\//, ""));
-  const listed = new Set(locs.map(strip));
-
-  // 页面里唯一不在 sitemap 中的是 404.html，这是正常的
-  for (const page of pages) {
-    const p = rel(page);
-    if (p === "404.html" || p === "zh/404.html") continue;
-    if (!listed.has(p)) problems.push(`sitemap.xml 里没有 ${p}`);
-  }
-  for (const l of listed) {
-    if (!fs.existsSync(path.join(ROOT, l))) problems.push(`sitemap.xml 里列了磁盘上不存在的 ${l}`);
-  }
-  notes.push(`sitemap.xml 收录 ${listed.size} 个地址，与磁盘上的页面一一对应`);
-}
-
 /* -------------------------------------------------------------- 输出结果 */
 
 console.log(`检查目录：${ROOT}`);

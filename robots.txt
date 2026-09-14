@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 Disallow: /_素材审阅/
-
-Sitemap: https://www.famedcasting.com/sitemap.xml

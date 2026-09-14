@@ -139,6 +139,25 @@ dl, dd, dt, figure, blockquote { margin: 0; }
 .prose h2:first-child { margin-top: 0; }
 .prose--narrow { max-width: 72ch; }
 
+/* 新闻正文配图（生成器 pageNewsItem 输出，点击进灯箱） */
+.prose__figure { margin: 28px 0; }
+.prose__zoom {
+  display: block; width: 100%; margin: 0; padding: 0; border: 0; background: none;
+  cursor: zoom-in; border-radius: var(--radius-sm); overflow: hidden;
+}
+.prose__zoom picture { display: block; }
+.prose__img {
+  width: 100%; height: auto; display: block; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); transition: transform .35s var(--ease);
+}
+.prose__zoom:hover .prose__img { transform: scale(1.015); }
+.prose__cap {
+  margin-top: 10px; font-size: 13.5px; line-height: 1.65; color: var(--muted);
+}
+@media (max-width: 760px) {
+  .prose__figure { margin: 22px 0; }
+}
+
 .note {
   font-size: 13.5px; color: var(--muted); margin-top: 20px;
   padding-left: 14px; border-left: 3px solid var(--line-strong);
@@ -734,7 +753,11 @@ dl, dd, dt, figure, blockquote { margin: 0; }
 .visit__title { font-size: 18px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
 
 .article { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(30px, 4vw, 56px); align-items: start; }
-.article__meta { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; font-size: 13.5px; color: var(--muted); }
+/* meta 必须横跨两列：否则它占掉左列，正文被挤进右侧 300px 的窄列（首版以来的布局缺陷） */
+.article__meta {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 14px; margin-bottom: 20px; font-size: 13.5px; color: var(--muted);
+}
 .article__meta .tag { margin: 0; }
 .article__aside {
   position: sticky; top: 110px;

@@ -97,8 +97,22 @@ for (const page of pages) {
     refCount++;
     if (!exists(target)) problems.push(`${rel(page)} 引用了不存在的本地文件：${m[1]}`);
   }
+
+  /* srcset 里的每个候选（"路径 800w" / "路径 2x"）也要存在。
+     注意：<source> 只能在 type 不受支持时回退到 <img>，404 不会回退，
+     所以 srcset 指向的文件缺失会直接表现为"图片不显示"。 */
+  for (const m of html.matchAll(/srcset="([^"]+)"/g)) {
+    for (const part of m[1].split(",")) {
+      const url = part.trim().split(/\s+/)[0];
+      if (!url) continue;
+      const target = resolveTarget(page, url);
+      if (!target) continue;
+      refCount++;
+      if (!exists(target)) problems.push(`${rel(page)} 的 srcset 引用了不存在的本地文件：${url}`);
+    }
+  }
 }
-notes.push(`页面内共检查 ${refCount} 处本地链接 / 资源引用`);
+notes.push(`页面内共检查 ${refCount} 处本地链接 / 资源引用（含 srcset 候选）`);
 
 /* --------------------------------------------- 检查 3：CSS 里的图片是否存在 */
 

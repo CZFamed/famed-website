@@ -1405,6 +1405,21 @@ function pageNewsItem(c, n) {
         <time datetime="${x.date}">${esc(c.t(x.dateText))}</time>
         <span>${esc(c.t(x.title))}</span></a></li>`).join("\n      ");
 
+  /* 正文配图：插在指定段落之后，点击进灯箱（同一篇文章的图为一组） */
+  const figures = n.figures || [];
+  const prose = n.body.map((p, i) => {
+    const figs = figures
+      .filter((f) => (f.after || 1) === i + 1)
+      .map((f) => `
+      <figure class="prose__figure">
+        <button class="prose__zoom" type="button" data-lb-group="news-${n.slug}" data-lb-src="${c.a(`img/${f.img}.jpg`)}" data-lb-cap="${esc(c.t(f.caption))}">
+          ${img(c, f.img, c.t(f.caption), { w: f.w, h: f.h, thumb: true, cls: "prose__img", sizes: "(max-width: 900px) 92vw, 720px" })}
+        </button>
+        <figcaption class="prose__cap">${esc(c.t(f.caption))}</figcaption>
+      </figure>`).join("");
+    return `<p>${esc(c.t(p))}</p>${figs}`;
+  }).join("\n      ");
+
   const body = `
 ${banner(c, {
   title: c.t(n.title), sub: c.t(n.summary), base: n.image, file: `news-${n.slug}.html`,
@@ -1417,7 +1432,7 @@ ${banner(c, {
       <span class="tag">${esc(c.t(NEWS_META.categoryLabel[n.category]))}</span>
     </p>
     <div class="prose">
-      ${n.body.map((p) => `<p>${esc(c.t(p))}</p>`).join("\n      ")}
+      ${prose}
     </div>
     <aside class="article__aside">
       <h2 class="article__aside-title">${esc(c.t(NEWS_META.allNews))}</h2>

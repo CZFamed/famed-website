@@ -61,6 +61,30 @@ export const NEWS = [
         zh: "对客户而言，这一项目的实际意义是产能：扩建完成后，本厂年铸造产能可达 30000 吨，且不新增劳动定员。",
       },
     ],
+    /* 正文配图：after = 插在第几段之后；img 路径相对 assets/img/，
+       画面内容可在 assets/img/manifest.json 的 rag_description 字段核对 */
+    figures: [
+      {
+        img: "gallery/factory-04",
+        w: 1200,
+        h: 900,
+        after: 1,
+        caption: {
+          en: "Expansion capacity: the new second-floor production platform inside the steel-frame workshop.",
+          zh: "新增产能所在的新建钢结构厂房二层车间平台。",
+        },
+      },
+      {
+        img: "banner/banner-contact",
+        w: 2000,
+        h: 800,
+        after: 2,
+        caption: {
+          en: "Dust collection and off-gas treatment equipment in the plant yard — the equipment the approval requires for the added capacity.",
+          zh: "厂区除尘与废气处理设施——批复对新增产能提出的治理要求正落在这一类设备上。",
+        },
+      },
+    ],
   },
   {
     slug: "coating-line-upgrade",
@@ -90,6 +114,28 @@ export const NEWS = [
         zh: "底漆与面漆现已全部在厂内完成，不再外协，交期中去掉了一段运输时间。",
       },
     ],
+    figures: [
+      {
+        img: "process/paint-2",
+        w: 1200,
+        h: 900,
+        after: 1,
+        caption: {
+          en: "Sealed spray booths arranged along the rebuilt coating line.",
+          zh: "改造后的涂装线：封闭喷涂工位沿车间一字排开。",
+        },
+      },
+      {
+        img: "process/paint-1",
+        w: 1200,
+        h: 900,
+        after: 2,
+        caption: {
+          en: "Coated castings on the overhead conveyor line.",
+          zh: "涂装后的大型铸件悬挂在输送链下方。",
+        },
+      },
+    ],
   },
   {
     slug: "specialised-sme",
@@ -115,6 +161,28 @@ export const NEWS = [
         zh: "对无法到厂的采购方来说，省级认定是一份有用的第三方信号：它经过省级主管部门的资料审核与现场核查，并非自我声明。",
       },
     ],
+    figures: [
+      {
+        img: "process/machining-2",
+        w: 1200,
+        h: 900,
+        after: 1,
+        caption: {
+          en: "Machining a heavy-wall iron housing on a CNC boring and milling machine — the kind of in-house process the assessment looks at.",
+          zh: "数控镗铣床加工厚壁铸铁箱体——评审关注的正是这类自有工艺能力。",
+        },
+      },
+      {
+        img: "quality/cmm",
+        w: 1200,
+        h: 900,
+        after: 2,
+        caption: {
+          en: "ZEISS bridge-type CMM in the metrology room.",
+          zh: "计量室内的 ZEISS 桥式三坐标测量机。",
+        },
+      },
+    ],
   },
   {
     slug: "high-tech-enterprise",
@@ -138,6 +206,28 @@ export const NEWS = [
       {
         en: "In practice it also matters commercially: high-tech status is one of the documents public tender and larger OEM audits frequently ask to see.",
         zh: "它同时具有商业价值：在公开招投标与大型主机厂的供应商审核中，高新技术企业资质是被频繁要求的文件之一。",
+      },
+    ],
+    figures: [
+      {
+        img: "certs/hitech-enterprise",
+        w: 1400,
+        h: 1000,
+        after: 1,
+        caption: {
+          en: "National High-Tech Enterprise certificate (no. GR202313000812), valid for three years.",
+          zh: "国家高新技术企业证书（证书编号 GR202313000812，有效期三年）。",
+        },
+      },
+      {
+        img: "process/scan-1",
+        w: 1200,
+        h: 900,
+        after: 2,
+        caption: {
+          en: "3D scanning a large grey-iron housing casting.",
+          zh: "大型灰铁箱体铸件的三维扫描检测。",
+        },
       },
     ],
   },

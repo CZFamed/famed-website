@@ -35,7 +35,7 @@ node tools/serve.mjs          # 然后浏览器打开 http://localhost:5173/
 | `assets\css\site.css` | 全站样式（设计系统 + 组件，无第三方依赖）。响应式断点集中在文件末尾 §9：1180 / 1080 / 760 / 480 / 420 / 360 |
 | `assets\js\site.js` | 全站交互（导航、灯箱、手风琴、表单、Cookie 同意等） |
 | `assets\img\` | 已裁切压缩的图片素材（WebP + JPEG 双格式） |
-| `assets\img\brand\` | LOGO 与图标（由 `..\品牌资产\` 同步而来，不要直接改这里） |
+| `assets\img\brand\` | LOGO 与图标（由 `..\LOGO\` 同步而来，不要直接改这里） |
 | `assets\video\` | 6 段原始车间视频（共 14 MB）。首页"车间短视频"模块已按要求移除，站内暂无引用，可自行删除 |
 | `sitemap.xml` / `robots.txt` | SEO 基础文件 |
 | `tools\` | 站点生成器与素材脚本（**上线时不要上传**）。另含 `audit_mobile.mjs`、`audit_mobile_ui.mjs`、`shots_mobile.mjs` 三个手机端复验脚本 |
@@ -187,8 +187,8 @@ Formspree，由它转成邮件发到 `czfamed1@outlook.com`；成功后表单会
 - ~~邮箱~~ **已确定**：`czfamed1@outlook.com`（`tools\content.mjs` → `SITE.email` / `SITE.emailService`）
 - 域名 `https://www.famedcasting.com`
 - 备案号 `冀ICP备00000000号-1`
-- ~~网站 Logo~~ **已确定**：公司提供的 LOGO 已转成矢量与全套位图，见 `..\品牌资产\`；
-  网站上用到的是它的同步副本，改 LOGO 请改 `品牌资产\input\logo-source.jpg` 后重跑生成脚本
+- ~~网站 Logo~~ **已确定**：公司提供的 LOGO 已转成矢量与全套位图，见 `..\LOGO\`；
+  网站上用到的是它的同步副本，改 LOGO 请改 `LOGO\input\logo-source.jpg` 后重跑生成脚本
 - 地图（现为"点击加载"，上线前确认用 Google Maps 还是高德/百度）
 - 中英双语对接人姓名与联系方式
 

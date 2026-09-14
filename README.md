@@ -288,3 +288,83 @@ powershell -File tools\publish_github.ps1 -IncludeNonSource
 
 仓库里的文件是**网站根目录**（`index.html` 在最外层），所以直接开 GitHub Pages
 （Settings → Pages → Branch: `main` / root）就能得到一个在线预览地址。
+
+---
+
+## 十、自动部署到 Cloudflare Workers
+
+线上地址：<https://czfamed.czfamed1.workers.dev/>（英文在根目录，中文在 `/zh/`）。
+
+链路是：**改内容 → 重新生成 → 推 GitHub → GitHub Actions 自动上线**。
+
+```powershell
+cd "D:\agent开发\菲美得\公司网站"
+node tools\generate_site.mjs                              # 重新生成 38 个页面
+powershell -File tools\publish_github.ps1 -Message "改了什么"   # 推送
+# 推上去之后 GitHub 会自动跑「部署到 Cloudflare Workers」并上线，不需要再手工操作
+```
+
+### 首次配置（只需做一次）
+
+1. **建 API Token**：Cloudflare 控制台 → 右上角头像 → My Profile → API Tokens →
+   Create Token → 用 **Edit Cloudflare Workers** 模板（或自定义：Account →
+   Workers Scripts → Edit）。创建后复制 token，**只会显示一次**。
+2. **取 Account ID**：Workers & Pages 页面右侧的 Account ID，或地址栏
+   `dash.cloudflare.com/<account-id>` 里那串。
+3. **写进 GitHub**：仓库 → Settings → Secrets and variables → Actions →
+   New repository secret，加两条：`CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID`。
+4. **跑一次**：仓库 → Actions → 部署到 Cloudflare Workers → Run workflow。
+
+之后每次 push 到 `main` 都会自动部署。
+
+### 部署相关文件
+
+| 文件 | 作用 |
+|---|---|
+| `wrangler.jsonc` | Cloudflare 部署配置。`name` 必须与线上 Worker 同名（`czfamed`），否则会新建一个 Worker 而不是更新线上那个 |
+| `.assetsignore` | 决定哪些文件**不**上传：`tools\`、`_素材审阅\`、`_预览截图\`、`assets\video\`、`README.md`、`交付说明.md` 等 |
+| `.github/workflows/deploy-cloudflare.yml` | push 到 `main` 时自动部署 |
+| `tools/check_site.mjs` | 部署前的完整性检查，见下 |
+
+### 部署前检查（`tools/check_site.mjs`）
+
+每次部署前自动跑，本地也可以随时手动跑：
+
+```powershell
+node tools\check_site.mjs
+```
+
+它检查四件事，任一不通过就**中断部署**（退出码 1）：
+
+1. 每个页面的 `<use href="#图标">` 都能在本页找到对应 `<symbol>` 定义。
+   SVG 引用未定义符号时不报错、只渲染成空白，2026-09-14 首页「为什么选择」三格
+   图标就是这么坏掉的，这条专门防它。
+2. 各页 sprite 完全一致（防止个别页面停留在旧版本生成结果）。
+3. 页面与 CSS 里引用的本地文件都存在。
+4. `sitemap.xml` 与磁盘上的页面一一对应。
+
+> 这条检查上线前就抓到过一个真实问题：所有中文页的页脚 Sitemap 链接写成
+> `sitemap.xml`，而中文页在 `zh\` 子目录里，点击会 404（应为 `../sitemap.xml`）。
+> 已在生成器里修好并重新生成。
+
+### 本地手动部署（可选）
+
+不想走 GitHub 也可以在本地直接推：
+
+```powershell
+cd "D:\agent开发\菲美得\公司网站"
+npx wrangler@4 login      # 首次会开浏览器登录 Cloudflare
+npx wrangler@4 deploy
+```
+
+### 出问题时先看这里
+
+| 现象 | 处理 |
+|---|---|
+| Actions 报"仓库缺少 secret" | 按上面「首次配置」第 3 步补两条 secret |
+| Actions 失败但看不懂 | 进 Actions → 对应那次运行 → 展开失败的步骤看日志 |
+| 部署成功但页面没变 | 先强制刷新（Ctrl+F5）排除浏览器缓存；仍不对就确认 `wrangler.jsonc` 的 `name` 与线上 Worker 一致 |
+| 想确认线上到底是哪一版 | 抓 `https://czfamed.czfamed1.workers.dev/zh/`，在返回的 HTML 里搜 `id="i-group"` |
+
+> 注意：如果 Cloudflare 控制台里**同时**给这个 Worker 开了 Git 集成（Workers Builds），
+> 会和本工作流重复部署。二选一即可，推荐保留本仓库的 Actions（配置、检查都在仓库里）。

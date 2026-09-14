@@ -1,0 +1,6 @@
+# npx wrangler 的本地缓存目录（每次部署会重新生成）
+.wrangler/
+
+# 素材分析中间产物与预览长图（由 tools\publish_github.ps1 排除在发布之外）
+_素材审阅/
+_预览截图/

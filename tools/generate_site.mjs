@@ -50,6 +50,8 @@ function ctx(lang) {
     isZh,
     /** 站内页面链接（同语言，相对路径） */
     u: (file) => file,
+    /** 站根目录下的文件（如 sitemap.xml）。中文页在 zh\ 子目录里，需要回上一层 */
+    root: (file) => (isZh ? "../" + file : file),
     /** 静态资源链接 */
     a: (p) => (isZh ? "../assets/" : "assets/") + p,
     /** 语言切换链接 */
@@ -415,7 +417,7 @@ function footer(c) {
     <p>© ${new Date().getFullYear()} ${esc(c.isZh ? SITE.nameZh : SITE.nameEn)}. ${c.isZh ? "保留所有权利。" : "All rights reserved."}</p>
     <p class="footer__bottom-links">
       <a href="${c.u("privacy.html")}">${esc(c.t(PRIVACY.title))}</a>
-      <a href="${c.u("sitemap.xml")}">Sitemap</a>
+      <a href="${c.root("sitemap.xml")}">Sitemap</a>
       <a href="${c.alt("index.html")}">${esc(c.t(UI.langSwitch))}</a>
       <span>${esc(SITE.icp)}</span>
     </p>

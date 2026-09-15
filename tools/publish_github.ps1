@@ -16,8 +16,30 @@ param(
   [string]$RepoUrl = "",
   [string]$Message = "",
   [string]$Staging = "",
+  [string]$Proxy = "",
   [switch]$IncludeNonSource
 )
+
+# 直连 GitHub 经常被重置（"Empty reply from server" / 连不上 443），
+# 所以这里带一层兜底：直连失败就探测本机常见代理端口，用代理重试一次。
+function Test-LocalPort([int]$port) {
+  $client = New-Object System.Net.Sockets.TcpClient
+  try {
+    $client.Connect("127.0.0.1", $port)
+    return $true
+  } catch {
+    return $false
+  } finally {
+    $client.Dispose()
+  }
+}
+
+function Find-LocalProxy {
+  foreach ($port in 7897, 7890, 7891, 10809, 1080, 8080) {
+    if (Test-LocalPort $port) { return "http://127.0.0.1:$port" }
+  }
+  return ""
+}
 
 $ErrorActionPreference = "Stop"
 
@@ -93,14 +115,50 @@ if (-not $remote) {
   exit 2
 }
 
+$ErrorActionPreference = "Continue"   # git 往 stderr 写进度，别被当成致命错误
+
 git -C $Staging push -u origin main
-if ($LASTEXITCODE -ne 0) {
-  # 曾经踩过：直连 GitHub 被重置时 git 失败，但脚本不看退出码，照样打印"完成"
+if ($LASTEXITCODE -eq 0) {
   Write-Host ""
-  Write-Host "推送失败（git 退出码 $LASTEXITCODE）。" -ForegroundColor Red
-  Write-Host "发布副本已经提交好了，改动没丢；网络恢复后在本目录重跑一次本脚本即可。" -ForegroundColor Yellow
-  Write-Host "若直连 GitHub 被重置，可先开代理再重试。" -ForegroundColor Yellow
+  Write-Host "完成：$remote"
+  exit 0
+}
+
+# 直连失败：探测本地代理，用代理再试一次
+$directCode = $LASTEXITCODE
+$useProxy = if ($Proxy) { $Proxy } else { Find-LocalProxy }
+
+if (-not $useProxy) {
+  Write-Host ""
+  Write-Host "推送失败（git 退出码 $directCode），也没探测到本地代理。" -ForegroundColor Red
+  Write-Host "发布副本已经提交好了，改动没丢。" -ForegroundColor Yellow
+  Write-Host "开了代理再重跑本脚本，或用 -Proxy http://127.0.0.1:端口 指定。" -ForegroundColor Yellow
   exit 1
 }
+
 Write-Host ""
-Write-Host "完成：$remote"
+Write-Host "直连推送失败（git 退出码 $directCode），改用本地代理 $useProxy 重试…" -ForegroundColor Yellow
+
+$prevHttpsProxy = $env:HTTPS_PROXY
+$prevHttpProxy = $env:HTTP_PROXY
+$env:HTTPS_PROXY = $useProxy
+$env:HTTP_PROXY = $useProxy
+try {
+  git -C $Staging push -u origin main
+  $proxyCode = $LASTEXITCODE
+} finally {
+  # 别把代理变量留在当前会话里
+  if ($null -eq $prevHttpsProxy) { Remove-Item Env:HTTPS_PROXY -ErrorAction SilentlyContinue } else { $env:HTTPS_PROXY = $prevHttpsProxy }
+  if ($null -eq $prevHttpProxy) { Remove-Item Env:HTTP_PROXY -ErrorAction SilentlyContinue } else { $env:HTTP_PROXY = $prevHttpProxy }
+}
+
+if ($proxyCode -eq 0) {
+  Write-Host ""
+  Write-Host "完成：$remote（经本地代理 $useProxy 推送）" -ForegroundColor Green
+  exit 0
+}
+
+Write-Host ""
+Write-Host "推送失败：直连退出码 $directCode，走代理也失败（退出码 $proxyCode）。" -ForegroundColor Red
+Write-Host "发布副本已经提交好了，改动没丢；确认代理可用后重跑本脚本即可。" -ForegroundColor Yellow
+exit 1

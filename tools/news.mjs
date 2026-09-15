@@ -54,7 +54,7 @@ export const NEWS = [
     publishAt: "2026-09-16",
     dateText: { en: "24 August 2026", zh: "2026 年 8 月 24 日" },
     category: "industry",
-    image: "process/pouring-1",
+    image: "gallery/factory-13",
     imageW: 1200,
     imageH: 900,
     title: {
@@ -87,26 +87,45 @@ export const NEWS = [
       url: "https://worldsteel.org/media/press-releases/2026/july-2026-crude-steel-production/",
       date: "2026-08-24",
     },
-    figures: [
+    /* 正文配图用按当期数据画的内联图，不用照片：
+       照片池里 204 张几乎全部已被站内页面使用，而数据图是每期独有的。 */
+    charts: [
       {
-        img: "gallery/factory-09",
-        w: 1200,
-        h: 900,
         after: 1,
-        caption: {
-          en: "Lost-foam pouring area at our Botou plant — the melting end that regional scrap, coke and power costs feed into.",
-          zh: "泊头基地的消失模浇铸区——各区域的废钢、焦炭与电力成本最终作用在这一端。",
+        title: {
+          en: "Crude steel output by region — July 2026 vs July 2025",
+          zh: "粗钢产量分区域同比（2026 年 7 月 vs 2025 年 7 月）",
+        },
+        items: [
+          { label: { en: "Africa", zh: "非洲" }, value: 6.1, text: "+6.1%" },
+          { label: { en: "North America", zh: "北美" }, value: 4.9, text: "+4.9%" },
+          { label: { en: "EU (27)", zh: "欧盟（27 国）" }, value: 3.8, text: "+3.8%" },
+          { label: { en: "South America", zh: "南美" }, value: 2.8, text: "+2.8%" },
+          { label: { en: "Russia, other CIS, Ukraine", zh: "俄罗斯及独联体、乌克兰" }, value: 2.2, text: "+2.2%" },
+          { label: { en: "Asia and Oceania", zh: "亚洲与大洋洲" }, value: -1.2, text: "−1.2%" },
+          { label: { en: "Middle East", zh: "中东" }, value: -13.4, text: "−13.4%" },
+        ],
+        note: {
+          en: "Source: worldsteel, 70 reporting countries (about 98% of world output).",
+          zh: "来源：世界钢铁协会，70 个报告国（约占全球产量 98%）。",
         },
       },
       {
-        img: "featured/ship-02",
-        w: 1200,
-        h: 900,
         after: 2,
-        caption: {
-          en: "A counterweight casting for construction machinery — one of the downstream uses of steel.",
-          zh: "一件大型工程机械配重铸件——钢铁的下游应用之一。",
+        title: {
+          en: "The same pattern year to date — January–July 2026 vs 2025",
+          zh: "1—7 月累计同比：分化格局一致",
         },
+        items: [
+          { label: { en: "Africa", zh: "非洲" }, value: 9.5, text: "+9.5%" },
+          { label: { en: "Europe, other", zh: "欧洲其他（含土耳其、英国）" }, value: 5.5, text: "+5.5%" },
+          { label: { en: "North America", zh: "北美" }, value: 5.4, text: "+5.4%" },
+          { label: { en: "EU (27)", zh: "欧盟（27 国）" }, value: 0.4, text: "+0.4%" },
+          { label: { en: "South America", zh: "南美" }, value: 0, text: "0.0%" },
+          { label: { en: "Asia and Oceania", zh: "亚洲与大洋洲" }, value: -0.9, text: "−0.9%" },
+          { label: { en: "Russia, other CIS, Ukraine", zh: "俄罗斯及独联体、乌克兰" }, value: -6.0, text: "−6.0%" },
+          { label: { en: "Middle East", zh: "中东" }, value: -8.1, text: "−8.1%" },
+        ],
       },
     ],
   },
@@ -116,7 +135,7 @@ export const NEWS = [
     publishAt: "2026-09-16",
     dateText: { en: "10 September 2026", zh: "2026 年 9 月 10 日" },
     category: "industry",
-    image: "featured/ship-01",
+    image: "gallery/factory-14",
     imageW: 1200,
     imageH: 900,
     title: {
@@ -149,25 +168,40 @@ export const NEWS = [
       url: "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry",
       date: "2026-09-10",
     },
-    figures: [
+    charts: [
       {
-        img: "banner/banner-faq",
-        w: 2000,
-        h: 800,
-        after: 2,
-        caption: {
-          en: "Valve body castings staged for dispatch in our warehouse.",
-          zh: "仓库内成排待发货的阀体铸件。",
+        after: 1,
+        title: {
+          en: "Freight per 40ft container by route — 10 September 2026",
+          zh: "各航线运价（美元/40 英尺柜，2026 年 9 月 10 日）",
+        },
+        items: [
+          { label: { en: "Shanghai–New York", zh: "上海—纽约" }, value: 9726, text: "$9,726" },
+          { label: { en: "Shanghai–Los Angeles", zh: "上海—洛杉矶" }, value: 7352, text: "$7,352" },
+          { label: { en: "WCI composite", zh: "WCI 综合指数" }, value: 4476, text: "$4,476" },
+          { label: { en: "Shanghai–Genoa", zh: "上海—热那亚" }, value: 4216, text: "$4,216" },
+          { label: { en: "Shanghai–Rotterdam", zh: "上海—鹿特丹" }, value: 3997, text: "$3,997" },
+        ],
+        note: {
+          en: "Source: Drewry World Container Index, 10 September 2026.",
+          zh: "来源：Drewry 世界集装箱运价指数，2026 年 9 月 10 日。",
         },
       },
       {
-        img: "banner/banner-products",
-        w: 2000,
-        h: 800,
-        after: 3,
-        caption: {
-          en: "Grey iron valve bodies on pallets, banded and ready for container loading.",
-          zh: "托盘上码放的灰铁阀体成品，已打带、等待装箱。",
+        after: 2,
+        title: {
+          en: "Week-on-week change by route",
+          zh: "各航线周环比变化",
+        },
+        items: [
+          { label: { en: "Shanghai–Los Angeles", zh: "上海—洛杉矶" }, value: 2, text: "+2%" },
+          { label: { en: "Shanghai–New York", zh: "上海—纽约" }, value: 1, text: "+1%" },
+          { label: { en: "Shanghai–Rotterdam", zh: "上海—鹿特丹" }, value: -2, text: "−2%" },
+          { label: { en: "Shanghai–Genoa", zh: "上海—热那亚" }, value: -3, text: "−3%" },
+        ],
+        note: {
+          en: "The composite index was unchanged for a second week; Drewry expects rates to stay flat next week.",
+          zh: "综合指数连续第二周持平；Drewry 预计下周运价大体持平。",
         },
       },
     ],

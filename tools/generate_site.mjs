@@ -121,6 +121,34 @@ function scanLink(c, key) {
           <button class="scanlink" type="button" data-lb-group="certificates" data-lb-src="${c.a(`img/${s.img}.jpg`)}" data-lb-cap="${esc(title)}"><svg class="ico" aria-hidden="true"><use href="#i-doc"></use></svg>${esc(c.t(CERTIFICATES.viewScan))}</button>`;
 }
 
+/** 行业动态的数据图（内联条形图，不产生图片文件）。
+
+    为什么用图而不是照片：每期数据不同，图天然不会和站内其他页面撞图；
+    没有图片体积；对采购经理来说，一张按当期数据画的图比车间照片信息量更大。 */
+function chart(c, ch) {
+  const items = ch.items || [];
+  const max = Math.max(...items.map((it) => Math.abs(Number(it.value) || 0)), 0.0001);
+  const rows = items.map((it) => {
+    const v = Number(it.value) || 0;
+    /* 0 值也要留一小段，否则那一行看起来像渲染坏了；用灰色表示"持平" */
+    const isZero = v === 0;
+    const width = isZero ? "3px" : `${Math.max((Math.abs(v) / max) * 100, 2).toFixed(2)}%`;
+    return `
+        <div class="chart__row${v < 0 ? " is-neg" : ""}${isZero ? " is-zero" : ""}">
+          <span class="chart__label">${esc(c.t(it.label))}</span>
+          <span class="chart__track"><span class="chart__bar" style="width:${width}"></span></span>
+          <span class="chart__value">${esc(it.text != null ? it.text : v)}</span>
+        </div>`;
+  }).join("");
+  return `
+      <figure class="chart">
+        <figcaption class="chart__title">${esc(c.t(ch.title))}</figcaption>
+        <div class="chart__rows">${rows}
+        </div>${ch.note ? `
+        <p class="chart__note">${esc(c.t(ch.note))}</p>` : ""}
+      </figure>`;
+}
+
 function head(c, { file, title, desc, ogImage = "og/og-default", ogType = "website", extraLd = [] }) {
   const ogUrl = `${SITE.domain}/assets/img/${ogImage}.jpg`;
   const jsonld = [
@@ -1463,6 +1491,7 @@ ${sources.map((s) => `      <a href="${esc(s.url)}" target="_blank" rel="nofollo
 
   /* 正文配图：插在指定段落之后，点击进灯箱（同一篇文章的图为一组） */
   const figures = n.figures || [];
+  const charts = n.charts || [];
   const prose = n.body.map((p, i) => {
     const figs = figures
       .filter((f) => (f.after || 1) === i + 1)
@@ -1473,7 +1502,10 @@ ${sources.map((s) => `      <a href="${esc(s.url)}" target="_blank" rel="nofollo
         </button>
         <figcaption class="prose__cap">${esc(c.t(f.caption))}</figcaption>
       </figure>`).join("");
-    return `<p>${esc(c.t(p))}</p>${figs}`;
+    const chs = charts
+      .filter((x) => (x.after || 1) === i + 1)
+      .map((x) => chart(c, x)).join("");
+    return `<p>${esc(c.t(p))}</p>${figs}${chs}`;
   }).join("\n      ");
 
   const body = `

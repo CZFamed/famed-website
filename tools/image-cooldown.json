@@ -76,38 +76,14 @@
       "date": "2025-12-24"
     },
     {
-      "img": "banner/banner-faq",
-      "slug": "container-freight-rates-sep-2026",
-      "role": "figure-1",
-      "date": "2026-09-16"
-    },
-    {
-      "img": "banner/banner-products",
-      "slug": "container-freight-rates-sep-2026",
-      "role": "figure-2",
-      "date": "2026-09-16"
-    },
-    {
-      "img": "featured/ship-01",
-      "slug": "container-freight-rates-sep-2026",
+      "img": "gallery/factory-13",
+      "slug": "global-crude-steel-july-2026",
       "role": "cover",
       "date": "2026-09-16"
     },
     {
-      "img": "featured/ship-02",
-      "slug": "global-crude-steel-july-2026",
-      "role": "figure-2",
-      "date": "2026-09-16"
-    },
-    {
-      "img": "gallery/factory-09",
-      "slug": "global-crude-steel-july-2026",
-      "role": "figure-1",
-      "date": "2026-09-16"
-    },
-    {
-      "img": "process/pouring-1",
-      "slug": "global-crude-steel-july-2026",
+      "img": "gallery/factory-14",
+      "slug": "container-freight-rates-sep-2026",
       "role": "cover",
       "date": "2026-09-16"
     }

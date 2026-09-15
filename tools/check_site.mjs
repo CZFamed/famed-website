@@ -13,6 +13,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { NEWS, NEWS_META, LIVE_NEWS, SCHEDULED_NEWS, DRAFT_NEWS, publishDate, sourcesOf } from "./news.mjs";
+import { siteUsage } from "./image-usage.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const problems = [];
@@ -190,6 +191,20 @@ for (const n of NEWS) {
     }
   });
 
+  (n.charts || []).forEach((ch, i) => {
+    const where2 = `${where}：第 ${i + 1} 张数据图`;
+    for (const lang of ["en", "zh"]) {
+      if (!ch.title || !ch.title[lang]) problems.push(`${where2}缺 title.${lang}`);
+    }
+    if (!Array.isArray(ch.items) || !ch.items.length) problems.push(`${where2}没有数据项（items）`);
+    else ch.items.forEach((it, j) => {
+      if (!Number.isFinite(Number(it.value))) problems.push(`${where2}第 ${j + 1} 项的 value 必须是数字`);
+      for (const lang of ["en", "zh"]) {
+        if (!it.label || !it.label[lang]) problems.push(`${where2}第 ${j + 1} 项缺 label.${lang}`);
+      }
+    });
+  });
+
   const srcs = sourcesOf(n);
 
   if (n.category === "industry") {
@@ -284,6 +299,32 @@ if (!fs.existsSync(COOLDOWN_FILE)) {
 
   notes.push(`配图冷却：${reg.entries.length} 条用图记录，冷却期 ${windowDays} 天${hits.length ? "" : "，无重复"}`);
 }
+
+/* --------------------------------- 检查 6：新闻配图不得与站内页面重复 */
+
+/* 判定依据是生成后的 HTML（见 tools/image-usage.mjs）。
+   行业动态是每周新增的内容，必须用"站内其他页面没用过"的图；
+   历史公司新闻的配图已经上线多年，改图收益低，所以只提示、不拦构建。 */
+
+const siteUsed = siteUsage();
+const newsOnly = [];
+for (const n of NEWS) {
+  const label = `tools/news.mjs → ${n.slug}`;
+  const imgs = [n.image, ...(n.figures || []).map((f) => f.img)].filter(Boolean);
+  for (const img of imgs) {
+    if (!siteUsed.has(img)) continue;
+    const pages = [...siteUsed.get(img)].slice(0, 2).join("、");
+    if (n.category === "industry") {
+      problems.push(`${label}：配图 ${img} 已被站内页面使用（${pages}）——行业动态不得与站内重复，请从 node tools/news_images.mjs 的"可选用"清单里选，或改用数据图（charts）`);
+    } else {
+      newsOnly.push(`${n.slug} 的 ${img}（${pages}）`);
+    }
+  }
+}
+if (newsOnly.length) {
+  notes.push(`历史新闻配图与站内页面重复 ${newsOnly.length} 处（不改动，仅记录）：${newsOnly.slice(0, 3).join("；")}${newsOnly.length > 3 ? " 等" : ""}`);
+}
+notes.push(`站内页面已用图片 ${siteUsed.size} 张：行业动态的封面只能从"未被任何页面使用"的图里选，正文配图建议用数据图（charts）`);
 
 /* -------------------------------------------------------------- 输出结果 */
 

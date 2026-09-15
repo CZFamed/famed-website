@@ -21,14 +21,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { NEWS, sourcesOf, publishDate } from "./news.mjs";
+import { siteUsage, pool as imagePool } from "./image-usage.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REGISTRY = path.join(ROOT, "tools", "image-cooldown.json");
-const MANIFEST = path.join(ROOT, "assets", "img", "manifest.json");
-
-/* 可用于新闻配图的目录：排除了 brand（品牌素材）、cert（证书扫描件）、
-   news（新闻专用封面，一图一篇）、og（社交分享卡）*/
-const POOL_DIRS = ["process", "gallery", "featured", "products", "quality", "about", "banner", "hero"];
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -73,24 +69,6 @@ function newsUsage() {
   return rows.sort((a, b) => a.date.localeCompare(b.date) || a.img.localeCompare(b.img));
 }
 
-/* ------------------------------------- 站点其他页面引用到的图 */
-
-function siteUsage() {
-  const used = new Map(); /* img -> Set(文件) */
-  const files = fs.readdirSync(path.join(ROOT, "tools")).filter((f) => f.endsWith(".mjs") && f !== "news_images.mjs");
-  const re = new RegExp(`["'\`]((?:${POOL_DIRS.join("|")})/[A-Za-z0-9_./-]+)["'\`]`, "g");
-  for (const f of files) {
-    const text = fs.readFileSync(path.join(ROOT, "tools", f), "utf8");
-    for (const m of text.matchAll(re)) {
-      const img = m[1];
-      if (f === "news.mjs") continue; /* 新闻自己的引用由 newsUsage() 负责 */
-      if (!used.has(img)) used.set(img, new Set());
-      used.get(img).add(f);
-    }
-  }
-  return used;
-}
-
 /* ------------------------------------------------------- 冷却记录 */
 
 function readRegistry() {
@@ -110,13 +88,7 @@ function writeRegistry(windowDays) {
   return payload;
 }
 
-function pool() {
-  const raw = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
-  return raw.items
-    .filter((it) => POOL_DIRS.includes(it.out.split("/")[0]))
-    .map((it) => ({ img: it.out, desc: it.rag_description || "", size: it.out_size || "" }))
-    .sort((a, b) => a.img.localeCompare(b.img));
-}
+const pool = imagePool;
 
 /* --------------------------------------------------------------- 主流程 */
 

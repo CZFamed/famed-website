@@ -106,10 +106,17 @@ OECD / LME / S&P Global 站点返回 403**，这些内容改由人工看到后�
 
 ## 五、一篇稿子的数据骨架
 
-### 选图前先查冷却（重要）
+### 配图规则（先说结论：正文配图用数据图，封面才用照片）
 
-每周要挑 3 张图（1 张封面 + 2 张正文配图），同一张图在 **180 天**内不能出现在两篇文章里，
-同一篇文章里也不能重复用（封面即配图是历史踩过的坑）。冷却记录不用手写：
+网站上有 99 张成品照片，其中 **97 张已经被各个页面用掉了**（页面用循环铺图库），
+真正没被任何页面用过的一度只剩 4 张。所以行业动态的配图规则是：
+
+1. **正文配图用数据图**（`charts` 字段，生成器直接画内联条形图）：每期数据不同、天然唯一，
+   不占图片池、没有体积、对采购经理比车间照片信息量更大。
+2. **封面图**从"未被任何页面使用"的照片里挑，而且同一张图 180 天内不能出现在两篇文章里。
+3. 历史公司新闻的配图与站内页面有重复，那些已经上线多年，改图收益低，`check_site` 只提示不拦。
+
+选封面图前先查冷却与可用清单：
 
 ```powershell
 node tools/news_images.mjs                 # 看"冷却中"与"可选用"两张清单（可用清单带画面描述）
@@ -117,9 +124,27 @@ node tools/news_images.mjs --filter=浇注    # 只想找某类画面时
 node tools/news_images.mjs --sync          # 改完文章后重建冷却记录（check_site 会校验有没有漏）
 ```
 
-默认清单已经**排除站点其他页面用过的图**（页面 banner、产品页、证书页等），避免同一张照片
-在网站上反复出现；需要放宽时加 `--include-site`。目前可选用约 77 张，按每月 6 张算够用一年左右，
-之后要么补新素材，要么放宽到 `--include-site`。
+> **素材告急**：目前"可选用"清单里只剩 2 张（`gallery/factory-15`、`gallery/factory-16`），
+> 按每周 2 篇算只够一周多。需要尽快补一批没有在页面上用过的照片（补拍或从原始素材里新裁切），
+> 否则封面只能重复站内已有的图——那是 `check_site` 明确会拦下的。
+
+### 数据图的写法
+
+```js
+charts: [
+  {
+    after: 1,                                   // 插在第几段之后
+    title: { en: "…", zh: "…" },                 // 图题（双语必填）
+    items: [
+      { label: { en: "Africa", zh: "非洲" }, value: 6.1, text: "+6.1%" },
+      { label: { en: "Middle East", zh: "中东" }, value: -13.4, text: "−13.4%" },
+    ],
+    note: { en: "Source: worldsteel", zh: "来源：世界钢铁协会" },   // 选填，建议写来源
+  },
+],
+```
+
+`value` 决定条形长度（负数走橙色），`text` 是条形右侧显示的文字。数值必须来自来源原文。
 
 写进 `tools/news.mjs` 的条目（**中英双语必须齐全，否则生成器会报错**）：
 
@@ -149,11 +174,11 @@ node tools/news_images.mjs --sync          # 改完文章后重建冷却记录�
 四条硬规则：
 
 1. `category: "industry"` 的条目**必须**有 `source.name` 和可点开的 `source.url`，否则 `check_site.mjs` 直接失败。
-2. 配图只用站内已有素材（`assets/img/`，选图前先查 `assets/img/manifest.json` 的 `rag_description` 确认画面），**不引用外部图片**。
+2. 配图只用站内自有素材，**不引用外部图片**；正文配图用 `charts` 数据图，封面图必须是站内页面没用过的照片。
 3. **英文是主稿**：先用英文写，确认英文读起来像英文媒体而不是翻译稿；中文版是同一事实的中文表达，不是英文的逐字对照。
 4. 金额与单位跟随来源口径并在文中写明（国际来源用 USD、欧盟用 EUR、中国数据用 CNY），需要换算时注明换算日期，不做无出处的换算。
 
-配图还要过冷却这一关：先从 `node tools/news_images.mjs` 的"可选用"清单里挑，
+配图还要过两关：封面从 `node tools/news_images.mjs` 的"可选用"清单里挑（不得使用站内页面已用的图），
 文章写完后跑 `node tools/news_images.mjs --sync`，否则 `check_site.mjs` 会以"冷却记录缺条"失败。
 
 ---
@@ -225,6 +250,9 @@ node tools/news_images.mjs --sync          # 改完文章后重建冷却记录�
 | 多来源文章（`source` 可以写成数组，逐条署名并进入结构化数据） | `tools/news.mjs` + `tools/generate_site.mjs` |
 | 封面图按真实尺寸输出（`imageW` / `imageH`，默认 2000×800） | `tools/news.mjs` 条目字段 |
 | 配图冷却（180 天内不重复、同篇不重复、记录自动同步） | `tools/news_images.mjs` + `tools/image-cooldown.json` |
+| 行业动态数据图（内联条形图，无图片文件） | `tools/news.mjs` 的 `charts` 字段 + `tools/generate_site.mjs` → `chart()` |
+| 站内图片使用检测（生成后 HTML 为准，新闻条目区块已排除） | `tools/image-usage.mjs` |
+| 发布脚本：直连 GitHub 失败自动探测本地代理重试 | `tools/publish_github.ps1` |
 | 列表页分类筛选（含 `#news-industry` 直达锚点） | `tools/generate_site.mjs` + `assets/js/site.js` |
 | 中英双份 `feed.xml`（RSS） | `tools/generate_site.mjs`，站点根与 `zh/` |
 | 缺来源 / 缺翻译 / 缺配图的部署前拦截 | `tools/check_site.mjs` 检查 4 |

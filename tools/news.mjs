@@ -116,23 +116,23 @@ export const NEWS = [
     ],
     figures: [
       {
-        img: "process/paint-2",
+        img: "process/paint-1",
         w: 1200,
         h: 900,
         after: 1,
         caption: {
-          en: "Sealed spray booths arranged along the rebuilt coating line.",
-          zh: "改造后的涂装线：封闭喷涂工位沿车间一字排开。",
+          en: "On the coating line: castings hanging from the overhead conveyor.",
+          zh: "涂装线作业现场：大型铸件悬挂在输送链下方。",
         },
       },
       {
-        img: "process/paint-1",
+        img: "products/machine-tool-parts/10",
         w: 1200,
         h: 900,
         after: 2,
         caption: {
-          en: "Coated castings on the overhead conveyor line.",
-          zh: "涂装后的大型铸件悬挂在输送链下方。",
+          en: "A machine-tool bed casting after primer — primer and top coat are now both applied in house.",
+          zh: "喷涂底漆后的机床床身铸件——底漆与面漆现已全部在厂内完成。",
         },
       },
     ],

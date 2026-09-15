@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15 10:37:37",
+ "generated": "2026-09-15 11:02:53",
  "items": [
   {
    "slot": "hero",
@@ -607,7 +607,7 @@
    "src": "生产流程/涂装线/2S4A0159.JPG",
    "src_size": "3543x2362",
    "out_size": "1200x900",
-   "rag_description": "涂装线现场（2S4A0159.JPG，2026-09-08 拍摄；画面描述待确认）",
+   "rag_description": "厂房内编号 9 至 12 的悬挂吊挂工位，挂具上吊挂灰色金属工件",
    "files": [
     [
      "process/paint-2.jpg",
@@ -1795,7 +1795,7 @@
    "src": "生产流程/涂装线/2S4A0159.JPG",
    "src_size": "3543x2362",
    "out_size": "1600x900",
-   "rag_description": "涂装线现场（2S4A0159.JPG，2026-09-08 拍摄；画面描述待确认）",
+   "rag_description": "厂房内编号 9 至 12 的悬挂吊挂工位，挂具上吊挂灰色金属工件",
    "files": [
     [
      "news/news-coating.jpg",

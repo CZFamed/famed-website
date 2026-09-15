@@ -9,6 +9,7 @@
 <link rel="alternate" hreflang="en" href="https://www.famedcasting.com/news.html">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.famedcasting.com/zh/news.html">
 <link rel="alternate" hreflang="x-default" href="https://www.famedcasting.com/news.html">
+<link rel="alternate" type="application/rss+xml" title="菲美得新闻资讯" href="feed.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="沧州菲美得机械设备有限公司">
 <meta property="og:title" content="新闻资讯 | 投资项目、资质认定与厂区升级">
@@ -141,9 +142,47 @@
 </section>
 <section class="section">
   <div class="wrap">
+
+    <nav class="chips chips--filter" aria-label="按分类筛选">
+      <button class="chip is-active" type="button" data-news-filter="all" aria-pressed="true">全部<span class="chip__n">6</span></button>
+      <button class="chip" type="button" data-news-filter="industry" aria-pressed="false">行业动态<span class="chip__n">2</span></button>
+      <button class="chip" type="button" data-news-filter="investment" aria-pressed="false">投资项目<span class="chip__n">1</span></button>
+      <button class="chip" type="button" data-news-filter="certification" aria-pressed="false">资质认定<span class="chip__n">2</span></button>
+      <button class="chip" type="button" data-news-filter="environment" aria-pressed="false">环保合规<span class="chip__n">1</span></button>
+    </nav>
     <div class="news news--list">
 
-      <article class="news__item">
+      <article class="news__item" data-category="industry">
+        <a class="news__media" href="news-global-crude-steel-july-2026.html" tabindex="-1" aria-hidden="true">
+          <picture>
+        <source srcset="../assets/img/process/pouring-1-t.webp 800w, ../assets/img/process/pouring-1.webp 1600w" type="image/webp">
+        <img src="../assets/img/process/pouring-1-t.jpg" srcset="../assets/img/process/pouring-1-t.jpg 800w, ../assets/img/process/pouring-1.jpg 1600w" alt="全球粗钢月产量 1.492 亿吨：总量持平，区域冷热分化" width="1600" height="900" class="" loading="lazy" decoding="async" sizes="(max-width:768px) 92vw, 46vw">
+      </picture>
+        </a>
+        <div class="news__body">
+          <p class="news__meta"><time datetime="2026-08-24">2026 年 8 月 24 日</time> · 行业动态</p>
+          <h2 class="news__title"><a href="news-global-crude-steel-july-2026.html">全球粗钢月产量 1.492 亿吨：总量持平，区域冷热分化</a></h2>
+          <p class="news__text">世界钢铁协会：2026 年 7 月 70 个报告国粗钢产量 1.492 亿吨，同比下降 0.3%。北美增长 4.9%、欧盟增长 3.8%，中东下降 13.4%；占全球约 73% 的亚洲与大洋洲下降 1.2%。</p>
+          <a class="card__link" href="news-global-crude-steel-july-2026.html">阅读全文<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="news__item" data-category="industry">
+        <a class="news__media" href="news-container-freight-rates-sep-2026.html" tabindex="-1" aria-hidden="true">
+          <picture>
+        <source srcset="../assets/img/featured/ship-01-t.webp 800w, ../assets/img/featured/ship-01.webp 1600w" type="image/webp">
+        <img src="../assets/img/featured/ship-01-t.jpg" srcset="../assets/img/featured/ship-01-t.jpg 800w, ../assets/img/featured/ship-01.jpg 1600w" alt="集装箱运价连续第二周持平于 4476 美元/40 英尺柜" width="1600" height="900" class="" loading="lazy" decoding="async" sizes="(max-width:768px) 92vw, 46vw">
+      </picture>
+        </a>
+        <div class="news__body">
+          <p class="news__meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time> · 行业动态</p>
+          <h2 class="news__title"><a href="news-container-freight-rates-sep-2026.html">集装箱运价连续第二周持平于 4476 美元/40 英尺柜</a></h2>
+          <p class="news__text">Drewry 全球集装箱运价指数连续第二周持平于 4476 美元/40 英尺柜。上海—洛杉矶上涨 2% 至 7352 美元，上海—纽约上涨 1% 至 9726 美元；上海—热那亚下降 3% 至 4216 美元，上海—鹿特丹下降 2% 至 3997 美元。</p>
+          <a class="card__link" href="news-container-freight-rates-sep-2026.html">阅读全文<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="news__item" data-category="investment">
         <a class="news__media" href="news-expansion-approved.html" tabindex="-1" aria-hidden="true">
           <picture>
         <source srcset="../assets/img/news/news-expansion-t.webp 800w, ../assets/img/news/news-expansion.webp 1600w" type="image/webp">
@@ -158,7 +197,7 @@
         </div>
       </article>
 
-      <article class="news__item">
+      <article class="news__item" data-category="environment">
         <a class="news__media" href="news-coating-line-upgrade.html" tabindex="-1" aria-hidden="true">
           <picture>
         <source srcset="../assets/img/news/news-coating-t.webp 800w, ../assets/img/news/news-coating.webp 1600w" type="image/webp">
@@ -173,7 +212,7 @@
         </div>
       </article>
 
-      <article class="news__item">
+      <article class="news__item" data-category="certification">
         <a class="news__media" href="news-specialised-sme.html" tabindex="-1" aria-hidden="true">
           <picture>
         <source srcset="../assets/img/news/news-hitech-t.webp 800w, ../assets/img/news/news-hitech.webp 1600w" type="image/webp">
@@ -188,7 +227,7 @@
         </div>
       </article>
 
-      <article class="news__item">
+      <article class="news__item" data-category="certification">
         <a class="news__media" href="news-high-tech-enterprise.html" tabindex="-1" aria-hidden="true">
           <picture>
         <source srcset="../assets/img/news/news-techrenov-t.webp 800w, ../assets/img/news/news-techrenov.webp 1600w" type="image/webp">
@@ -203,7 +242,9 @@
         </div>
       </article>
     </div>
+    <p class="news__empty" hidden>该分类暂时还没有内容。</p>
     <p class="note">以下日期与文号取自公开披露信息。产能数据除注明集团口径外，均为本厂口径。</p>
+    <p class="note">「行业动态」整理公开来源的事实与数据，每篇文末附来源链接；文中关于「对采购方意味着什么」的判断为本厂观点。</p>
   </div>
 </section>
 

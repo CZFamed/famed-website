@@ -667,6 +667,13 @@ dl, dd, dt, figure, blockquote { margin: 0; }
   background: #fff; border: 1px solid var(--line); color: #2c4054; font-weight: 500;
 }
 
+/* 新闻列表的分类筛选：chip 兼作按钮用，激活态沿用主色 */
+.chips--filter { margin-bottom: 28px; }
+.chip { cursor: pointer; font-family: inherit; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+.chip:hover { border-color: var(--line-strong); }
+.chip.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+.chip__n { margin-left: 8px; font-size: 12px; font-weight: 600; opacity: .6; }
+
 .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .flow__item { background: #fff; padding: 28px 24px 30px; }
 .flow__no { display: block; font-size: 12.5px; font-weight: 800; letter-spacing: .12em; color: var(--accent); margin-bottom: 12px; }
@@ -770,6 +777,23 @@ dl, dd, dt, figure, blockquote { margin: 0; }
 .mininews time { display: block; font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
 .mininews span { font-size: 14.5px; color: var(--ink); font-weight: 600; line-height: 1.45; }
 .mininews a:hover span { color: var(--blue); }
+
+/* 新闻详情：来源标注（行业动态类文章必带） */
+/* 正文与来源包在同一个网格单元里，来源才能落在正文所在的左栏 */
+.article__main { min-width: 0; }
+.article__source {
+  margin-top: 26px; padding: 14px 18px; font-size: 13.5px; color: var(--muted);
+  background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.article__source-label {
+  display: inline-block; margin-right: 8px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+}
+.article__source a { color: var(--blue); word-break: break-all; }
+
+/* 新闻列表：筛选后的空态 */
+.news__item.is-hidden { display: none; }
+.news__empty { margin-top: 24px; font-size: 14.5px; color: var(--muted); }
 
 .notfound { text-align: center; padding: 40px 0 20px; }
 .notfound__code { font-size: clamp(72px, 12vw, 140px); font-weight: 800; line-height: 1; color: var(--bg-mute); margin: 0; letter-spacing: -.04em; }

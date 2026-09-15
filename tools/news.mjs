@@ -24,7 +24,21 @@ export const NEWS_META = {
   allNews: { en: "All news", zh: "全部新闻" },
   readMore: { en: "Read more", zh: "阅读全文" },
   published: { en: "Published", zh: "发布时间" },
+  sourceLabel: { en: "Source", zh: "来源" },
+  sourceNote: {
+    en: "Industry Watch articles summarise facts and figures from publicly reported sources; each item links to its source. The assessment of what a development means for buyers is our own.",
+    zh: "「行业动态」整理公开来源的事实与数据，每篇文末附来源链接；文中关于「对采购方意味着什么」的判断为本厂观点。",
+  },
+  filterLabel: { en: "Filter by category", zh: "按分类筛选" },
+  filterAll: { en: "All", zh: "全部" },
+  emptyText: {
+    en: "No articles in this category yet.",
+    zh: "该分类暂时还没有内容。",
+  },
+  /* 分类键的顺序同时决定列表页筛选按钮的顺序 */
+  categoryOrder: ["industry", "investment", "certification", "environment", "production"],
   categoryLabel: {
+    industry: { en: "Industry Watch", zh: "行业动态" },
     investment: { en: "Investment", zh: "投资项目" },
     certification: { en: "Certification", zh: "资质认定" },
     environment: { en: "Environment", zh: "环保合规" },
@@ -33,6 +47,131 @@ export const NEWS_META = {
 };
 
 export const NEWS = [
+  /* ---- 行业动态 · 试刊（面向全球买家）---- */
+  {
+    slug: "global-crude-steel-july-2026",
+    date: "2026-08-24",
+    publishAt: "2026-09-16",
+    dateText: { en: "24 August 2026", zh: "2026 年 8 月 24 日" },
+    category: "industry",
+    image: "process/pouring-1",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "Global crude steel output steady at 149.2 Mt as regions pull apart",
+      zh: "全球粗钢月产量 1.492 亿吨：总量持平，区域冷热分化",
+    },
+    summary: {
+      en: "worldsteel: the 70 reporting countries produced 149.2 Mt of crude steel in July 2026, down 0.3% year on year. North America rose 4.9% and the EU 3.8%, the Middle East fell 13.4%, and Asia and Oceania — about 73% of the total — slipped 1.2%.",
+      zh: "世界钢铁协会：2026 年 7 月 70 个报告国粗钢产量 1.492 亿吨，同比下降 0.3%。北美增长 4.9%、欧盟增长 3.8%，中东下降 13.4%；占全球约 73% 的亚洲与大洋洲下降 1.2%。",
+    },
+    body: [
+      {
+        en: "The World Steel Association (worldsteel) published July 2026 production figures on 24 August. The 70 countries that report to it — about 98% of world output in 2025 — produced 149.2 million tonnes of crude steel in July, 0.3% less than in July 2025. For January to July the total was 1,081.2 Mt, down 0.6% year on year.",
+        zh: "世界钢铁协会于 2026 年 8 月 24 日发布 7 月产量数据。向其报告的 70 个国家（其产量约占 2025 年全球产量的 98%）7 月粗钢产量 1.492 亿吨，比 2025 年 7 月减少 0.3%；1—7 月累计 10.812 亿吨，同比下降 0.6%。",
+      },
+      {
+        en: "The movement is in the regional split. In July, North America produced 9.6 Mt (+4.9%), the EU 10.5 Mt (+3.8%), other Europe including Türkiye and the UK 3.7 Mt (+5.8%) and Africa 2.0 Mt (+6.1%), while the Middle East fell to 3.8 Mt (−13.4%) and Asia and Oceania — 109.4 Mt, about 73% of the world total — slipped 1.2%. Year to date the same pattern holds: North America +5.4%, other Europe +5.5% and Africa +9.5%, against the Middle East at −8.1% and Russia, other CIS and Ukraine at −6.0%.",
+        zh: "变化主要发生在区域结构上。7 月北美 960 万吨（+4.9%）、欧盟 1050 万吨（+3.8%）、含土耳其与英国的欧洲其他地区 370 万吨（+5.8%）、非洲 200 万吨（+6.1%）；中东降至 380 万吨（−13.4%），占全球约 73% 的亚洲与大洋洲 1.094 亿吨、下降 1.2%。1—7 月累计延续同样格局：北美 +5.4%、欧洲其他 +5.5%、非洲 +9.5%，而中东 −8.1%、俄罗斯及其他独联体国家与乌克兰 −6.0%。",
+      },
+      {
+        en: "What this means for buyers: total tonnage is stable, so there is no system-wide shortage or collapse in steel supply — but the map underneath is shifting. North America and Europe are adding volume while the Middle East and the CIS are losing it, and shifts of this size usually surface in two places: the cost base behind each region's quotes (energy, scrap and coke, inland freight), and how hard a regional producer is willing to chase export business. For sourcing, the practical move is to keep the comparison window open — a framework agreement with a reviewable re-quote window at a fixed interval tends to beat locking a full year at one number while regional costs diverge this much.",
+        zh: "对采购方意味着什么：全球总量稳定，说明钢铁供给既没有系统性短缺、也没有崩塌，但底下这张地图在移动。北美与欧洲在增产、中东与独联体在减产，这种量级的区域位移通常出现在两件事上：各产区报价背后的成本基础（能源、废钢与焦炭、内陆运费），以及该产区厂商争取出口订单的意愿。落到采购动作上：保持比价窗口开着——在框架协议里约定固定周期的可复核重新报价窗口，通常比在区域成本如此分化时一次性锁定全年价格更稳妥。",
+      },
+    ],
+    source: {
+      name: {
+        en: "World Steel Association (worldsteel) — July 2026 crude steel production",
+        zh: "世界钢铁协会《2026 年 7 月全球粗钢产量》",
+      },
+      url: "https://worldsteel.org/media/press-releases/2026/july-2026-crude-steel-production/",
+      date: "2026-08-24",
+    },
+    figures: [
+      {
+        img: "gallery/factory-09",
+        w: 1200,
+        h: 900,
+        after: 1,
+        caption: {
+          en: "Lost-foam pouring area at our Botou plant — the melting end that regional scrap, coke and power costs feed into.",
+          zh: "泊头基地的消失模浇铸区——各区域的废钢、焦炭与电力成本最终作用在这一端。",
+        },
+      },
+      {
+        img: "featured/ship-02",
+        w: 1200,
+        h: 900,
+        after: 2,
+        caption: {
+          en: "A counterweight casting for construction machinery — one of the downstream uses of steel.",
+          zh: "一件大型工程机械配重铸件——钢铁的下游应用之一。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "container-freight-rates-sep-2026",
+    date: "2026-09-10",
+    publishAt: "2026-09-16",
+    dateText: { en: "10 September 2026", zh: "2026 年 9 月 10 日" },
+    category: "industry",
+    image: "featured/ship-01",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "Container rates hold at $4,476 per 40ft for a second week",
+      zh: "集装箱运价连续第二周持平于 4476 美元/40 英尺柜",
+    },
+    summary: {
+      en: "Drewry's World Container Index stayed at $4,476 per 40ft container. Shanghai–Los Angeles rose 2% to $7,352 and Shanghai–New York 1% to $9,726, while Shanghai–Genoa fell 3% to $4,216 and Shanghai–Rotterdam 2% to $3,997.",
+      zh: "Drewry 全球集装箱运价指数连续第二周持平于 4476 美元/40 英尺柜。上海—洛杉矶上涨 2% 至 7352 美元，上海—纽约上涨 1% 至 9726 美元；上海—热那亚下降 3% 至 4216 美元，上海—鹿特丹下降 2% 至 3997 美元。",
+    },
+    body: [
+      {
+        en: "Drewry's World Container Index (WCI) for 10 September 2026 held at USD 4,476 per 40ft container, unchanged for a second consecutive week. On the transpacific, Shanghai–Los Angeles rose 2% to USD 7,352 and Shanghai–New York edged up 1% to USD 9,726. On Asia–Europe, Shanghai–Genoa fell 3% to USD 4,216 and Shanghai–Rotterdam 2% to USD 3,997. Drewry expects rates to stay broadly flat next week.",
+        zh: "Drewry 2026 年 9 月 10 日发布的全球集装箱运价指数（WCI）为 4476 美元/40 英尺柜，连续第二周持平。跨太平洋航线：上海—洛杉矶上涨 2% 至 7352 美元，上海—纽约上涨 1% 至 9726 美元；亚欧航线：上海—热那亚下降 3% 至 4216 美元，上海—鹿特丹下降 2% 至 3997 美元。Drewry 预计下周运价大体持平。",
+      },
+      {
+        en: "Behind the flat headline, capacity is being managed rather than demanded. Eight blank sailings are announced for next week on the transpacific, up from seven this week, and three on Asia–Europe, up from one — carriers withdrawing capacity to hold rates. Shanghai port congestion improved from 94 hours in week 35 to 64 hours in week 36 but remains elevated. The Panama Canal Authority postponed a 0.15 m draft reduction for Neopanamax vessels, though transit restrictions stay in place, and the selective return of services to the Suez Canal is restoring effective capacity on Asia–Europe and pushing rates down. Iran–US tensions continue to disrupt shipping through the Strait of Hormuz.",
+        zh: "持平的数字背后是运力管理，而不是需求拉动。跨太平洋航线下周公布的空班为 8 班，比本周的 7 班增加；亚欧航线 3 班，比本周的 1 班增加——船公司在撤运力撑运价。上海港拥堵从第 35 周的 94 小时降到第 36 周的 64 小时，但仍处高位。巴拿马运河管理局推迟了对新巴拿马型船 0.15 米吃水的削减，不过通行限制仍在；部分航线回归苏伊士运河，正在恢复亚欧航线的有效运力，对运价形成下行压力。伊朗与美国局势继续扰动霍尔木兹海峡的航运。",
+      },
+      {
+        en: "What this means for buyers: freight is now the fastest-moving part of a landed cost, so it is worth quoting separately. First, because carriers are holding rates through capacity management, space rather than price is usually the binding constraint around month-end and in peak weeks — booking three to four weeks out protects a delivery date better than chasing the last few dollars off the rate. Second, with Shanghai congestion still well above normal, allow a buffer on the China loading side, and note that the validity period of a sea freight quote is normally far shorter than that of a casting quotation; printing both dates on the same offer avoids the usual argument later about which one expired first.",
+        zh: "对采购方意味着什么：到岸成本里，海运这一段现在是变化最快的部分，值得单独列出来报价。一是船公司靠运力管理撑价，意味着月底与旺季里真正卡住的是舱位而不是运价——提前 3–4 周订舱，比为了砍掉最后一二十美元而拖延更能保住交期；二是上海港拥堵仍显著高于常态，从中国发货的计划要留出缓冲，同时注意海运报价的有效期通常远短于铸件报价的有效期，把两个日期写在同一份报价单上，可以避免事后争论哪一个先过期。",
+      },
+    ],
+    source: {
+      name: {
+        en: "Drewry — World Container Index, 10 September 2026",
+        zh: "Drewry 全球集装箱运价指数（2026 年 9 月 10 日）",
+      },
+      url: "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry",
+      date: "2026-09-10",
+    },
+    figures: [
+      {
+        img: "banner/banner-faq",
+        w: 2000,
+        h: 800,
+        after: 2,
+        caption: {
+          en: "Valve body castings staged for dispatch in our warehouse.",
+          zh: "仓库内成排待发货的阀体铸件。",
+        },
+      },
+      {
+        img: "banner/banner-products",
+        w: 2000,
+        h: 800,
+        after: 3,
+        caption: {
+          en: "Grey iron valve bodies on pallets, banded and ready for container loading.",
+          zh: "托盘上码放的灰铁阀体成品，已打带、等待装箱。",
+        },
+      },
+    ],
+  },
   {
     slug: "expansion-approved",
     date: "2025-12-24",
@@ -232,3 +371,55 @@ export const NEWS = [
     ],
   },
 ];
+
+/* ------------------------------------------------- 发布状态、排期与草稿
+
+   每周固定发行业动态靠的是这张表里的三个字段，不需要人工记得发版：
+
+     date      显示与排序用的日期（必填，YYYY-MM-DD）
+     publishAt 上线日期（选填）。写了就以它为准，用来把稿件排到未来某一天；
+               到期后随下一次生成自动出现在列表里
+     draft     草稿（选填，true）。只留在数据文件里，不生成页面、不进列表
+     source    来源（行业动态必填）：{ name, url }
+
+   由此，"每周固定发送"的实际操作是：一次性排产未来几周，
+   再加上每周一次的定时生成与推送（定时任务见《新闻周更SOP.md》）。
+
+   本地预览未来排期效果：
+     $env:NEWS_TODAY="2026-10-06"; node tools/generate_site.mjs
+*/
+
+function localToday() {
+  const override = process.env.NEWS_TODAY;
+  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) return override;
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/** 生成当天（可用 NEWS_TODAY 覆盖，便于本地预览） */
+export const NEWS_TODAY = localToday();
+
+/** 决定上线日期的字段：publishAt 优先于 date */
+export const publishDate = (n) => n.publishAt || n.date;
+
+export const isDraft = (n) => n.draft === true;
+
+/** 已发布：非草稿且已到上线日期。列表、首页与页面生成只用这个数组 */
+export const LIVE_NEWS = NEWS
+  .filter((n) => !isDraft(n) && publishDate(n) <= NEWS_TODAY)
+  .sort((a, b) => publishDate(b).localeCompare(publishDate(a)));
+
+/** 已排期未到期：留在数据文件里，到期后随下一次生成自动上线 */
+export const SCHEDULED_NEWS = NEWS
+  .filter((n) => !isDraft(n) && publishDate(n) > NEWS_TODAY)
+  .sort((a, b) => publishDate(a).localeCompare(publishDate(b)));
+
+/** 草稿：只存在于数据文件，不生成页面 */
+export const DRAFT_NEWS = NEWS.filter(isDraft);
+
+/** 列表页筛选按钮的顺序与内容 */
+export const NEWS_CATEGORIES = NEWS_META.categoryOrder.filter((k) => NEWS_META.categoryLabel[k]);
+
+/** 来源可以写成一个对象，也可以写成数组（多来源文章）；统一取成数组 */
+export const sourcesOf = (n) => (Array.isArray(n.source) ? n.source : n.source ? [n.source] : []);

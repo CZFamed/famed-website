@@ -330,6 +330,38 @@
   });
 
   /* ------------------------------------------------------------ 子导航高亮 */
+  /* -------------------------------------------------------- 新闻分类筛选 */
+  /* 列表页的分类按钮：只切换显示，不做请求；没有 JS 时全部条目照常可见 */
+  var newsFilter = $$("[data-news-filter]");
+  if (newsFilter.length) {
+    var newsItems = $$(".news__item[data-category]");
+    var newsEmpty = $(".news__empty");
+    var applyNewsFilter = function (key) {
+      var shown = 0;
+      newsItems.forEach(function (item) {
+        var on = key === "all" || item.getAttribute("data-category") === key;
+        item.classList.toggle("is-hidden", !on);
+        if (on) shown++;
+      });
+      newsFilter.forEach(function (btn) {
+        var on = btn.getAttribute("data-news-filter") === key;
+        btn.classList.toggle("is-active", on);
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      if (newsEmpty) newsEmpty.hidden = shown > 0;
+    };
+    newsFilter.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        applyNewsFilter(btn.getAttribute("data-news-filter"));
+      });
+    });
+    /* #news-industry 这类锚点可直接打开某个分类，方便把分类链接单独发出去 */
+    var want = window.location.hash.replace(/^#news-/, "");
+    if (want && newsFilter.some(function (b) { return b.getAttribute("data-news-filter") === want; })) {
+      applyNewsFilter(want);
+    }
+  }
+
   var subnav = $(".subnav");
   if (subnav && "IntersectionObserver" in window) {
     var links = $$(".subnav__link", subnav);

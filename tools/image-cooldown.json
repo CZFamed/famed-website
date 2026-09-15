@@ -1,0 +1,115 @@
+{
+  "windowDays": 180,
+  "note": "由 node tools/news_images.mjs --sync 从 tools/news.mjs 自动生成，不要手改。",
+  "generated": "2026-09-16",
+  "entries": [
+    {
+      "img": "certs/hitech-enterprise",
+      "slug": "high-tech-enterprise",
+      "role": "figure-1",
+      "date": "2023-11-01"
+    },
+    {
+      "img": "news/news-techrenov",
+      "slug": "high-tech-enterprise",
+      "role": "cover",
+      "date": "2023-11-01"
+    },
+    {
+      "img": "process/scan-1",
+      "slug": "high-tech-enterprise",
+      "role": "figure-2",
+      "date": "2023-11-01"
+    },
+    {
+      "img": "news/news-hitech",
+      "slug": "specialised-sme",
+      "role": "cover",
+      "date": "2024-03-28"
+    },
+    {
+      "img": "process/machining-2",
+      "slug": "specialised-sme",
+      "role": "figure-1",
+      "date": "2024-03-28"
+    },
+    {
+      "img": "quality/cmm",
+      "slug": "specialised-sme",
+      "role": "figure-2",
+      "date": "2024-03-28"
+    },
+    {
+      "img": "news/news-coating",
+      "slug": "coating-line-upgrade",
+      "role": "cover",
+      "date": "2024-06-17"
+    },
+    {
+      "img": "process/paint-1",
+      "slug": "coating-line-upgrade",
+      "role": "figure-1",
+      "date": "2024-06-17"
+    },
+    {
+      "img": "products/machine-tool-parts/10",
+      "slug": "coating-line-upgrade",
+      "role": "figure-2",
+      "date": "2024-06-17"
+    },
+    {
+      "img": "banner/banner-contact",
+      "slug": "expansion-approved",
+      "role": "figure-2",
+      "date": "2025-12-24"
+    },
+    {
+      "img": "gallery/factory-04",
+      "slug": "expansion-approved",
+      "role": "figure-1",
+      "date": "2025-12-24"
+    },
+    {
+      "img": "news/news-expansion",
+      "slug": "expansion-approved",
+      "role": "cover",
+      "date": "2025-12-24"
+    },
+    {
+      "img": "banner/banner-faq",
+      "slug": "container-freight-rates-sep-2026",
+      "role": "figure-1",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "banner/banner-products",
+      "slug": "container-freight-rates-sep-2026",
+      "role": "figure-2",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "featured/ship-01",
+      "slug": "container-freight-rates-sep-2026",
+      "role": "cover",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "featured/ship-02",
+      "slug": "global-crude-steel-july-2026",
+      "role": "figure-2",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "gallery/factory-09",
+      "slug": "global-crude-steel-july-2026",
+      "role": "figure-1",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "process/pouring-1",
+      "slug": "global-crude-steel-july-2026",
+      "role": "cover",
+      "date": "2026-09-16"
+    }
+  ]
+}

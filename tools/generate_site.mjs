@@ -9,7 +9,17 @@ import { fileURLToPath } from "node:url";
 
 import { SITE, NAV, UI, HOME, ABOUT, CAPABILITIES, QUALITY, APPLICATIONS, CERTIFICATES, FAQ, CONTACT, PRIVACY } from "./content.mjs";
 import { PRODUCTS, CATEGORIES_TITLE, CATEGORIES_LEAD } from "./products.mjs";
-import { NEWS, NEWS_META } from "./news.mjs";
+import {
+  NEWS,
+  NEWS_META,
+  NEWS_CATEGORIES,
+  NEWS_TODAY,
+  LIVE_NEWS,
+  SCHEDULED_NEWS,
+  DRAFT_NEWS,
+  publishDate,
+  sourcesOf,
+} from "./news.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LANGS = ["en", "zh"];
@@ -111,7 +121,7 @@ function scanLink(c, key) {
           <button class="scanlink" type="button" data-lb-group="certificates" data-lb-src="${c.a(`img/${s.img}.jpg`)}" data-lb-cap="${esc(title)}"><svg class="ico" aria-hidden="true"><use href="#i-doc"></use></svg>${esc(c.t(CERTIFICATES.viewScan))}</button>`;
 }
 
-function head(c, { file, title, desc, ogImage = "og/og-default" }) {
+function head(c, { file, title, desc, ogImage = "og/og-default", ogType = "website", extraLd = [] }) {
   const ogUrl = `${SITE.domain}/assets/img/${ogImage}.jpg`;
   const jsonld = [
     {
@@ -150,7 +160,8 @@ function head(c, { file, title, desc, ogImage = "og/og-default" }) {
 <link rel="alternate" hreflang="en" href="${SITE.domain}/${file}">
 <link rel="alternate" hreflang="zh-Hans" href="${SITE.domain}/zh/${file}">
 <link rel="alternate" hreflang="x-default" href="${SITE.domain}/${file}">
-<meta property="og:type" content="website">
+<link rel="alternate" type="application/rss+xml" title="${esc(c.isZh ? "菲美得新闻资讯" : "FAMED News")}" href="${c.u("feed.xml")}">
+<meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${esc(c.isZh ? SITE.nameZh : SITE.nameEn)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -164,7 +175,7 @@ function head(c, { file, title, desc, ogImage = "og/og-default" }) {
 <link rel="icon" type="image/png" sizes="16x16" href="${c.a("img/brand/favicon-16.png")}">
 <link rel="apple-touch-icon" href="${c.a("img/brand/apple-touch-icon.png")}">
 <link rel="stylesheet" href="${c.a("css/site.css")}">
-<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+<script type="application/ld+json">${JSON.stringify([...jsonld, ...extraLd])}</script>
 <script>
   /* 询盘表单收件地址等运行期配置（改这里或改 tools/content.mjs → SITE.email） */
   window.SITE_CONFIG = { mailTo: "${SITE.email}", formEndpoint: "${SITE.formEndpoint}" };
@@ -261,10 +272,10 @@ function header(c, active) {
 </div>`;
 }
 
-function banner(c, { title, sub, base, file, crumbs = [] }) {
+function banner(c, { title, sub, base, file, crumbs = [], w = 2000, h = 800 }) {
   return `
 <section class="banner">
-  <div class="banner__media">${img(c, base, title, { w: 2000, h: 800, sizes: "100vw", lazy: false })}</div>
+  <div class="banner__media">${img(c, base, title, { w, h, sizes: "100vw", lazy: false })}</div>
   <div class="banner__scrim"></div>
   <div class="wrap banner__inner">
     <nav class="crumbs" aria-label="${c.isZh ? "面包屑" : "Breadcrumb"}">
@@ -486,8 +497,8 @@ function sprite() {
     .join("")}</svg>`;
 }
 
-function page(c, { file, active, title, desc, body, ogImage }) {
-  return `${head(c, { file, title, desc, ogImage })}
+function page(c, { file, active, title, desc, body, ogImage, ogType, extraLd }) {
+  return `${head(c, { file, title, desc, ogImage, ogType, extraLd })}
 ${sprite()}
 ${topbar(c, active)}
 ${header(c, active)}
@@ -563,7 +574,7 @@ function pageHome(c) {
         </button>
       </figure>`).join("\n");
 
-  const news = NEWS.slice(0, 3).map((n) => `
+  const news = LIVE_NEWS.slice(0, 3).map((n) => `
       <article class="news__item">
         <a class="news__media" href="${c.u(`news-${n.slug}.html`)}" tabindex="-1" aria-hidden="true">
           ${img(c, n.image, c.t(n.title), { w: 1600, h: 900, thumb: true, cls: "", sizes: "(max-width:768px) 92vw, 31vw" })}
@@ -1361,8 +1372,8 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 /* ---------------------------------------------------------------- 新闻资讯 */
 
 function pageNews(c) {
-  const items = NEWS.map((n) => `
-      <article class="news__item">
+  const items = LIVE_NEWS.map((n) => `
+      <article class="news__item" data-category="${esc(n.category)}">
         <a class="news__media" href="${c.u(`news-${n.slug}.html`)}" tabindex="-1" aria-hidden="true">
           ${img(c, n.image, c.t(n.title), { w: 1600, h: 900, thumb: true, cls: "", sizes: "(max-width:768px) 92vw, 46vw" })}
         </a>
@@ -1374,14 +1385,27 @@ function pageNews(c) {
         </div>
       </article>`).join("\n");
 
+  /* 分类筛选：只渲染"确实有内容"的分类；没有 JS 时全部条目照常显示 */
+  const used = NEWS_CATEGORIES.filter((k) => LIVE_NEWS.some((n) => n.category === k));
+  const chips = used.length > 1
+    ? `
+    <nav class="chips chips--filter" aria-label="${esc(c.t(NEWS_META.filterLabel))}">
+      <button class="chip is-active" type="button" data-news-filter="all" aria-pressed="true">${esc(c.t(NEWS_META.filterAll))}<span class="chip__n">${LIVE_NEWS.length}</span></button>
+${used.map((k) => `      <button class="chip" type="button" data-news-filter="${esc(k)}" aria-pressed="false">${esc(c.t(NEWS_META.categoryLabel[k]))}<span class="chip__n">${LIVE_NEWS.filter((n) => n.category === k).length}</span></button>`).join("\n")}
+    </nav>`
+    : "";
+
   const body = `
 ${banner(c, { title: c.t(NEWS_META.title), sub: c.t(NEWS_META.lead), base: "banner/banner-news", file: "news.html", crumbs: [] })}
 <section class="section">
   <div class="wrap">
+${chips}
     <div class="news news--list">
 ${items}
     </div>
+    <p class="news__empty" hidden>${esc(c.t(NEWS_META.emptyText))}</p>
     <p class="note">${esc(c.t(NEWS_META.disclaimer))}</p>
+    <p class="note">${esc(c.t(NEWS_META.sourceNote))}</p>
   </div>
 </section>
 ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
@@ -1397,10 +1421,45 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 }
 
 function pageNewsItem(c, n) {
-  const others = NEWS.filter((x) => x.slug !== n.slug).slice(0, 3).map((x) => `
+  /* 相关阅读：同分类优先，其余按时间补齐——相关性更高的内链对收录与读物体验都更好 */
+  const pool = LIVE_NEWS.filter((x) => x.slug !== n.slug);
+  const others = [
+    ...pool.filter((x) => x.category === n.category),
+    ...pool.filter((x) => x.category !== n.category),
+  ].slice(0, 3).map((x) => `
       <li class="mininews"><a href="${c.u(`news-${x.slug}.html`)}">
         <time datetime="${x.date}">${esc(c.t(x.dateText))}</time>
         <span>${esc(c.t(x.title))}</span></a></li>`).join("\n      ");
+
+  /* 行业动态必须标注来源：既是对读者的交代，也是对"摘抄"这条线的合规兜底 */
+  const sources = sourcesOf(n);
+  const source = sources.length
+    ? `
+    <p class="article__source">
+      <span class="article__source-label">${esc(c.t(NEWS_META.sourceLabel))}</span>
+${sources.map((s) => `      <a href="${esc(s.url)}" target="_blank" rel="nofollow noopener">${esc(c.t(s.name))}</a>${s.date ? `<span class="article__source-date"> · ${esc(s.date)}</span>` : ""}`).join("<br>\n")}
+    </p>`
+    : "";
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: c.t(n.title),
+    description: c.t(n.summary),
+    datePublished: publishDate(n),
+    inLanguage: c.isZh ? "zh-Hans" : "en",
+    mainEntityOfPage: c.canon(`news-${n.slug}.html`),
+    image: `${SITE.domain}/assets/img/${n.image}.jpg`,
+    articleSection: c.t(NEWS_META.categoryLabel[n.category]),
+    publisher: {
+      "@type": "Organization",
+      name: c.isZh ? SITE.nameZh : SITE.nameEn,
+      logo: { "@type": "ImageObject", url: `${SITE.domain}/assets/img/brand/logo-mark-square.png` },
+    },
+    ...(sources.length
+      ? { citation: sources.map((s) => ({ "@type": "CreativeWork", name: c.t(s.name), url: s.url })) }
+      : {}),
+  };
 
   /* 正文配图：插在指定段落之后，点击进灯箱（同一篇文章的图为一组） */
   const figures = n.figures || [];
@@ -1420,6 +1479,7 @@ function pageNewsItem(c, n) {
   const body = `
 ${banner(c, {
   title: c.t(n.title), sub: c.t(n.summary), base: n.image, file: `news-${n.slug}.html`,
+  w: n.imageW || 2000, h: n.imageH || 800,
   crumbs: [{ file: "news.html", label: c.t(NEWS_META.title) }],
 })}
 <section class="section">
@@ -1428,8 +1488,12 @@ ${banner(c, {
       <time datetime="${n.date}">${esc(c.t(n.dateText))}</time>
       <span class="tag">${esc(c.t(NEWS_META.categoryLabel[n.category]))}</span>
     </p>
-    <div class="prose">
-      ${prose}
+    <!-- 正文与来源同属左栏：分开放进两个网格单元会让来源被自动排到右侧窄栏里 -->
+    <div class="article__main">
+      <div class="prose">
+        ${prose}
+      </div>
+${source}
     </div>
     <aside class="article__aside">
       <h2 class="article__aside-title">${esc(c.t(NEWS_META.allNews))}</h2>
@@ -1447,6 +1511,8 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
     title: `${c.t(n.title)} | ${c.isZh ? SITE.nameZh : "FAMED"}`,
     desc: c.t(n.summary).slice(0, 158),
     ogImage: n.image,
+    ogType: "article",
+    extraLd: [articleLd],
     body,
   });
 }
@@ -1673,7 +1739,7 @@ const ROUTES = [
   { file: "privacy.html", render: pagePrivacy, priority: "0.2", freq: "yearly" },
   { file: "404.html", render: page404, priority: "0.1", freq: "yearly" },
   ...PRODUCTS.map((p) => ({ file: `product-${p.slug}.html`, render: (c) => pageProduct(c, p), priority: "0.7", freq: "monthly" })),
-  ...NEWS.map((n) => ({ file: `news-${n.slug}.html`, render: (c) => pageNewsItem(c, n), priority: "0.5", freq: "yearly" })),
+  ...LIVE_NEWS.map((n) => ({ file: `news-${n.slug}.html`, render: (c) => pageNewsItem(c, n), priority: "0.5", freq: "yearly" })),
 ];
 
 for (const lang of LANGS) {
@@ -1704,7 +1770,63 @@ Disallow: /_素材审阅/
 `, "utf8");
 written.push("robots.txt");
 
+/* -------------------------------------------------------------------- RSS */
+
+/* 新闻列表的结构化输出，两个语种各一份。
+   作用：给搜索引擎和订阅工具一个稳定的"更新信号"，是"收录与自然流量"这条主线里
+   成本最低的一环——新文章一上线就出现在 feed 里。 */
+
+const RFC_DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const RFC_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function rfc822(dateStr) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const wd = RFC_DAYS[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  return `${wd}, ${pad2(d)} ${RFC_MONTHS[m - 1]} ${y} 08:00:00 +0800`;
+}
+
+function feed(c) {
+  const home = c.canon("news.html");
+  const self = `${SITE.domain}/${c.isZh ? "zh/" : ""}feed.xml`;
+  const items = LIVE_NEWS.map((n) => {
+    const link = c.canon(`news-${n.slug}.html`);
+    return `
+    <item>
+      <title>${esc(c.t(n.title))}</title>
+      <link>${link}</link>
+      <guid isPermaLink="true">${link}</guid>
+      <pubDate>${rfc822(publishDate(n))}</pubDate>
+      <category>${esc(c.t(NEWS_META.categoryLabel[n.category]))}</category>
+      <description>${esc(c.t(n.summary))}</description>${sourcesOf(n).slice(0, 1).map((s) => `
+      <source url="${esc(s.url)}">${esc(c.t(s.name))}</source>`).join("")}
+    </item>`;
+  }).join("");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${esc(c.isZh ? `${SITE.nameZh} — ${NEWS_META.title.zh}` : `${SITE.nameEn} — ${NEWS_META.title.en}`)}</title>
+    <link>${home}</link>
+    <description>${esc(c.t(NEWS_META.metaDesc))}</description>
+    <language>${c.isZh ? "zh-cn" : "en"}</language>
+    <lastBuildDate>${rfc822(NEWS_TODAY)}</lastBuildDate>
+    <atom:link href="${self}" rel="self" type="application/rss+xml"/>
+    <ttl>10080</ttl>${items}
+  </channel>
+</rss>
+`;
+}
+
+for (const lang of LANGS) {
+  write(lang, "feed.xml", feed(ctx(lang)));
+}
+
 /* ------------------------------------------------------------------ 报告 */
+
+console.log(`新闻发布状态（生成日期 ${NEWS_TODAY}）：已发布 ${LIVE_NEWS.length} 篇 · 排期中 ${SCHEDULED_NEWS.length} 篇 · 草稿 ${DRAFT_NEWS.length} 篇`);
+if (SCHEDULED_NEWS.length) {
+  console.log(`  下一篇到期的排期稿：${SCHEDULED_NEWS[0].slug}（${publishDate(SCHEDULED_NEWS[0])}）——到期后重新生成即上线`);
+}
 
 console.log(`生成 ${written.length} 个文件：`);
 for (const f of written) console.log("  " + f);

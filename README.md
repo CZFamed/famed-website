@@ -313,31 +313,37 @@ powershell -File tools\publish_github.ps1 -IncludeNonSource
 
 ---
 
-## 十、自动部署到 Cloudflare Workers
+## 十、部署到 Cloudflare Workers
 
 线上地址：<https://czfamed.czfamed1.workers.dev/>（英文在根目录，中文在 `/zh/`）。
 
-链路是：**改内容 → 重新生成 → 推 GitHub → GitHub Actions 自动上线**。
+链路是：**改内容 → 重新生成 → 推 GitHub → Cloudflare 自动构建上线**。
+
+部署由 Cloudflare 控制台里的 **Git 集成（Workers Builds）** 完成：仓库连了 `main` 分支，
+每次 push 它会自动构建并部署，**不需要任何密钥，也不用额外敲命令**。
 
 ```powershell
 cd "D:\agent开发\菲美得\公司网站"
 node tools\generate_site.mjs                              # 重新生成 38 个页面
 powershell -File tools\publish_github.ps1 -Message "改了什么"   # 推送
-# 推上去之后 GitHub 会自动跑「部署到 Cloudflare Workers」并上线，不需要再手工操作
+# 推完约 1 分钟自动上线
 ```
 
-### 首次配置（只需做一次）
+### 怎么确认上线成功
 
-1. **建 API Token**：Cloudflare 控制台 → 右上角头像 → My Profile → API Tokens →
-   Create Token → 用 **Edit Cloudflare Workers** 模板（或自定义：Account →
-   Workers Scripts → Edit）。创建后复制 token，**只会显示一次**。
-2. **取 Account ID**：Workers & Pages 页面右侧的 Account ID，或地址栏
-   `dash.cloudflare.com/<account-id>` 里那串。
-3. **写进 GitHub**：仓库 → Settings → Secrets and variables → Actions →
-   New repository secret，加两条：`CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID`。
-4. **跑一次**：仓库 → Actions → 部署到 Cloudflare Workers → Run workflow。
+1. GitHub 上这次提交旁边会有 `Workers Builds: czfamed` 的检查项，**success** 就是构建并部署成功；
+2. 想核对线上内容，抓 `https://czfamed.czfamed1.workers.dev/zh/`，在返回的 HTML 里搜
+   `id="i-group"`（图标是否齐全）或看页脚有没有多出来的东西。
 
-之后每次 push 到 `main` 都会自动部署。
+### 建议做一次的设置：让检查拦住坏版本
+
+完整性检查现在跑在 GitHub Actions 里，能在提交上看到红绿，但**拦不住 Cloudflare 的部署**——
+检查不通过时 Cloudflare 照样会把站点发出去。想让它真正挡住，去控制台做一次设置：
+
+> Workers & Pages → `czfamed` → Settings → Build → **Build command** 填
+> `node tools/check_site.mjs`（Deploy command 保持默认 `npx wrangler deploy`）
+
+之后每次构建会先跑这个检查，不通过就中止，坏版本上不了线。
 
 ### 部署相关文件
 
@@ -345,12 +351,12 @@ powershell -File tools\publish_github.ps1 -Message "改了什么"   # 推送
 |---|---|
 | `wrangler.jsonc` | Cloudflare 部署配置。`name` 必须与线上 Worker 同名（`czfamed`），否则会新建一个 Worker 而不是更新线上那个 |
 | `.assetsignore` | 决定哪些文件**不**上传：`tools\`、`_素材审阅\`、`_预览截图\`、`assets\video\`、`README.md`、`交付说明.md` 等 |
-| `.github/workflows/deploy-cloudflare.yml` | push 到 `main` 时自动部署 |
-| `tools/check_site.mjs` | 部署前的完整性检查，见下 |
+| `tools/check_site.mjs` | 完整性检查，本地和 CI 都能跑，见下 |
+| `.github/workflows/deploy-cloudflare.yml` | **可选的备用部署路径**：默认只跑完整性检查、不部署（部署由 Cloudflare 负责）；哪天不用 Git 集成了，往仓库加 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 两个 secret，它就会自己接手部署 |
 
-### 部署前检查（`tools/check_site.mjs`）
+### 完整性检查（`tools/check_site.mjs`）
 
-每次部署前自动跑，本地也可以随时手动跑：
+本地随时可以手动跑，GitHub Actions 每次 push 也会跑：
 
 ```powershell
 node tools\check_site.mjs
@@ -378,10 +384,7 @@ npx wrangler@4 deploy
 
 | 现象 | 处理 |
 |---|---|
-| Actions 报"仓库缺少 secret" | 按上面「首次配置」第 3 步补两条 secret |
-| Actions 失败但看不懂 | 进 Actions → 对应那次运行 → 展开失败的步骤看日志 |
-| 部署成功但页面没变 | 先强制刷新（Ctrl+F5）排除浏览器缓存；仍不对就确认 `wrangler.jsonc` 的 `name` 与线上 Worker 一致 |
-| 想确认线上到底是哪一版 | 抓 `https://czfamed.czfamed1.workers.dev/zh/`，在返回的 HTML 里搜 `id="i-group"` |
-
-> 注意：如果 Cloudflare 控制台里**同时**给这个 Worker 开了 Git 集成（Workers Builds），
-> 会和本工作流重复部署。二选一即可，推荐保留本仓库的 Actions（配置、检查都在仓库里）。
+| 推送后线上没变化 | 看 GitHub 提交旁边的 `Workers Builds: czfamed` 检查项：失败就点进去看构建日志；成功但页面没变，先 Ctrl+F5 强制刷新排除浏览器缓存 |
+| 构建失败但看不懂 | 常见原因是 `wrangler.jsonc` 里的 `name` 与线上 Worker 名不一致，或 `.assetsignore` 把必需文件排除了 |
+| 想确认线上是哪一版 | 抓 `https://czfamed.czfamed1.workers.dev/zh/`，搜 `id="i-group"`；再看页脚有没有已删除的链接 |
+| 找不到控制台入口 | Workers & Pages → `czfamed`（账户子域 `czfamed1`）→ Deployments 能看到每次构建对应的提交 |

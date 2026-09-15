@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12 15:21:47",
+ "generated": "2026-09-15 10:37:37",
  "items": [
   {
    "slot": "hero",
@@ -604,10 +604,10 @@
   {
    "slot": "card",
    "out": "process/paint-2",
-   "src": "生产流程/涂装线/1582768321676.jpg",
-   "src_size": "640x480",
+   "src": "生产流程/涂装线/2S4A0159.JPG",
+   "src_size": "3543x2362",
    "out_size": "1200x900",
-   "rag_description": "消失模涂装线多个封闭喷涂工位沿车间一字排开",
+   "rag_description": "涂装线现场（2S4A0159.JPG，2026-09-08 拍摄；画面描述待确认）",
    "files": [
     [
      "process/paint-2.jpg",
@@ -1792,10 +1792,10 @@
   {
    "slot": "wide",
    "out": "news/news-coating",
-   "src": "生产流程/涂装线/1582768321676.jpg",
-   "src_size": "640x480",
+   "src": "生产流程/涂装线/2S4A0159.JPG",
+   "src_size": "3543x2362",
    "out_size": "1600x900",
-   "rag_description": "消失模涂装线多个封闭喷涂工位沿车间一字排开",
+   "rag_description": "涂装线现场（2S4A0159.JPG，2026-09-08 拍摄；画面描述待确认）",
    "files": [
     [
      "news/news-coating.jpg",

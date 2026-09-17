@@ -14,6 +14,10 @@
    冷却记录的来源有两个，都不需要手写：
      1) tools/news.mjs 里的新闻条目（封面 image + 正文 figures）→ 自动同步进 image-cooldown.json
      2) 站点其他页面引用过的图（页面 banner、产品图、证书页等）→ 扫描 tools/*.mjs 得到，只作提示
+
+   "可选用"清单还会自动排除两类图：
+      · 冷却期内的图（上面第 1 条）
+      · 已被政策停用的图（tools/image-usage.mjs 的 RETIRED，如已删除 ZEISS 表述的 quality/cmm）
 */
 
 import fs from "node:fs";
@@ -21,7 +25,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { NEWS, sourcesOf, publishDate } from "./news.mjs";
-import { siteUsage, pool as imagePool } from "./image-usage.mjs";
+import { siteUsage, pool as imagePool, RETIRED } from "./image-usage.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REGISTRY = path.join(ROOT, "tools", "image-cooldown.json");
@@ -143,6 +147,13 @@ for (const p of items.slice(0, limit)) {
   console.log(`  ${p.img.padEnd(34)} ${p.size.padEnd(9)} ${p.desc}`);
 }
 if (items.length > limit) console.log(`  … 还有 ${items.length - limit} 张，用 --limit= 调整`);
+
+if (RETIRED.length) {
+  console.log(`\n■ 已停用 ${RETIRED.length} 张（政策上不得再对外使用，永远不会进"可选用"清单）`);
+  for (const r of RETIRED) {
+    console.log(`  ${r.img.padEnd(34)} 停用自 ${r.since} · ${r.reason}`);
+  }
+}
 
 if (!flag("quiet")) {
   console.log(`\n选图提示：先看上面的"可选用"清单，用 rag_description 判断画面是否贴近文章内容；`);

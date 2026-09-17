@@ -346,13 +346,13 @@ export const NEWS = [
         },
       },
       {
-        img: "quality/cmm",
+        img: "quality/scan-hoist",
         w: 1200,
         h: 900,
         after: 2,
         caption: {
-          en: "ZEISS bridge-type CMM in the metrology room.",
-          zh: "计量室内的 ZEISS 桥式三坐标测量机。",
+          en: "3D scanning of a large housing casting with the crane holding the part — dimensional checks run in-house rather than at an outside laboratory.",
+          zh: "吊运状态下对大型箱体铸件做三维扫描——尺寸检测在厂内完成，不外送实验室。",
         },
       },
     ],

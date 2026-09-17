@@ -13,7 +13,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { NEWS, NEWS_META, LIVE_NEWS, SCHEDULED_NEWS, DRAFT_NEWS, publishDate, sourcesOf } from "./news.mjs";
-import { siteUsage } from "./image-usage.mjs";
+import { siteUsage, retiredReason } from "./image-usage.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const problems = [];
@@ -304,7 +304,9 @@ if (!fs.existsSync(COOLDOWN_FILE)) {
 
 /* 判定依据是生成后的 HTML（见 tools/image-usage.mjs）。
    行业动态是每周新增的内容，必须用"站内其他页面没用过"的图；
-   历史公司新闻的配图已经上线多年，改图收益低，所以只提示、不拦构建。 */
+   历史公司新闻的配图已经上线多年，改图收益低，所以只提示、不拦构建。
+   另外，政策上已停用的图（tools/image-usage.mjs 的 RETIRED）任何文章都不许再用——
+   停用往往是因为该画面与已删除的表述绑定（如 ZEISS 三坐标），属于硬拦截。 */
 
 const siteUsed = siteUsage();
 const newsOnly = [];
@@ -312,6 +314,11 @@ for (const n of NEWS) {
   const label = `tools/news.mjs → ${n.slug}`;
   const imgs = [n.image, ...(n.figures || []).map((f) => f.img)].filter(Boolean);
   for (const img of imgs) {
+    const retired = retiredReason(img);
+    if (retired) {
+      problems.push(`${label}：配图 ${img} 已被政策停用（${retired}）——请改用 node tools/news_images.mjs 的"可选用"清单里的图`);
+      continue;
+    }
     if (!siteUsed.has(img)) continue;
     const pages = [...siteUsed.get(img)].slice(0, 2).join("、");
     if (n.category === "industry") {

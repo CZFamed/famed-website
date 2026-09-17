@@ -1222,7 +1222,6 @@ ${points}
         ["scan-box", "大型箱体铸件三维扫描检测", "3D scan inspection of a housing casting"],
         ["scan-hoist", "吊运状态下的大型箱体铸件三维扫描", "3D scanning of a housing casting under the crane"],
         ["scan-hand", "手持式三维激光扫描铸钢件", "Handheld 3D laser scanning of a steel casting"],
-        ["cmm", "ZEISS 桥式三坐标测量机", "ZEISS bridge-type CMM in the metrology room"],
         ["record", "喷涂后检验记录", "Inspection record being taken after coating"],
         ["packing", "成品缠绕膜包装待运", "Finished casting wrapped for shipment"],
       ].map(([n, zh, en]) => `

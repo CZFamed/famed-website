@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15 11:02:53",
+ "generated": "2026-09-17 09:44:19",
  "items": [
   {
    "slot": "hero",
@@ -927,6 +927,438 @@
   },
   {
    "slot": "card",
+   "out": "gallery/factory-17",
+   "src": "厂区_场景/厂房/2S4A0163.JPG",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "大型车间内部全景，红钢结构配黄色桥式起重机，地面成排摆放黄色涂装工件。",
+   "files": [
+    [
+     "gallery/factory-17.jpg",
+     "gallery/factory-17.webp"
+    ],
+    [
+     "gallery/factory-17-t.jpg",
+     "gallery/factory-17-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-18",
+   "src": "厂区_场景/厂房/2S4A0155.JPG",
+   "src_size": "5760x3840",
+   "out_size": "1200x900",
+   "rag_description": "红色钢结构厂房内，黄色天车下方成排摆放铸件，右侧为大型机床。",
+   "files": [
+    [
+     "gallery/factory-18.jpg",
+     "gallery/factory-18.webp"
+    ],
+    [
+     "gallery/factory-18-t.jpg",
+     "gallery/factory-18-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-19",
+   "src": "厂区_场景/厂房/2S4A0156.JPG",
+   "src_size": "5760x3840",
+   "out_size": "1200x900",
+   "rag_description": "红色钢构厂房内，地面成排摆放黑色铸件，一名工人正在设备前作业",
+   "files": [
+    [
+     "gallery/factory-19.jpg",
+     "gallery/factory-19.webp"
+    ],
+    [
+     "gallery/factory-19-t.jpg",
+     "gallery/factory-19-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-20",
+   "src": "厂区_场景/厂房/2S4A0157.JPG",
+   "src_size": "5760x3840",
+   "out_size": "1200x900",
+   "rag_description": "钢结构厂房内的环形悬挂输送线，前景地面堆放灰黑色铸件。",
+   "files": [
+    [
+     "gallery/factory-20.jpg",
+     "gallery/factory-20.webp"
+    ],
+    [
+     "gallery/factory-20-t.jpg",
+     "gallery/factory-20-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-21",
+   "src": "厂区_场景/厂房/2S4A0136.JPG",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "涂装车间内环形悬挂输送轨道与覆膜柜体设备，处于作业阶段。",
+   "files": [
+    [
+     "gallery/factory-21.jpg",
+     "gallery/factory-21.webp"
+    ],
+    [
+     "gallery/factory-21-t.jpg",
+     "gallery/factory-21-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-22",
+   "src": "厂区_场景/厂房/17.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "喷涂/烘干工段：环形悬挂输送链与洁净板房组合线",
+   "files": [
+    [
+     "gallery/factory-22.jpg",
+     "gallery/factory-22.webp"
+    ],
+    [
+     "gallery/factory-22-t.jpg",
+     "gallery/factory-22-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-23",
+   "src": "厂区_场景/厂房/0e5cc0b4337e7e7d4a6876ad9bd121ae.jpg",
+   "src_size": "1920x1080",
+   "out_size": "1200x900",
+   "rag_description": "铸造车间内圆筒形炉体，炉口积渣，旁有红色手轮与吨袋。",
+   "files": [
+    [
+     "gallery/factory-23.jpg",
+     "gallery/factory-23.webp"
+    ],
+    [
+     "gallery/factory-23-t.jpg",
+     "gallery/factory-23-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-24",
+   "src": "厂区_场景/厂房/473f25fe1721fac1a36bd7ffd91818b9.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "蓝色大型设备与管道的铸造车间内景，设安全标语、检修平台与护栏。",
+   "files": [
+    [
+     "gallery/factory-24.jpg",
+     "gallery/factory-24.webp"
+    ],
+    [
+     "gallery/factory-24-t.jpg",
+     "gallery/factory-24-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-25",
+   "src": "厂区_场景/厂房/6f22d1a1b147e23128ccd220b7b23460.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "钢结构厂房内蓝色箱式设备与除尘器，两名工人作业",
+   "files": [
+    [
+     "gallery/factory-25.jpg",
+     "gallery/factory-25.webp"
+    ],
+    [
+     "gallery/factory-25-t.jpg",
+     "gallery/factory-25-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-26",
+   "src": "厂区_场景/厂房/c41aa7dd4c5bee11733a334d9c9b8c69.png",
+   "src_size": "2560x1696",
+   "out_size": "1200x900",
+   "rag_description": "车间内一排数控加工中心沿墙整齐排列，地面划有黄色标线。",
+   "files": [
+    [
+     "gallery/factory-26.jpg",
+     "gallery/factory-26.webp"
+    ],
+    [
+     "gallery/factory-26-t.jpg",
+     "gallery/factory-26-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-27",
+   "src": "厂区_场景/厂房/0150a3155d3f3a16701fdea8a09f2b2e.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "钢结构厂房内蓝色管道集气罩与成排黄色料箱作业区。",
+   "files": [
+    [
+     "gallery/factory-27.jpg",
+     "gallery/factory-27.webp"
+    ],
+    [
+     "gallery/factory-27-t.jpg",
+     "gallery/factory-27-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-28",
+   "src": "厂区_场景/厂房/15.jpg",
+   "src_size": "4160x3120",
+   "out_size": "1200x900",
+   "rag_description": "新厂区建设全景：黄色平地机与三层混凝土厂房",
+   "files": [
+    [
+     "gallery/factory-28.jpg",
+     "gallery/factory-28.webp"
+    ],
+    [
+     "gallery/factory-28-t.jpg",
+     "gallery/factory-28-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "gallery/factory-29",
+   "src": "厂区_场景/厂房/1582768322196.jpg",
+   "src_size": "640x480",
+   "out_size": "1200x900",
+   "rag_description": "车间内大型烘房/喷漆房：四扇门的密闭黑色设备间",
+   "files": [
+    [
+     "gallery/factory-29.jpg",
+     "gallery/factory-29.webp"
+    ],
+    [
+     "gallery/factory-29-t.jpg",
+     "gallery/factory-29-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/pouring-4",
+   "src": "生产流程/浇筑/2S4A0125.JPG",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "车间内行车吊包浇筑，两名工人持工具在旁配合作业",
+   "files": [
+    [
+     "process/pouring-4.jpg",
+     "process/pouring-4.webp"
+    ],
+    [
+     "process/pouring-4-t.jpg",
+     "process/pouring-4-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/blasting-1",
+   "src": "生产流程/抛丸/2S4A0134.JPG",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "钢结构厂房内多台大型箱式设备，地面堆放灰色铸件，工人戴安全帽在场作业。",
+   "files": [
+    [
+     "process/blasting-1.jpg",
+     "process/blasting-1.webp"
+    ],
+    [
+     "process/blasting-1-t.jpg",
+     "process/blasting-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/blasting-2",
+   "src": "生产流程/抛丸/IMG_20260915_133351.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "钢结构厂房内两台箱式抛丸清理设备，地面散落待清理铸件。",
+   "files": [
+    [
+     "process/blasting-2.jpg",
+     "process/blasting-2.webp"
+    ],
+    [
+     "process/blasting-2-t.jpg",
+     "process/blasting-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/blasting-3",
+   "src": "生产流程/抛丸/IMG_20260915_133414.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "车间内工人坐在堆满灰色铸件的托盘旁，身后是蓝色箱体设备。",
+   "files": [
+    [
+     "process/blasting-3.jpg",
+     "process/blasting-3.webp"
+    ],
+    [
+     "process/blasting-3-t.jpg",
+     "process/blasting-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-4",
+   "src": "生产流程/机加工/IMG_20260915_132327.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "厂房内的卧式加工中心与摆放的待加工铸件",
+   "files": [
+    [
+     "process/machining-4.jpg",
+     "process/machining-4.webp"
+    ],
+    [
+     "process/machining-4-t.jpg",
+     "process/machining-4-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-5",
+   "src": "生产流程/机加工/微信图片_20260908145330_47_2.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "大型加工中心车间内，地面摆放黑色金属工件，工人现场查看作业。",
+   "files": [
+    [
+     "process/machining-5.jpg",
+     "process/machining-5.webp"
+    ],
+    [
+     "process/machining-5-t.jpg",
+     "process/machining-5-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-6",
+   "src": "生产流程/机加工/微信图片_20260908145331_48_2.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "车间内大型龙门加工中心正在加工铸件，周边摆放待加工与已加工工件",
+   "files": [
+    [
+     "process/machining-6.jpg",
+     "process/machining-6.webp"
+    ],
+    [
+     "process/machining-6-t.jpg",
+     "process/machining-6-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/machining-7",
+   "src": "生产流程/机加工/微信图片_20260908145338_49_2.png",
+   "src_size": "3543x2362",
+   "out_size": "1200x900",
+   "rag_description": "车间内多台数控加工中心并排，木托盘上码放灰色机加工铸件。",
+   "files": [
+    [
+     "process/machining-7.jpg",
+     "process/machining-7.webp"
+    ],
+    [
+     "process/machining-7-t.jpg",
+     "process/machining-7-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/inspection-1",
+   "src": "生产流程/下检/IMG_20260915_132902.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "人员在工作台前操作台式检测仪器，对夹持的小样品进行成分分析",
+   "files": [
+    [
+     "process/inspection-1.jpg",
+     "process/inspection-1.webp"
+    ],
+    [
+     "process/inspection-1-t.jpg",
+     "process/inspection-1-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/inspection-2",
+   "src": "生产流程/下检/IMG_20260915_132843.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "身穿红色工装的员工在台式仪器前操作试样检测",
+   "files": [
+    [
+     "process/inspection-2.jpg",
+     "process/inspection-2.webp"
+    ],
+    [
+     "process/inspection-2-t.jpg",
+     "process/inspection-2-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
+   "out": "process/inspection-3",
+   "src": "生产流程/下检/IMG_20260915_132627.jpg",
+   "src_size": "4096x3072",
+   "out_size": "1200x900",
+   "rag_description": "实验室内检测仪器旁摆放数个带钩金属试样，属检验环节场景。",
+   "files": [
+    [
+     "process/inspection-3.jpg",
+     "process/inspection-3.webp"
+    ],
+    [
+     "process/inspection-3-t.jpg",
+     "process/inspection-3-t.webp"
+    ]
+   ]
+  },
+  {
+   "slot": "card",
    "out": "products/machine-tool-parts/01",
    "src": "加工件/机床件/IMG_20201111_135023.jpg",
    "src_size": "2736x3648",
@@ -1669,7 +2101,7 @@
    "src": "生产流程/涂装线/IMG_20201012_094750.jpg",
    "src_size": "2736x3648",
    "out_size": "1200x900",
-   "rag_description": "一台 ZEISS 桥式三坐标测量机（CMM）置于计量室内",
+   "rag_description": "计量室内的大型检测设备",
    "files": [
     [
      "quality/cmm.jpg",

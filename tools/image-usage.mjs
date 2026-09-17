@@ -16,6 +16,26 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
     news（新闻专用封面，一图一篇）、og（社交分享卡）*/
 export const POOL_DIRS = ["process", "gallery", "featured", "products", "quality", "about", "banner", "hero"];
 
+/** 政策上已停用的图：文件还在、四种规格也齐全，但业务上已明确不得再对外使用。
+    放在这里是为了让"可选用"清单与构建检查同时生效——只靠人记会漏，
+    2026-09-17 排查封面告急时就发现 quality/cmm 仍被脚本当作可用图。
+    每一条都要写清停用原因与日期；恢复使用要连同原因一起删掉。 */
+export const RETIRED = [
+  {
+    img: "quality/cmm",
+    reason: "ZEISS 桥式三坐标（CMM）的表述与配图已按业务要求从全站与公司简介中全部删除，该图不得再出现在任何对外内容里",
+    since: "2026-09-16",
+  },
+];
+
+const RETIRED_MAP = new Map(RETIRED.map((r) => [r.img, r]));
+
+/** 该图是否已被政策停用；停用则返回原因，否则返回空串。 */
+export const retiredReason = (img) => RETIRED_MAP.get(img)?.reason || "";
+
+/** 该图是否已被政策停用。 */
+export const isRetired = (img) => RETIRED_MAP.has(img);
+
 const SKIP_DIRS = ["assets", "tools", "node_modules", "_预览截图", "_素材审阅", ".git", ".wrangler", ".github"];
 
 /** 站点页面用到的图：img 路径 → 用到它的页面集合（新闻详情页不算，否则文章自己的配图会自锁） */
@@ -54,12 +74,14 @@ export function siteUsage() {
 }
 
 /** 素材库里所有可用于新闻的成品图（带画面描述）。
-    只收录 4 个规格齐全的图（.jpg/.webp 与缩略图 -t 版），否则页面里的卡片会用不了。 */
+    只收录 4 个规格齐全的图（.jpg/.webp 与缩略图 -t 版），否则页面里的卡片会用不了。
+    已被政策停用的图（见 RETIRED）直接排除，避免周更再选到它们。 */
 export function pool() {
   const manifest = path.join(ROOT, "assets", "img", "manifest.json");
   const raw = JSON.parse(fs.readFileSync(manifest, "utf8"));
   return raw.items
     .filter((it) => POOL_DIRS.includes(it.out.split("/")[0]))
+    .filter((it) => !RETIRED_MAP.has(it.out))
     .filter((it) => ["", "-t"].every((suffix) => ["jpg", "webp"].every((ext) =>
       fs.existsSync(path.join(ROOT, "assets", "img", `${it.out}${suffix}.${ext}`)))))
     .map((it) => ({ img: it.out, desc: it.rag_description || "", size: it.out_size || "" }))

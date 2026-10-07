@@ -203,6 +203,17 @@ charts: [
 | 泵阀壳体 | pump and valve housing |
 | 配重件 | counterweight |
 | 年产 30000 吨 | 30,000 t/yr capacity |
+| 螺纹钢 / 混凝土用钢筋 | steel concrete reinforcing bar (rebar) |
+| 反倾销税 | antidumping duty (AD) |
+| 反补贴税 | countervailing duty (CVD) |
+| 加权平均倾销幅度 | weighted-average dumping margin |
+| 现金保证金税率 | cash deposit rate |
+| 可获得的不利事实 | facts available with adverse inferences |
+| 到岸成本 | landed cost |
+| 价格指数 | price index |
+| 月均价 | monthly average |
+| 百万英热单位 | million British thermal units (mmBtu) |
+| 干吨 | dry metric tonne (dmt) |
 
 新的术语加进这张表之后再用于稿件，避免同一概念出现两种译法。
 

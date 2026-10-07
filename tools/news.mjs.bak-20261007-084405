@@ -209,6 +209,7 @@ export const NEWS = [
   {
     slug: "world-bank-energy-prices-sep-2026",
     date: "2026-09-02",
+    draft: true,
     dateText: { en: "2 September 2026", zh: "2026 年 9 月 2 日" },
     category: "industry",
     image: "gallery/factory-23",
@@ -297,6 +298,7 @@ export const NEWS = [
   {
     slug: "us-rebar-duties-bulgaria-egypt-vietnam",
     date: "2026-09-18",
+    draft: true,
     dateText: { en: "18 September 2026", zh: "2026 年 9 月 18 日" },
     category: "industry",
     image: "gallery/factory-19",
@@ -384,6 +386,7 @@ export const NEWS = [
   {
     slug: "container-rates-golden-week-sep-2026",
     date: "2026-09-24",
+    draft: true,
     dateText: { en: "24 September 2026", zh: "2026 年 9 月 24 日" },
     category: "industry",
     image: "gallery/factory-18",
@@ -461,6 +464,7 @@ export const NEWS = [
   {
     slug: "eu-industrial-production-jul-2026",
     date: "2026-09-16",
+    draft: true,
     dateText: { en: "16 September 2026", zh: "2026 年 9 月 16 日" },
     category: "industry",
     image: "process/machining-6",
@@ -543,6 +547,7 @@ export const NEWS = [
   {
     slug: "global-crude-steel-august-2026",
     date: "2026-09-24",
+    draft: true,
     dateText: { en: "24 September 2026", zh: "2026 年 9 月 24 日" },
     category: "industry",
     image: "process/pouring-4",
@@ -628,6 +633,7 @@ export const NEWS = [
   {
     slug: "eu-cbam-certificate-price-oct-2026",
     date: "2026-10-05",
+    draft: true,
     dateText: { en: "5 October 2026", zh: "2026 年 10 月 5 日" },
     category: "industry",
     image: "gallery/factory-25",

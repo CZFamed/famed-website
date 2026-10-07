@@ -1,7 +1,7 @@
 {
   "windowDays": 180,
   "note": "由 node tools/news_images.mjs --sync 从 tools/news.mjs 自动生成，不要手改。",
-  "generated": "2026-09-16",
+  "generated": "2026-10-07",
   "entries": [
     {
       "img": "certs/hitech-enterprise",
@@ -76,6 +76,12 @@
       "date": "2025-12-24"
     },
     {
+      "img": "gallery/factory-23",
+      "slug": "world-bank-energy-prices-sep-2026",
+      "role": "cover",
+      "date": "2026-09-02"
+    },
+    {
       "img": "gallery/factory-13",
       "slug": "global-crude-steel-july-2026",
       "role": "cover",
@@ -86,6 +92,36 @@
       "slug": "container-freight-rates-sep-2026",
       "role": "cover",
       "date": "2026-09-16"
+    },
+    {
+      "img": "process/machining-6",
+      "slug": "eu-industrial-production-jul-2026",
+      "role": "cover",
+      "date": "2026-09-16"
+    },
+    {
+      "img": "gallery/factory-19",
+      "slug": "us-rebar-duties-bulgaria-egypt-vietnam",
+      "role": "cover",
+      "date": "2026-09-18"
+    },
+    {
+      "img": "gallery/factory-18",
+      "slug": "container-rates-golden-week-sep-2026",
+      "role": "cover",
+      "date": "2026-09-24"
+    },
+    {
+      "img": "process/pouring-4",
+      "slug": "global-crude-steel-august-2026",
+      "role": "cover",
+      "date": "2026-09-24"
+    },
+    {
+      "img": "gallery/factory-25",
+      "slug": "eu-cbam-certificate-price-oct-2026",
+      "role": "cover",
+      "date": "2026-10-05"
     }
   ]
 }

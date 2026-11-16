@@ -58,6 +58,7 @@ export const SITE = {
 export const NAV = [
   { id: "home", file: "index.html", en: "Home", zh: "首页" },
   { id: "about", file: "about.html", en: "About Us", zh: "关于我们" },
+  { id: "culture", file: "culture.html", en: "Culture", zh: "企业文化" },
   {
     id: "products", file: "products.html", en: "Products", zh: "产品中心",
     children: "products",
@@ -284,15 +285,11 @@ export const ABOUT = {
       ],
     },
     {
+      /* 只放摘要，完整内容在独立页 culture.html（见 CULTURE） */
       id: "culture",
-      navEn: "How We Work", navZh: "企业文化",
-      title: { en: "How we work", zh: "我们的做法" },
-      values: [
-        { en: "Say the real date", zh: "承诺可兑现的交期", textEn: "We would rather quote four weeks and deliver in four weeks than quote two and apologise.", textZh: "宁可报四周、如期四周交付，也不报两周再回头道歉。" },
-        { en: "Measure, then argue", zh: "用数据说话", textEn: "Material chemistry, hardness and dimensions are recorded per batch. Disagreements get settled with a report, not an opinion.", textZh: "每批记录化学成分、硬度与尺寸。有分歧用检测报告解决，不靠口头解释。" },
-        { en: "Fix the process, not the part", zh: "改工艺，不改成品", textEn: "When a defect appears we change the pattern, the gating or the cooling — not the inspection standard.", textZh: "出现缺陷时改的是模具、浇注系统或冷却方式，而不是放宽检验标准。" },
-        { en: "Be a supplier you can audit", zh: "经得起审核的供应商", textEn: "Certificates, permits and inspection records are kept current so your audit takes an afternoon, not a month.", textZh: "证照与检验记录保持有效可查，让你的供应商审核一个下午就能完成。" },
-      ],
+      navEn: "How we work", navZh: "企业文化",
+      title: { en: "How we work", zh: "企业文化" },
+      summaryLink: "culture.html",
     },
   ],
   galleryTitle: { en: "Plant gallery", zh: "厂区掠影" },
@@ -300,6 +297,213 @@ export const ABOUT = {
     en: "Workshops, pattern shop and finishing lines, photographed on site.",
     zh: "车间、制模工部与涂装线的现场实拍。",
   },
+};
+
+/** 企业文化（独立页 culture.html；关于我们页只放摘要） */
+export const CULTURE = {
+  metaTitle: {
+    en: "How We Work | Culture at a Lost-Foam Foundry — FAMED",
+    zh: "企业文化 | 泊头消失模铸造工厂怎么做事 — 菲美得",
+  },
+  metaDesc: {
+    en: "Mission, five values, six rules and the people who keep them.",
+    zh: "使命、五条价值观、六条规矩，以及守住它们的人。",
+  },
+  title: { en: "How we work", zh: "企业文化" },
+  lead: {
+    en: "Who we are, and how we work.",
+    zh: "我们是谁，以及怎么做事。",
+  },
+
+  /* 首页文化带（排在"主营产品"之前）*/
+  homeTitle: { en: "How we work", zh: "企业文化" },
+  homeLead: {
+    en: "Quote, sample, production, shipment — the same way of working, every time.",
+    zh: "报价、打样、量产、出货——同一套做法。",
+  },
+  homeHabitsLabel: { en: "Our values", zh: "企业价值观" },
+  homeHabitsNote: {
+    en: "The six rules on the culture page are the checkable version of these.",
+    zh: "企业文化页那六条工作规矩，就是它们的可检查版本。",
+  },
+
+  missionTitle: { en: "Mission", zh: "使命" },
+  mission: {
+    en: "Better parts for our customers, dependable dates for their lines.",
+    zh: "为客户提供更优质的产品，为产线守住更可靠的交期。",
+  },
+  missionNote: {
+    // 改编自博世（Bosch）价值观：「We promise only what we can deliver, accept agreements as binding.」
+    // 与康明斯（Cummins）诚信条：「Doing what you say you will do.」
+    en: "We count before we promise, and once we promise, we treat it as a commitment.",
+    zh: "承诺之前先算清楚；答应出去的事，就当契约来守。",
+  },
+
+  visionTitle: { en: "Vision", zh: "愿景" },
+  vision: {
+    en: "Cast parts that stand up to an audit. Build a plant that keeps its people. Run a business that outlives us.",
+    zh: "铸出经得起审的产品，建成留得住人的工厂，办成传得下去的企业。",
+  },
+  visionNote: {
+    // 改编自 IHI：「Human resources are our single most valuable asset」＋美国铝业（Alcoa）：「Build a legacy of excellence for future generations.」
+    en: "People are the most valuable asset here, and what we leave behind is something worth handing over.",
+    zh: "人是最值钱的资产；给下一代留一件拿得出手的东西。",
+  },
+
+  valuesTitle: { en: "Our values", zh: "企业价值观" },
+  valuesNote: {
+    en: "Five words we hire by, review by and pick suppliers by.",
+    zh: "五条挂在墙上，也写进招聘、考核和采购的标准。",
+  },
+  values: [
+    {
+      en: "Integrity", zh: "诚信",
+      textEn: "We keep our word — open with customers, staff and suppliers alike.",
+      textZh: "守信誉，对客户、员工、供应商坦诚守信。",
+    },
+    {
+      en: "Quality", zh: "品质",
+      textEn: "Tight control on every part; no shortcuts on material or process.",
+      textZh: "严控产品质量，不偷工减料。",
+    },
+    {
+      en: "Safety", zh: "安全",
+      textEn: "Safety first on the floor — nobody gets hurt making a part.",
+      textZh: "安全生产优先，守住人员安全底线。",
+    },
+    {
+      en: "Pragmatism", zh: "务实",
+      textEn: "Feet on the floor: solve the problem at the machine, not in a meeting.",
+      textZh: "脚踏实地，解决现场问题，拒绝空谈。",
+    },
+    {
+      en: "Shared success", zh: "共赢",
+      textEn: "Staff earn more, customers get what they paid for, the company lasts.",
+      textZh: "员工增收、客户满意、企业长久发展。",
+    },
+  ],
+
+  principlesTitle: { en: "Six rules we work to", zh: "六条工作规矩" },
+  principlesNote: {
+    en: "The checkable version of the values above — the things a supplier audit can actually test.",
+    zh: "上面五条价值观的可检查版本——供应商审核时可以逐条核。",
+  },
+  principles: [
+    {
+      icon: "i-doc",
+      en: "Review the drawing before the price", zh: "先评审图纸，再报价",
+      textEn: "Shrinkage, machining stock, gating and feeding are settled before a number goes out, so the price matches a process we can actually run.",
+      textZh: "缩尺、加工余量、浇冒口在报价前定好；报出去的价格对应一套真能做的工艺。",
+    },
+    {
+      icon: "i-check",
+      en: "No batch before first-article sign-off", zh: "首件确认后才批量",
+      textEn: "The first casting is scanned against the model and measured; the batch starts only after it is signed off.",
+      textZh: "首件用三维扫描对图、量尺寸，签字确认之后才开批量。",
+    },
+    {
+      icon: "i-mail-check",
+      en: "The paperwork travels with the pallet", zh: "每批随货带报告",
+      textEn: "Material certificate, hardness results and dimensional report ship with the batch — not a week later on request.",
+      textZh: "材质证明、硬度结果、尺寸报告随批走，不是事后一周再补。",
+    },
+    {
+      icon: "i-gears",
+      en: "Changes in writing, before they happen", zh: "变更先书面通知",
+      textEn: "Any change to pattern, process, material or subcontractor is put to the customer in writing before it takes effect.",
+      textZh: "模具、工艺、材料或外协有任何变动，先书面告知客户，确认后再执行。",
+    },
+    {
+      icon: "i-shield",
+      en: "Contain first, explain second", zh: "出事先遏制，再谈原因",
+      textEn: "A suspect batch is quarantined and the customer gets a disposition within one working day; the root cause follows once we have it.",
+      textZh: "先隔离可疑批次，一个工作日内给客户处置方案；原因查清了再给根因报告。",
+    },
+    {
+      icon: "i-layer",
+      en: "Pack for the sea, not for the yard", zh: "包装按海运做",
+      textEn: "Packing is designed for the container and the ocean transit — rust protection, bracing, lifting points — not just for our own forklift.",
+      textZh: "包装按集装箱与海运周期设计：防锈、加固、吊点，而不是只考虑厂内叉车。",
+    },
+  ],
+
+  peopleTitle: { en: "The people behind the castings", zh: "铸件背后的人" },
+  peopleText: {
+    en: "Machines can be bought. A moulder who can read a foam pattern, or a pourer who judges a heat by the slag, cannot — those take years to make, and they are why the casting comes out right.",
+    zh: "设备可以买。能看懂泡沫模的造型工、能凭渣色判断铁水温度的浇注工买不到——这些人要养很多年，也是铸件能做对的原因。",
+  },
+  peopleNote: {
+    en: "Headcount as of the current year, supplied by HR; the training count is internal sessions per year.",
+    zh: "人数为当年在册人数，由人事部提供；培训为每年厂内技术培训场次。",
+  },
+  /* 四个数字等厂里确认后填进来，value 填了页面才会出现"数字带"这一行 */
+  stats: [
+    { value: "", labelEn: "People on site", labelZh: "厂区员工" },
+    { value: "", labelEn: "Average years of service", labelZh: "平均工龄" },
+    { value: "", labelEn: "Technical and QC staff", labelZh: "技术与质检人员" },
+    { value: "", labelEn: "Internal training sessions a year", labelZh: "年度内部培训" },
+  ],
+  trainingTitle: { en: "How people get good here", zh: "人是怎么练出来的" },
+  training: [
+    {
+      en: "New starters shadow a qualified hand for three months before working a station alone.",
+      zh: "新员工先跟岗三个月，考核通过才独立上岗。",
+    },
+    {
+      en: "Skill grades and pay bands per station — moulding, pouring, cleaning, machining, inspection.",
+      zh: "按岗位设技能等级与津贴：造型、浇注、清理、加工、检验。",
+    },
+    {
+      en: "Quarterly in-house technical sessions; the two photos on this page are from one.",
+      zh: "每季度一次内部技术培训；本页那两张照片就是现场。",
+    },
+    {
+      en: "Spectrometer, hardness, CMM and crane operators are trained and authorised in writing.",
+      zh: "光谱、硬度、三坐标与行车操作岗位持证并经书面授权。",
+    },
+  ],
+
+  hseTitle: { en: "Safety and environment", zh: "安全与环境" },
+  hseText: {
+    en: "Foundries are dirty by default. Ours is a lost-foam plant in a district that has been casting iron for centuries — what keeps it running is environmental performance, not paperwork.",
+    zh: "铸造天生是脏活。我们是在一个铸了几百年铁的镇上做消失模，能继续做下去的凭据是环保表现，不是几张纸。",
+  },
+  hse: [
+    {
+      en: "Discharge permit renewed in April 2026, valid to 2031 — publicly checkable.",
+      zh: "排污许可证 2026 年 4 月换发，有效期至 2031 年，可公开查询。",
+    },
+    {
+      en: "Paint line rebuilt as a sealed booth with exhaust treatment; the upgrade was filed and completed in 2024.",
+      zh: "涂装线改为密闭喷房并加装废气处理，2024 年完成备案与改造。",
+    },
+    {
+      en: "Dust extraction at the moulding, shake-out and shot-blast stations.",
+      zh: "造型、落砂、抛丸工位配套除尘。",
+    },
+    {
+      en: "Named a Green Casting Demonstration Enterprise in 2018.",
+      zh: "2018 年获评绿色铸造示范企业。",
+    },
+    {
+      en: "Annual safety drills and PPE issue, logged by workshop.",
+      zh: "每年组织安全演练与劳保用品配发，按车间登记。",
+    },
+  ],
+
+  ctaTitle: { en: "A plant visit beats a web page", zh: "来厂看一次，比看这页有用" },
+  ctaText: {
+    en: "Walk the moulding line, open a batch file, talk to the pourer. We will arrange the day around your audit checklist.",
+    zh: "走一遍造型线、翻一份批次档案、跟浇注工聊两句。可以按你的审核清单来安排。",
+  },
+  ctaBtn: { en: "Arrange a visit", zh: "预约参观" },
+
+  /* 关于我们页的摘要块 */
+  aboutIntro: {
+    en: "Culture in a foundry is what happens when nobody is watching: whether the date quietly moves, whether the report gets written, whether the pattern actually gets fixed.",
+    zh: "对铸造厂来说，文化就是没人盯着的时候会发生什么：交期会不会悄悄往后挪、报告会不会补写、模具会不会真去改。",
+  },
+  aboutLink: { en: "Read how we work", zh: "查看完整企业文化" },
 };
 
 /** 制造能力 */

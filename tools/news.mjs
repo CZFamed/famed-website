@@ -49,6 +49,165 @@ export const NEWS_META = {
 export const NEWS = [
   /* ---- 行业动态 · 试刊（面向全球买家）---- */
   {
+    slug: "drewry-wci-22-oct-2026",
+    date: "2026-10-22",
+    draft: true,
+    dateText: { en: "22 October 2026", zh: "2026 年 10 月 22 日" },
+    category: "industry",
+    image: "gallery/factory-20",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "Drewry WCI rises 2% to USD 4,585 as Asia–Europe blank sailings tighten capacity",
+      zh: "Drewry 全球集装箱运价指数升至 4585 美元/40 英尺柜，亚欧航线空班增至 8 班",
+    },
+    summary: {
+      en: "Drewry's World Container Index rose 2% to USD 4,585 per 40ft container on 22 October 2026, its highest level in 15 weeks. Shanghai–Rotterdam and Shanghai–Genoa rose 3% and 5%, while eight blank sailings are announced on Asia–Europe for next week, up from two this week.",
+      zh: "Drewry 2026 年 10 月 22 日全球集装箱运价指数上涨 2% 至 4585 美元/40 英尺柜，创 15 周新高。上海—鹿特丹与上海—热那亚分别上涨 3% 和 5%；亚欧航线下周公布 8 班空班，本周为 2 班。",
+    },
+    body: [
+      {
+        en: "Drewry's assessment for 22 October 2026 put its World Container Index at USD 4,585 per 40ft container, up 2% week on week and the highest in 15 weeks. Shanghai–Los Angeles rose 2% to USD 8,007 and Shanghai–New York 1% to USD 10,166. On Asia–Europe, Shanghai–Rotterdam rose 3% to USD 3,632 and Shanghai–Genoa 5% to USD 4,152.",
+        zh: "Drewry 2026 年 10 月 22 日的评估显示，全球集装箱运价指数为 4585 美元/40 英尺柜，环比上涨 2%，为 15 周以来最高。上海—洛杉矶上涨 2% 至 8007 美元，上海—纽约上涨 1% 至 10166 美元；亚欧航线方面，上海—鹿特丹上涨 3% 至 3632 美元，上海—热那亚上涨 5% 至 4152 美元。",
+      },
+      {
+        en: "The capacity picture differs by route. Two transpacific blank sailings are announced for next week, down from six this week, while Asia–Europe has eight, up from two; Drewry expects transpacific rates to stay stable and Asia–Europe rates to rise slightly. Port pressure has eased at Shanghai, where vessel waiting time fell from 97 hours in week 38 to 38 hours in week 42. Drewry also reports 54 Suez Canal sailings in week 41 and 55 in week 42, with two container ships entering the Gulf in week 42 against five in the previous week.",
+        zh: "不同航线的运力状况并不一致。跨太平洋航线下周公布 2 班空班，本周为 6 班；亚欧航线则从本周的 2 班增至下周的 8 班。Drewry 预计跨太平洋运价保持稳定，亚欧运价小幅上涨。上海港的船舶等待时间从第 38 周的 97 小时降至第 42 周的 38 小时。Drewry 还记录到，苏伊士运河第 41 周有 54 班航行、第 42 周有 55 班；第 42 周进入海湾的集装箱船为 2 艘，前一周为 5 艘。",
+      },
+      {
+        en: "What this means for buyers — our view: For a European or North American buyer, the composite matters less than the route and the capacity signal behind it. Asia–Europe is being repriced with more blank sailings while transpacific capacity is improving, so a freight number carried over from the other lane can distort a landed-cost comparison. Our advice is to quote the exact port pair and separate sea freight from the casting price, with its own validity date and surcharge basis. Where the selected lane is being supported by capacity withdrawals, confirm space and sailing with the forwarder before fixing a delivery date; the published WCI is a market benchmark, not a booked rate.",
+        zh: "对采购方意味着什么（我们的判断）：对欧洲或北美买家而言，真正相关的是具体航线及其背后的运力信号，而不只是综合指数。亚欧航线在增加空班，跨太平洋航线却在改善，把另一条航线的运价直接拿来比较，会扭曲到岸成本的判断。我们建议按确切港口对询价，把海运费与铸件价格分开，并分别写明有效期和附加费口径。如果所选航线正在通过撤运力支撑价格，应在确认交期前与货代核实舱位和船期；公布的 WCI 是市场基准，并不是已经订到的运价。",
+      },
+    ],
+    source: {
+      name: {
+        en: "Drewry — World Container Index, 22 October 2026",
+        zh: "Drewry 全球集装箱运价指数（2026 年 10 月 22 日）",
+      },
+      url: "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry",
+      date: "2026-10-22",
+    },
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "World Container Index and Shanghai route rates — 22 October 2026 (USD per 40ft container)",
+          zh: "全球集装箱运价指数及上海出发航线运价（美元/40 英尺柜，2026 年 10 月 22 日）",
+        },
+        items: [
+          { label: { en: "Shanghai–New York", zh: "上海—纽约" }, value: 10166, text: "$10,166" },
+          { label: { en: "Shanghai–Los Angeles", zh: "上海—洛杉矶" }, value: 8007, text: "$8,007" },
+          { label: { en: "WCI composite", zh: "WCI 综合指数" }, value: 4585, text: "$4,585" },
+          { label: { en: "Shanghai–Genoa", zh: "上海—热那亚" }, value: 4152, text: "$4,152" },
+          { label: { en: "Shanghai–Rotterdam", zh: "上海—鹿特丹" }, value: 3632, text: "$3,632" },
+        ],
+        note: {
+          en: "Source: Drewry World Container Index, assessment for 22 October 2026.",
+          zh: "来源：Drewry 世界集装箱运价指数，2026 年 10 月 22 日评估。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Blank sailings announced for next week versus this week",
+          zh: "下周与本周公布的空班数量",
+        },
+        items: [
+          { label: { en: "Transpacific — this week", zh: "跨太平洋——本周" }, value: 6, text: "6" },
+          { label: { en: "Transpacific — next week", zh: "跨太平洋——下周" }, value: 2, text: "2" },
+          { label: { en: "Asia–Europe — this week", zh: "亚欧——本周" }, value: 2, text: "2" },
+          { label: { en: "Asia–Europe — next week", zh: "亚欧——下周" }, value: 8, text: "8" },
+        ],
+        note: {
+          en: "Number of blank sailings. Source: Drewry World Container Index, 22 October 2026.",
+          zh: "空班数量。来源：Drewry 世界集装箱运价指数，2026 年 10 月 22 日。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "worldsteel-crude-steel-sep-2026",
+    date: "2026-10-23",
+    draft: true,
+    dateText: { en: "23 October 2026", zh: "2026 年 10 月 23 日" },
+    category: "industry",
+    image: "process/blasting-2",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "Global crude steel output falls 0.2% in September as Germany drops 13% and Vietnam rises 29.1%",
+      zh: "9 月全球粗钢产量下降 0.2%：德国减少 13%，越南增长 29.1%",
+    },
+    summary: {
+      en: "worldsteel reports that the 70 reporting countries produced 142.4 Mt of crude steel in September 2026, down 0.2% year on year. The Middle East fell 20.4% and the EU 5.0%, while North America rose 3.4%; among individual producers, Germany fell 13.0% and Vietnam rose 29.1%.",
+      zh: "世界钢铁协会：2026 年 9 月 70 个报告国粗钢产量 1.424 亿吨，同比下降 0.2%。中东下降 20.4%，欧盟下降 5.0%，北美增长 3.4%；主要产钢国中，德国下降 13.0%，越南增长 29.1%。",
+    },
+    body: [
+      {
+        en: "The World Steel Association (worldsteel) reported on 23 October 2026 that the 70 countries in its monthly dataset produced 142.4 million tonnes of crude steel in September, 0.2% less than in September 2025. Output in January–September was 1,367.5 Mt, down 0.7%. The 70 countries accounted for about 98% of world crude steel production in 2025.",
+        zh: "世界钢铁协会于 2026 年 10 月 23 日发布数据：其月度统计覆盖的 70 个国家 9 月粗钢产量为 1.424 亿吨，比 2025 年 9 月减少 0.2%；1—9 月累计 13.675 亿吨，同比下降 0.7%。这 70 个国家约占 2025 年全球粗钢产量的 98%。",
+      },
+      {
+        en: "Regional results moved further apart. Africa rose 10.6%, Asia and Oceania 0.7%, North America 3.4% and South America 0.2%. The EU (27) fell 5.0%, other Europe 1.4%, Russia and other CIS plus Ukraine 1.9% and the Middle East 20.4%. Among the largest producers, Germany fell 13.0% to 2.6 Mt, China edged up 0.1% to 73.6 Mt, the United States was estimated at 7.2 Mt (+4.3%) and Vietnam at 2.6 Mt (+29.1%).",
+        zh: "区域走势进一步分化。非洲增长 10.6%，亚洲与大洋洲增长 0.7%，北美增长 3.4%，南美增长 0.2%；欧盟（27 国）下降 5.0%，欧洲其他地区下降 1.4%，俄罗斯及其他独联体国家加乌克兰下降 1.9%，中东下降 20.4%。主要产钢国中，德国产量降至 260 万吨、下降 13.0%；中国微增 0.1% 至 7360 万吨；美国估计为 720 万吨、增长 4.3%；越南为 260 万吨、增长 29.1%。",
+      },
+      {
+        en: "What this means for buyers — our view: Crude-steel output does not set a casting price on its own, so we would not use this monthly total as a direct reason to raise or accept a quote. The more useful signal is the widening regional spread, which points to different operating rates and availability across supplier regions. For a sourcing decision, ask a supplier which specific metal-input index it uses and whether its material plan relies on local or imported supply, then check lead time against the delivery and quality terms in the offer. Treat the worldsteel figure as context for a review, not as a standalone price trigger.",
+        zh: "对采购方意味着什么（我们的判断）：粗钢产量本身并不决定铸件价格，因此不应仅凭这一月度总量要求涨价或接受涨价。更有价值的是区域分化加大，它意味着不同供应地区的开工水平与材料可得性存在差异。做采购判断时，可以问清供应商引用的是哪一种具体金属投入指数、其材料计划依赖本地还是进口供应，再把交期与报价中的交付和质量条款一起核对。世界钢铁协会的数据适合作为复核背景，不应单独作为价格触发条件。",
+      },
+    ],
+    source: {
+      name: {
+        en: "World Steel Association (worldsteel) — September 2026 crude steel production",
+        zh: "世界钢铁协会《2026 年 9 月全球粗钢产量》",
+      },
+      url: "https://worldsteel.org/media/press-releases/2026/september-2026-crude-steel-production/",
+      date: "2026-10-23",
+    },
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "Crude steel output by region — September 2026 versus September 2025",
+          zh: "粗钢产量分区域同比（2026 年 9 月 vs 2025 年 9 月）",
+        },
+        items: [
+          { label: { en: "Africa", zh: "非洲" }, value: 10.6, text: "+10.6%" },
+          { label: { en: "North America", zh: "北美" }, value: 3.4, text: "+3.4%" },
+          { label: { en: "Asia and Oceania", zh: "亚洲与大洋洲" }, value: 0.7, text: "+0.7%" },
+          { label: { en: "South America", zh: "南美" }, value: 0.2, text: "+0.2%" },
+          { label: { en: "Europe, other", zh: "欧洲其他地区" }, value: -1.4, text: "−1.4%" },
+          { label: { en: "Russia, other CIS and Ukraine", zh: "俄罗斯及独联体、乌克兰" }, value: -1.9, text: "−1.9%" },
+          { label: { en: "EU (27)", zh: "欧盟（27 国）" }, value: -5.0, text: "−5.0%" },
+          { label: { en: "Middle East", zh: "中东" }, value: -20.4, text: "−20.4%" },
+        ],
+        note: {
+          en: "Source: worldsteel, September 2026 crude steel production, 70 reporting countries.",
+          zh: "来源：世界钢铁协会《2026 年 9 月全球粗钢产量》，70 个报告国。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Selected crude steel producers — September 2026 versus September 2025",
+          zh: "主要粗钢生产国同比变化（2026 年 9 月 vs 2025 年 9 月）",
+        },
+        items: [
+          { label: { en: "Vietnam", zh: "越南" }, value: 29.1, text: "+29.1%" },
+          { label: { en: "United States (estimated)", zh: "美国（估计）" }, value: 4.3, text: "+4.3%" },
+          { label: { en: "India", zh: "印度" }, value: 1.9, text: "+1.9%" },
+          { label: { en: "Türkiye", zh: "土耳其" }, value: 0.8, text: "+0.8%" },
+          { label: { en: "China", zh: "中国" }, value: 0.1, text: "+0.1%" },
+          { label: { en: "Germany", zh: "德国" }, value: -13.0, text: "−13.0%" },
+        ],
+        note: {
+          en: "Source: worldsteel, September 2026 crude steel production. US figure is an estimate; other selected countries are reported figures.",
+          zh: "来源：世界钢铁协会《2026 年 9 月全球粗钢产量》。美国为估计值，其余为报告值。",
+        },
+      },
+    ],
+  },
+  {
     slug: "global-crude-steel-july-2026",
     date: "2026-08-24",
     publishAt: "2026-09-16",
@@ -710,6 +869,343 @@ export const NEWS = [
         note: {
           en: "Assessment period 1 April 2025 – 31 March 2026. Source: European Commission.",
           zh: "评估期：2025 年 4 月 1 日—2026 年 3 月 31 日。来源：欧盟委员会。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "world-bank-commodity-prices-oct-2026",
+    date: "2026-10-12",
+    draft: true,
+    dateText: { en: "12 October 2026", zh: "2026 年 10 月 12 日" },
+    category: "industry",
+    image: "gallery/factory-24",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "World Bank: energy index jumps 25.7% in September, crude oil averages USD 102.3 a barrel",
+      zh: "世界银行：9 月能源价格指数上涨 25.7%，原油月均价 102.3 美元/桶",
+    },
+    summary: {
+      en: "The World Bank's October Pink Sheet, published on 2 October, puts its energy price index up 25.7% in September: crude oil rose 21.2% to an average of USD 102.3 a barrel and natural gas 15.3%, leaving European gas at USD 25.42 per million British thermal units. Metals edged up 0.4%, with zinc at USD 4,021 a tonne and iron ore at USD 97.7 a dry metric tonne.",
+      zh: "世界银行 10 月版 Pink Sheet 于 10 月 2 日发布：9 月能源价格指数环比上涨 25.7%，原油上涨 21.2%、月均价 102.3 美元/桶，天然气上涨 15.3%，欧洲天然气均价 25.42 美元/百万英热单位。金属价格指数微涨 0.4%，锌 4021 美元/吨、铁矿石 97.7 美元/干吨。",
+    },
+    body: [
+      {
+        en: "The World Bank published the October 2026 edition of its Commodity Markets \u201cPink Sheet\u201d on 2 October, covering September. Its energy price index rose 25.7% month on month, led by crude oil (+21.2%) and natural gas (+15.3%). Crude oil averaged USD 102.3 a barrel in September against USD 84.4 in August, and Brent averaged USD 116.8; Australian coal averaged USD 147.1 a tonne. European natural gas averaged USD 25.42 per million British thermal units, up from USD 21.11 in August, while US gas was USD 2.95 and LNG delivered to Japan USD 14.25. The metals index rose 0.4%: aluminium averaged USD 3,283 a tonne, copper USD 14,474, zinc USD 4,021 and iron ore USD 97.7 a dry metric tonne.",
+        zh: "世界银行于 2026 年 10 月 2 日发布 10 月版《大宗商品价格数据（Pink Sheet）》，数据对应 9 月。当月能源价格指数环比上涨 25.7%，以原油（+21.2%）和天然气（+15.3%）为主。9 月原油均价 102.3 美元/桶，8 月为 84.4 美元；布伦特均价 116.8 美元；澳大利亚煤炭均价 147.1 美元/吨。欧洲天然气均价 25.42 美元/百万英热单位，高于 8 月的 21.11 美元；美国天然气为 2.95 美元，日本进口 LNG 为 14.25 美元。金属价格指数上涨 0.4%：铝均价 3283 美元/吨、铜 14474 美元/吨、锌 4021 美元/吨，铁矿石 97.7 美元/干吨。",
+      },
+      {
+        en: "The index values show how far the move goes. The World Bank's energy index stood at 148.9 in September (2010 = 100), against 108.8 in July, and the overall index reached 142.8. Non-energy commodities moved far less: the non-energy index rose 1.3%, with metals up 0.4%, raw materials 0.9%, fertilizers 0.4% and precious metals down 1.9%, while beverages fell 4.6%. The same file shows where a casting's inputs sit against their 2025 averages: zinc at USD 4,021 against USD 2,868, aluminium at USD 3,283 against USD 2,632, copper at USD 14,474 against USD 9,947, and iron ore at USD 97.7 against USD 100.2. The Pink Sheet reports monthly averages, so September's figures describe the whole month rather than a single day's spot price; the next edition is scheduled for 3 November 2026.",
+        zh: "指数本身说明了这轮涨幅的幅度。世界银行的能源价格指数 9 月为 148.9（2010 年 = 100），7 月为 108.8，整体指数升至 142.8。非能源类变化小得多：非能源指数上涨 1.3%，其中金属上涨 0.4%、原材料上涨 0.9%、化肥上涨 0.4%、贵金属下跌 1.9%，饮料下跌 4.6%。同一份数据也能看出铸件投入品相对 2025 年均价的位置：锌 4021 美元/吨（2025 年均价 2868 美元）、铝 3283 美元（2632 美元）、铜 14474 美元（9947 美元）、铁矿石 97.7 美元/干吨（100.2 美元）。Pink Sheet 记录的是月均价，因此 9 月数据代表整月水平，而不是某一天现货价；下一期定于 2026 年 11 月 3 日发布。",
+      },
+      {
+        en: "What this means for buyers \u2014 our assessment: energy and metal inputs are moving in different directions, and they land on a casting quotation at different points. Energy is the widest gap between producing regions \u2014 European gas at USD 25.42 per million British thermal units is over eight times the US price of USD 2.95, and it falls on the two steps a foundry cannot avoid: melting and heat treatment. A European buyer should ask which energy assumption a quotation carries and whether an energy surcharge applies, rather than treating the gas price as background. Base metals moved the other way from iron ore, so zinc at USD 4,021 a tonne has a direct effect where a part is coated or cast from a zinc-bearing alloy, while iron ore at USD 97.7 is close to its 2025 average and does not by itself justify an increase. Because the Pink Sheet publishes monthly averages while sea freight is re-quoted weekly, the practical step is to agree a reviewable re-quote window on the casting price and keep the freight validity separate \u2014 then ask which of the two lines a proposed increase is actually attached to.",
+        zh: "对采购方意味着什么（我们的判断）：能源与金属投入正朝不同方向走，而它们落在铸件报价上的位置并不相同。能源是各产区之间差异最大的一项——欧洲天然气 25.42 美元/百万英热单位，是美国 2.95 美元的八倍以上，而它正好落在铸造厂无法回避的两道工序上：熔炼与热处理。因此欧洲买家值得问清楚报价采用了什么能源假设、是否适用能源附加费，而不是把气价当作背景信息。基本金属与铁矿石方向相反：若零件需要镀层或使用含锌合金，锌 4021 美元/吨有直接影响；而铁矿石 97.7 美元/干吨接近 2025 年均价，本身不足以支撑一次涨价。由于 Pink Sheet 公布的是月均价、而海运费按周重报，可操作的做法是在铸件价格上约定可复核的重新报价窗口，并把海运有效期分开处理，再问清楚拟议的涨价究竟挂在哪一条上。",
+      },
+    ],
+    source: [
+      {
+        name: {
+          en: "World Bank \u2014 Commodity Markets Price Data (Pink Sheet), October 2026 edition, published 2 October 2026",
+          zh: "世界银行《大宗商品价格数据（Pink Sheet）》2026 年 10 月版（2026 年 10 月 2 日发布）",
+        },
+        url: "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-October-2026.pdf",
+        date: "2026-10-02",
+      },
+      {
+        name: {
+          en: "World Bank \u2014 Commodity Markets: latest commodity prices and month-on-month changes, published 2 October 2026",
+          zh: "世界银行《大宗商品市场》最新价格与环比变化（2026 年 10 月 2 日发布）",
+        },
+        url: "https://www.worldbank.org/en/research/commodity-markets",
+        date: "2026-10-02",
+      },
+    ],
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "World Bank commodity price indices and prices, September 2026 vs August 2026",
+          zh: "世界银行大宗商品价格指数与价格：2026 年 9 月 vs 8 月环比",
+        },
+        items: [
+          { label: { en: "Energy index", zh: "能源价格指数" }, value: 25.7, text: "+25.7%" },
+          { label: { en: "Crude oil, average", zh: "原油（均价）" }, value: 21.2, text: "+21.2%" },
+          { label: { en: "Natural gas", zh: "天然气" }, value: 15.3, text: "+15.3%" },
+          { label: { en: "Food", zh: "食品" }, value: 3.8, text: "+3.8%" },
+          { label: { en: "Non-energy index", zh: "非能源价格指数" }, value: 1.3, text: "+1.3%" },
+          { label: { en: "Raw materials", zh: "原材料" }, value: 0.9, text: "+0.9%" },
+          { label: { en: "Fertilizers", zh: "化肥" }, value: 0.4, text: "+0.4%" },
+          { label: { en: "Metals", zh: "金属" }, value: 0.4, text: "+0.4%" },
+          { label: { en: "Precious metals", zh: "贵金属" }, value: -1.9, text: "\u22121.9%" },
+          { label: { en: "Beverages", zh: "饮料" }, value: -4.6, text: "\u22124.6%" },
+        ],
+        note: {
+          en: "Source: World Bank, Commodity Markets \u2014 Pink Sheet, October 2026 edition (published 2 October 2026). Month-on-month change in September 2026; the Pink Sheet reports monthly averages.",
+          zh: "来源：世界银行《大宗商品价格数据（Pink Sheet）》2026 年 10 月版（2026 年 10 月 2 日发布）。为 2026 年 9 月环比变化；Pink Sheet 记录月均价。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Natural gas prices, September 2026 (USD per million British thermal units)",
+          zh: "天然气价格（美元/百万英热单位，2026 年 9 月）",
+        },
+        items: [
+          { label: { en: "Europe", zh: "欧洲" }, value: 25.42, text: "25.42" },
+          { label: { en: "LNG delivered to Japan", zh: "日本进口 LNG" }, value: 14.25, text: "14.25" },
+          { label: { en: "United States", zh: "美国" }, value: 2.95, text: "2.95" },
+        ],
+        note: {
+          en: "Source: World Bank Pink Sheet, October 2026 edition \u2014 September 2026 monthly averages.",
+          zh: "来源：世界银行 Pink Sheet 2026 年 10 月版——2026 年 9 月月均价。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "us-hydraulic-cylinder-dumping-investigation",
+    date: "2026-10-12",
+    draft: true,
+    dateText: { en: "12 October 2026", zh: "2026 年 10 月 12 日" },
+    category: "industry",
+    image: "process/machining-7",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "US opens AD/CVD cases on hydraulic cylinders, with petition margins up to 744.85%",
+      zh: "美国对液压缸发起反倾销与反补贴调查：诉状主张幅度最高 744.85%",
+    },
+    summary: {
+      en: "Commerce initiated antidumping investigations into linear hydraulic cylinders and parts from Canada, China, India, Korea and Mexico on 14 September 2026, and countervailing duty investigations into China, India and Mexico. The margins alleged in the petitions run from 56.79% for Mexico to 744.85% for Canada; the scope covers steel barrels and piston rods plus the parts shipped with them.",
+      zh: "美国商务部于 2026 年 9 月 14 日对加拿大、中国、印度、韩国、墨西哥的直线液压缸及零部件发起反倾销调查，并对中国、印度、墨西哥发起反补贴调查。诉状主张的幅度自墨西哥的 56.79% 到加拿大的 744.85%；涉案范围包括钢制缸筒与活塞杆，以及随其一同发运的零部件。",
+    },
+    body: [
+      {
+        en: "The US Department of Commerce initiated less-than-fair-value (antidumping) investigations into certain linear hydraulic cylinders and parts thereof from Canada, China, India, Korea and Mexico, in a notice published on 14 September 2026 and applicable from 8 September (cases A-122-879, A-570-240, A-533-952, A-580-923 and A-201-870). The petitions were filed on 29 July 2026 by the Hydraulic Cylinders Fair Trade Coalition and named US producers. The estimated dumping margins alleged in the petitions are 248.33% to 744.85% for Canada; 149.86% to 394.07% (Malaysia surrogate), 103.05% to 197.07% (Mexico surrogate) and 299.38% to 440.48% (T\u00fcrkiye surrogate) for China; 85.31% to 370.67% for India; 73.09% to 158.74% for Korea; and 56.79% to 157.12% for Mexico. Separate countervailing duty investigations were initiated the same day on imports from China, India and Mexico. These are margins alleged by the petitioners, not duty rates: at the initiation stage no duties apply.",
+        zh: "美国商务部于 2026 年 9 月 14 日发布公告（适用日期自 9 月 8 日起），对来自加拿大、中国、印度、韩国、墨西哥的直线液压缸及零部件发起低于公平价值（反倾销）调查（案号 A-122-879、A-570-240、A-533-952、A-580-923、A-201-870）。诉状由液压缸公平贸易联盟与数家美国生产商于 2026 年 7 月 29 日提交。诉状主张的倾销幅度为：加拿大 248.33%—744.85%；中国分别按马来西亚替代价 149.86%—394.07%、墨西哥替代价 103.05%—197.07%、土耳其替代价 299.38%—440.48%；印度 85.31%—370.67%；韩国 73.09%—158.74%；墨西哥 56.79%—157.12%。同日还对中国、印度、墨西哥的进口发起反补贴调查。上述数字是诉状主张的幅度，不是税率：在立案阶段不征收任何税款。",
+      },
+      {
+        en: "The scope is what decides whether a shipment is caught. Covered cylinders are hydraulically activated, have steel barrels, a bore of 25.4 mm (one inch) or more and a retracted length of 101.6 mm (four inches) or more, and the notice lists tie-rod, welded body, telescopic, plunger, rodless and other designs. Beyond complete cylinders, the scope covers steel barrels honed or skived and finished for cylinder use, hard-chrome-plated and machined steel piston rods, and any part attached to, assembled with or shipped with a covered barrel or rod \u2014 end caps, mounting flanges, trunnions, clevises, pistons, rings, seals and valves among them. Parts of that kind imported or invoiced separately are outside the scope. Goods stay in scope if they are only assembled or lightly processed in a third country, and a cylinder attached to equipment classified in Chapter 84 of the HTSUS is covered while the surrounding equipment is not. The merchandise is classified under HTSUS 8412.21.0015, 8412.21.0030, 8412.21.0045, 8412.21.0060, 8412.21.0075 and 8412.90.9005. The period of investigation is 1 July 2025 to 30 June 2026 for Canada, India, Korea and Mexico, and 1 January to 30 June 2026 for China, which Commerce treats as a non-market economy.",
+        zh: "决定一票货是否涉案的是范围条款。受调查的液压缸为液压驱动、钢制缸筒、内径不低于 25.4 毫米（1 英寸）、收起长度不低于 101.6 毫米（4 英寸），公告列举了拉杆式、焊接式、伸缩式、柱塞式、无杆式等结构。除整缸外，涉案范围还包括：经过珩磨或刮削滚光并完成缸筒用途加工的钢制缸筒；镀硬铬并机加工成活塞杆的钢棒或钢管；以及与涉案缸筒或活塞杆连接、组装或一并发运的任何零部件，例如端盖、安装法兰、耳轴、耳环、活塞、挡圈、密封件与阀。此类零部件若单独进口或单独开票，则不在范围内。仅在第三国组装或简单加工并不改变涉案属性；与《美国协调关税表》第 84 章设备一同进口的液压缸属于涉案产品，而该设备本身不属于。涉案商品的 HTSUS 编码为 8412.21.0015、8412.21.0030、8412.21.0045、8412.21.0060、8412.21.0075 与 8412.90.9005。调查期为加拿大、印度、韩国、墨西哥的 2025 年 7 月 1 日至 2026 年 6 月 30 日；中国被美方视为非市场经济体，调查期为 2026 年 1 月 1 日至 6 月 30 日。",
+      },
+      {
+        en: "What this means for buyers \u2014 our assessment: an investigation at this stage adds no duty, but it changes what is worth settling when an order is placed. The scope follows the part and not only the complete cylinder, so an end cap, a mounting flange or a piston rod shipped with a covered barrel carries the cylinder's exposure with it. The questions to put to a supplier are therefore documentary rather than commercial: which HTSUS code is used, whether a component is invoiced on its own or bundled with a cylinder, and whether the origin of the barrel and the rod can be stated and not only the place of final assembly \u2014 the third-country rule means assembling outside the five named countries does not by itself take a cylinder out of scope. On price, petition margins in this range usually appear as a shorter validity period rather than a cost line, so it is worth expecting hydraulic cylinder and cylinder-component quotations for US delivery to be dated more tightly, and to keep a second origin on the bid list. For buyers outside the United States the effect is indirect: volumes displaced from the US market look for other outlets, which is worth keeping in mind when comparing hydraulic or machined-cylinder quotes.",
+        zh: "对采购方意味着什么（我们的判断）：调查在此阶段不产生任何税款，但它改变了下单时值得一并确认的内容。涉案范围跟着零件走，而不只是整缸，因此与涉案缸筒一并发运的端盖、安装法兰或活塞杆会连同整缸一起承担相应敞口。因此要问供应商的问题偏文件性而非商务性：采用哪个 HTSUS 编码；某个零部件是单独开票还是与液压缸打包；以及能否说明缸筒与活塞杆的原产地，而不只是最终组装地——第三国条款意味着在这五个国家之外组装，本身并不使液压缸脱离涉案范围。价格方面，这一量级的诉状幅度通常表现为报价有效期缩短，而不是立刻增加一条成本：销往美国的液压缸与缸体零部件报价，有效期值得按更短的周期来安排，同时在比价名单里保留第二个产地来源。对美国以外的买家，影响是间接的——从美国市场被挤出的量会寻找其他出路，比较液压件或机加工缸体报价时值得考虑这一点。",
+      },
+    ],
+    source: [
+      {
+        name: {
+          en: "Federal Register \u2014 Certain Linear Hydraulic Cylinders and Parts Thereof From Canada, the People's Republic of China, India, the Republic of Korea, and Mexico: Initiation of Less-Than-Fair-Value Investigations (14 September 2026)",
+          zh: "美国《联邦公报》——加拿大、中国、印度、韩国、墨西哥直线液压缸及零部件反倾销调查立案公告（2026 年 9 月 14 日）",
+        },
+        url: "https://www.federalregister.gov/documents/2026/09/14/2026-18706/certain-linear-hydraulic-cylinders-and-parts-thereof-from-canada-the-peoples-republic-of-china-india",
+        date: "2026-09-14",
+      },
+      {
+        name: {
+          en: "Federal Register \u2014 Certain Linear Hydraulic Cylinders and Parts Thereof From the People's Republic of China, India, and Mexico: Initiation of Countervailing Duty Investigations (14 September 2026)",
+          zh: "美国《联邦公报》——中国、印度、墨西哥直线液压缸及零部件反补贴调查立案公告（2026 年 9 月 14 日）",
+        },
+        url: "https://www.federalregister.gov/documents/2026/09/14/2026-18707/certain-linear-hydraulic-cylinders-and-parts-thereof-from-the-peoples-republic-of-china-india-and",
+        date: "2026-09-14",
+      },
+    ],
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "Estimated dumping margins alleged in the petitions, by origin",
+          zh: "诉状主张的倾销幅度（按来源地）",
+        },
+        items: [
+          { label: { en: "Canada", zh: "加拿大" }, value: 744.85, text: "248.33\u2013744.85%" },
+          { label: { en: "China (T\u00fcrkiye surrogate)", zh: "中国（土耳其替代价）" }, value: 440.48, text: "299.38\u2013440.48%" },
+          { label: { en: "China (Malaysia surrogate)", zh: "中国（马来西亚替代价）" }, value: 394.07, text: "149.86\u2013394.07%" },
+          { label: { en: "India", zh: "印度" }, value: 370.67, text: "85.31\u2013370.67%" },
+          { label: { en: "China (Mexico surrogate)", zh: "中国（墨西哥替代价）" }, value: 197.07, text: "103.05\u2013197.07%" },
+          { label: { en: "Korea", zh: "韩国" }, value: 158.74, text: "73.09\u2013158.74%" },
+          { label: { en: "Mexico", zh: "墨西哥" }, value: 157.12, text: "56.79\u2013157.12%" },
+        ],
+        note: {
+          en: "Source: Federal Register, 14 September 2026 (China case A-570-240). Bars show the top of the range alleged in the petitions; the label gives the full range. Alleged margins are not duty rates, and no duties apply at the initiation stage.",
+          zh: "来源：美国《联邦公报》2026 年 9 月 14 日（中国案号 A-570-240）。条长为诉状主张区间的上限，文字为完整区间。主张幅度不等于税率，立案阶段不征税。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Structure of the two investigations opened on 14 September 2026 (number of countries)",
+          zh: "2026 年 9 月 14 日立案的两项调查覆盖范围（国家数）",
+        },
+        items: [
+          { label: { en: "Countries in the antidumping investigation", zh: "反倾销调查涉及国家" }, value: 5, text: "5" },
+          { label: { en: "Countries in the countervailing duty investigation", zh: "反补贴调查涉及国家" }, value: 3, text: "3" },
+          { label: { en: "Surrogate economies used to value Chinese inputs", zh: "用于评估中国投入成本的替代经济体" }, value: 3, text: "3" },
+        ],
+        note: {
+          en: "Source: Federal Register, 14 September 2026. Antidumping: Canada, China, India, Korea, Mexico. Countervailing duty: China, India, Mexico. Surrogate economies named in the petition: Malaysia, Mexico, T\u00fcrkiye.",
+          zh: "来源：美国《联邦公报》2026 年 9 月 14 日。反倾销：加拿大、中国、印度、韩国、墨西哥；反补贴：中国、印度、墨西哥；诉状列举的替代经济体：马来西亚、墨西哥、土耳其。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "worldsteel-demand-outlook-oct-2026",
+    date: "2026-10-12",
+    draft: true,
+    dateText: { en: "12 October 2026", zh: "2026 年 10 月 12 日" },
+    category: "industry",
+    image: "gallery/factory-17",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "worldsteel holds 2026 steel demand flat at 1,722 Mt, sees 1.7% growth in 2027",
+      zh: "世界钢铁协会：2026 年全球钢铁需求持平于 17.22 亿吨，2027 年预计增长 1.7%",
+    },
+    summary: {
+      en: "worldsteel's October 2026 outlook puts global steel demand at 1,722 Mt in 2026, unchanged from 2025, before growth of 1.7% to 1,752 Mt in 2027. Demand outside China is forecast to rise 1.5% this year and 4.0% next year.",
+      zh: "世界钢铁协会 2026 年 10 月展望预计，2026 年全球钢铁需求为 17.22 亿吨，与 2025 年持平；2027 年增长 1.7% 至 17.52 亿吨。中国以外需求今年预计增长 1.5%，明年增长 4.0%。",
+    },
+    body: [
+      {
+        en: "The World Steel Association (worldsteel) published its October 2026 Short Range Outlook on 12 October, based on information available in early September. It forecasts global steel demand unchanged from 2025 at 1,722 million tonnes in 2026, followed by growth of 1.7% to 1,752 Mt in 2027. Outside China, demand is forecast to rise 1.5% in 2026 and 4.0% in 2027; within China, it is forecast to fall 2.0% in 2026 and 1.0% in 2027.",
+        zh: "世界钢铁协会于 2026 年 10 月 12 日发布 10 月版短期展望，所用信息截至 9 月初。展望预计，2026 年全球钢铁需求为 17.22 亿吨，与 2025 年持平；2027 年增长 1.7% 至 17.52 亿吨。中国以外需求预计 2026 年增长 1.5%、2027 年增长 4.0%；中国需求预计 2026 年下降 2.0%、2027 年下降 1.0%。",
+      },
+      {
+        en: "The regional forecasts put the recovery on different timetables. Developed-world demand is forecast to grow 1.0% in 2026 and 2.2% in 2027; the United States 2.0% and approximately 1.5%; and the EU -0.3% and 3.1%. India is projected to grow 7.9% to 172.4 Mt in 2026 and 8.0% to 186.2 Mt in 2027. GCC demand is forecast to fall about 11% in 2026 before rebounding 11.3% in 2027, while ASEAN-5 growth is put at 5.2% and 3.2% in the two years.",
+        zh: "各区域复苏节奏并不一致。发达经济体需求预计 2026 年增长 1.0%、2027 年增长 2.2%；美国分别为 2.0% 和约 1.5%；欧盟为下降 0.3% 和增长 3.1%。印度需求预计 2026 年增长 7.9% 至 1.724 亿吨，2027 年增长 8.0% 至 1.862 亿吨。海湾合作委员会需求预计 2026 年下降约 11%，2027 年反弹 11.3%；东盟五国两年增速预计分别为 5.2% 和 3.2%。",
+      },
+      {
+        en: "What this means for buyers \u2014 our assessment: a flat global total hides a split in order momentum. The stronger outlook for the United States and India points to firmer demand for machinery, energy and infrastructure components, where long lead times for large machined castings can become the constraint before price does. The EU forecast is weaker in 2026 and stronger in 2027, so a buyer should phase a volume increase rather than commit the whole year on one outlook. We would keep rolling volume reviews, use separate validity periods for casting price and freight, and ask suppliers to confirm capacity for moulding, machining and surface treatment before a 2027 ramp-up. The outlook is a demand forecast, not an order book or a price commitment.",
+        zh: "对采购方意味着什么（我们的判断）：全球总量持平，掩盖了订单动能的区域分化。美国与印度前景较强，意味着机械、能源与基础设施零部件的需求更稳；在这类项目中，大型机加工铸件的长交期可能先于价格成为约束。欧盟需求预计 2026 年偏弱、2027 年转强，因此采购方宜分批增加用量，而不是依据一份展望一次性锁定全年。我们建议保留滚动用量复核，把铸件价格与海运有效期分开约定，并在 2027 年放量前向供应商确认造型、机加工与表面处理的产能。该展望是需求预测，不是订单簿，也不是价格承诺。",
+      },
+    ],
+    source: {
+      name: {
+        en: "World Steel Association (worldsteel) \u2014 Short Range Outlook, October 2026",
+        zh: "世界钢铁协会《2026 年 10 月短期展望》",
+      },
+      url: "https://worldsteel.org/media/press-releases/2026/worldsteel-short-range-outlook-october-2026/",
+      date: "2026-10-12",
+    },
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "Worldsteel steel demand growth forecast for 2026",
+          zh: "世界钢铁协会 2026 年钢铁需求增长预测",
+        },
+        items: [
+          { label: { en: "World", zh: "全球" }, value: 0, text: "0.0%" },
+          { label: { en: "Outside China", zh: "中国以外" }, value: 1.5, text: "+1.5%" },
+          { label: { en: "China", zh: "中国" }, value: -2, text: "\u22122.0%" },
+          { label: { en: "Developed world", zh: "发达经济体" }, value: 1, text: "+1.0%" },
+          { label: { en: "Developing economies excl. China", zh: "中国以外发展中经济体" }, value: 1.9, text: "+1.9%" },
+          { label: { en: "United States", zh: "美国" }, value: 2, text: "+2.0%" },
+          { label: { en: "EU", zh: "欧盟" }, value: -0.3, text: "\u22120.3%" },
+          { label: { en: "India", zh: "印度" }, value: 7.9, text: "+7.9%" },
+          { label: { en: "GCC", zh: "海湾合作委员会" }, value: -11, text: "\u2248\u221211%" },
+        ],
+        note: {
+          en: "Source: worldsteel, Short Range Outlook, October 2026, published 12 October 2026. Year-on-year change in apparent steel use; outlook based on information available in early September 2026.",
+          zh: "来源：世界钢铁协会《2026 年 10 月短期展望》，2026 年 10 月 12 日发布。为表观钢铁需求同比变化；展望所用信息截至 2026 年 9 月初。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Worldsteel steel demand growth forecast for 2027",
+          zh: "世界钢铁协会 2027 年钢铁需求增长预测",
+        },
+        items: [
+          { label: { en: "World", zh: "全球" }, value: 1.7, text: "+1.7%" },
+          { label: { en: "Outside China", zh: "中国以外" }, value: 4, text: "+4.0%" },
+          { label: { en: "China", zh: "中国" }, value: -1, text: "\u22121.0%" },
+          { label: { en: "Developed world", zh: "发达经济体" }, value: 2.2, text: "+2.2%" },
+          { label: { en: "Developing economies excl. China", zh: "中国以外发展中经济体" }, value: 5.1, text: "+5.1%" },
+          { label: { en: "United States", zh: "美国" }, value: 1.5, text: "\u2248+1.5%" },
+          { label: { en: "EU", zh: "欧盟" }, value: 3.1, text: "+3.1%" },
+          { label: { en: "India", zh: "印度" }, value: 8, text: "+8.0%" },
+          { label: { en: "GCC", zh: "海湾合作委员会" }, value: 11.3, text: "+11.3%" },
+        ],
+        note: {
+          en: "Source: worldsteel, Short Range Outlook, October 2026, published 12 October 2026. Year-on-year change in apparent steel use.",
+          zh: "来源：世界钢铁协会《2026 年 10 月短期展望》，2026 年 10 月 12 日发布。为表观钢铁需求同比变化。",
+        },
+      },
+    ],
+  },
+  {
+    slug: "us-fluid-end-block-duties-oct-2026",
+    date: "2026-10-19",
+    draft: true,
+    dateText: { en: "19 October 2026", zh: "2026 年 10 月 19 日" },
+    category: "industry",
+    image: "process/machining-5",
+    imageW: 1200,
+    imageH: 900,
+    title: {
+      en: "US sets 58.48% anti-dumping cash deposit for reviewed Italian fluid end blocks",
+      zh: "美国对意大利锻钢流体端块复审企业设定 58.48% 反倾销现金保证金率",
+    },
+    summary: {
+      en: "The US Federal Register published final results of the 2024 administrative review of forged steel fluid end blocks from Italy on 19 October 2026. The reviewed producer group received a 58.48% estimated weighted-average dumping margin based on total adverse facts available; the all-others cash deposit rate remains 7.33%.",
+      zh: "美国《联邦公报》于 2026 年 10 月 19 日公布意大利锻钢流体端块 2024 年行政复审终裁。受复审的生产商集团适用基于全部可获得不利事实确定的 58.48% 估计加权平均倾销幅度；其他企业现金保证金率仍为 7.33%。",
+    },
+    body: [
+      {
+        en: "The US Department of Commerce published the final results of its 2024 administrative review of the antidumping duty order on forged steel fluid end blocks from Italy in the Federal Register on 19 October 2026. The notice applies from that date and assigns Lucchini Mam\u00e9 Forge S.p.A., Lucchini Industries S.r.l. and Lucchini RS S.p.A., collectively Lucchini, an estimated weighted-average dumping margin of 58.48% for the review period from 1 January to 31 December 2024. Commerce says the rate is based on total adverse facts available, and it becomes the cash deposit rate for shipments by the reviewed companies entered, or withdrawn from warehouse, for consumption on or after publication.",
+        zh: "美国商务部于 2026 年 10 月 19 日在《联邦公报》公布意大利锻钢流体端块反倾销税令 2024 年行政复审终裁。公告自当日起适用，对 Lucchini Mam\u00e9 Forge S.p.A.、Lucchini Industries S.r.l. 与 Lucchini RS S.p.A.（合称 Lucchini）在 2024 年 1 月 1 日至 12 月 31 日复审期内适用 58.48% 的估计加权平均倾销幅度。商务部称该幅度基于全部可获得不利事实，并成为受复审企业在公告日或之后申报进入美国消费或从仓库提取时的现金保证金率。",
+      },
+      {
+        en: "The notice leaves the all-others cash deposit rate at 7.33%, the rate set in the original less-than-fair-value investigation. It also sets the timing for entries under review: Commerce intends to issue assessment instructions to US Customs and Border Protection no earlier than 35 days after publication. If a timely summons is filed at the US Court of International Trade, those instructions will keep liquidation open until the 90-day period for seeking a statutory injunction has expired. Before liquidation, importers must also file a certificate on the reimbursement of antidumping duties.",
+        zh: "公告将其他企业现金保证金率维持在 7.33%，即原反倾销调查确定的其他企业税率。公告还明确了复审所涉进口记录的后续时间：商务部拟在公告发布至少 35 天后向美国海关与边境保护局发出评估指令。若当事方及时向美国国际贸易法院提交传票，相关指令将在 90 天的法定禁令申请期届满前维持进口记录不予清算。清算前，进口商还须提交反倾销税补偿证明。",
+      },
+      {
+        en: "What this means for buyers \u2014 our assessment: this is a landed-cost issue before it is a price issue. For a US-bound order, confirm the exact producer and exporter, the entry date and the cash deposit rate that applies to that entity; an Italian quotation cannot be compared with another origin on product price alone while the reviewed supplier carries 58.48% and all others carry 7.33%. Ask the supplier and customs broker to reconcile the invoice, origin and deposit line before releasing the order, and keep duty changes separate from the casting price and freight in the quotation. Buyers with non-US destinations should still note the origin-specific exposure when comparing delivery options, but this notice does not itself impose a charge on those shipments.",
+        zh: "对采购方意味着什么（我们的判断）：这首先是到岸成本问题，其次才是产品价格问题。对美国目的地的订单，应确认实际生产商与出口商、进口申报日期及适用于该主体的现金保证金率；受复审供应商适用 58.48%，其他企业适用 7.33%，因此不能只比较产品单价来判断不同产地的报价。放行订单前，可要求供应商与报关代理核对发票、原产地和保证金项目，并在报价中把关税变化、铸件价格与海运费用分开列示。非美国目的地的买家在比较交付方案时也应留意产地相关的贸易措施敞口，但本公告本身不会对这些货物直接加征费用。",
+      },
+    ],
+    source: {
+      name: {
+        en: "Federal Register \u2014 Forged Steel Fluid End Blocks From Italy: Final Results of Antidumping Duty Administrative Review; 2024 (19 October 2026)",
+        zh: "美国《联邦公报》——意大利锻钢流体端块反倾销行政复审终裁：2024 年复审期（2026 年 10 月 19 日）",
+      },
+      url: "https://www.federalregister.gov/documents/2026/10/19/2026-21292/forged-steel-fluid-end-blocks-from-italy-final-results-of-antidumping-duty-administrative-review",
+      date: "2026-10-19",
+    },
+    charts: [
+      {
+        after: 1,
+        title: {
+          en: "US cash deposit rates after the 2024 review: reviewed producer vs all others",
+          zh: "2024 年复审后的美国现金保证金率：受复审生产商与其他企业",
+        },
+        items: [
+          { label: { en: "Reviewed producer group", zh: "受复审生产商集团" }, value: 58.48, text: "58.48%" },
+          { label: { en: "All other producers/exporters", zh: "其他生产商/出口商" }, value: 7.33, text: "7.33%" },
+        ],
+        note: {
+          en: "Source: Federal Register, final results published 19 October 2026. The reviewed rate is based on total adverse facts available; the all-others rate was established in the original less-than-fair-value investigation.",
+          zh: "来源：美国《联邦公报》2026 年 10 月 19 日终裁公告。受复审税率基于全部可获得不利事实；其他企业税率来自原反倾销调查。",
+        },
+      },
+      {
+        after: 2,
+        title: {
+          en: "Post-publication timing in the Federal Register notice",
+          zh: "《联邦公报》公告发布后的法定时间节点",
+        },
+        items: [
+          { label: { en: "Earliest assessment instructions", zh: "最早发出评估指令" }, value: 35, text: "35 days" },
+          { label: { en: "Court injunction window", zh: "法院禁令申请期" }, value: 90, text: "90 days" },
+        ],
+        note: {
+          en: "Source: Federal Register, 19 October 2026. Commerce intends to issue assessment instructions to CBP no earlier than 35 days after publication; a timely summons keeps liquidation open until the 90-day statutory injunction period expires.",
+          zh: "来源：美国《联邦公报》2026 年 10 月 19 日。商务部拟在公告后至少 35 天向美国海关与边境保护局发出评估指令；若及时提交传票，清算将在 90 天法定禁令申请期届满前维持开放。",
         },
       },
     ],

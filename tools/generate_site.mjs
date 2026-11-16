@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { SITE, NAV, UI, HOME, ABOUT, CAPABILITIES, QUALITY, APPLICATIONS, CERTIFICATES, FAQ, CONTACT, PRIVACY } from "./content.mjs";
+import { SITE, NAV, UI, HOME, ABOUT, CULTURE, CAPABILITIES, QUALITY, APPLICATIONS, CERTIFICATES, FAQ, CONTACT, PRIVACY } from "./content.mjs";
 import { PRODUCTS, CATEGORIES_TITLE, CATEGORIES_LEAD } from "./products.mjs";
 import {
   NEWS,
@@ -38,6 +38,25 @@ const esc = (s) =>
 const t = (o, lang) => (o && typeof o === "object" ? o[lang] ?? o.en : o ?? "");
 
 const pad2 = (n) => String(n).padStart(2, "0");
+
+/** 按 id 取导航项（用于 page() 的 active 高亮） */
+const nav = (id) => {
+  const item = NAV.find((n) => n.id === id);
+  if (!item) throw new Error(`NAV 中没有 id 为 ${id} 的项`);
+  return item;
+};
+
+/** 使命/愿景：按显式换行和标点断行，让对仗的几句各占一行（中文不在词中间断行） */
+const stacked = (text) => {
+  const zh = /[\u4e00-\u9fa5]/.test(text);
+  return text
+    .split(/\n+/)
+    .flatMap((line) => esc(line.trim()).split(zh ? /(?<=[，、：])/ : /(?<=[.,:]\s)/))
+    .filter(Boolean)
+    .join("<br>");
+};
+// 保留写法里的手动换行（用于"使命/愿景"下面的小字说明，与大字逐句对齐）
+const multi = (text) => esc(text).split("\n").map((line) => line.trim()).join("<br>");
 
 /* --------------------------------------------------------------- 页面输出 */
 
@@ -392,7 +411,7 @@ function inquiryForm(c, idPrefix) {
 </form>`;
 }
 
-function ctaBand(c, { title, text }) {
+function ctaBand(c, { title, text, btnLabel, btnHref = "contact.html" }) {
   return `
 <section class="cta-band">
   <div class="wrap cta-band__inner">
@@ -401,7 +420,7 @@ function ctaBand(c, { title, text }) {
       <p>${esc(text)}</p>
     </div>
     <div class="cta-band__actions">
-      <a class="btn btn--primary btn--lg" href="${c.u("contact.html")}">${esc(c.t(UI.getQuote))}</a>
+      <a class="btn btn--primary btn--lg" href="${c.u(btnHref)}">${esc(btnLabel ?? c.t(UI.getQuote))}</a>
       <a class="btn btn--ghost btn--lg" href="https://wa.me/${SITE.whatsapp}" target="_blank" rel="noopener">
         <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg>${esc(c.t(UI.whatsapp))}</a>
     </div>
@@ -654,6 +673,31 @@ function pageHome(c) {
   </div>
 </section>
 
+<section class="culture-hero" id="culture" aria-labelledby="culture-h">
+  <div class="culture-hero__media">${img(c, "scene/office-building", "", { w: 2400, h: 1350, sizes: "100vw", lazy: false })}</div>
+  <div class="culture-hero__scrim"></div>
+  <div class="wrap culture-hero__inner">
+    <div class="culture-hero__main">
+      <p class="culture-hero__kicker reveal">${esc(c.t(CULTURE.homeTitle))}</p>
+      <h2 class="culture-hero__mission reveal reveal--pop" id="culture-h" style="--d:90ms">${stacked(c.t(CULTURE.mission))}</h2>
+      <p class="culture-hero__note reveal" style="--d:170ms">${multi(c.t(CULTURE.missionNote))}</p>
+      <div class="culture-hero__vision reveal" style="--d:240ms">
+        <p class="culture-hero__label">${esc(c.t(CULTURE.visionTitle))}</p>
+        <p class="culture-hero__vision-text">${stacked(c.t(CULTURE.vision))}</p>
+        <p class="culture-hero__vision-note">${multi(c.t(CULTURE.visionNote))}</p>
+      </div>
+      <a class="culture-hero__link reveal" style="--d:320ms" href="${c.u("culture.html")}">${esc(c.t(CULTURE.aboutLink))}<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </div>
+    <aside class="culture-hero__values reveal reveal--pop" style="--d:200ms">
+      <p class="culture-hero__values-title">${esc(c.t(CULTURE.homeHabitsLabel))}</p>
+      <ul class="culture-hero__list">
+        ${CULTURE.values.map((v, i) => `<li class="culture-hero__value"><span class="culture-hero__num">0${i + 1}</span><span class="culture-hero__body"><span class="culture-hero__word">${esc(c.t(v))}</span><span class="culture-hero__def">${esc(c.isZh ? v.textZh : v.textEn)}</span></span></li>`).join("\n        ")}
+      </ul>
+      <p class="culture-hero__values-note">${esc(c.t(CULTURE.homeHabitsNote))}</p>
+    </aside>
+  </div>
+</section>
+
 <section class="section" id="products">
   <div class="wrap">
     <header class="section__head">
@@ -764,7 +808,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}
 
   return page(c, {
     file: "index.html",
-    active: NAV[0],
+    active: nav("home"),
     title: c.t(HOME.metaTitle),
     desc: c.t(HOME.metaDesc),
     body,
@@ -786,22 +830,20 @@ function pageAbout(c) {
   </div>
 </section>`;
     }
-    if (s.values) {
+    if (s.summaryLink) {
       return `
 <section class="section section--alt" id="${s.id}">
   <div class="wrap">
-    <h2 class="section__title">${esc(c.t(s.title))}</h2>
-    <div class="grid grid--2">
-      ${s.values.map((v) => `<article class="card card--plain reveal"><h3 class="card__title">${esc(c.t(v))}</h3><p class="card__text">${esc(c.isZh ? v.textZh : v.textEn)}</p></article>`).join("\n      ")}
+    <div class="section__head">
+      <h2 class="section__title">${esc(c.t(s.title))}</h2>
+      <p class="section__sub">${esc(c.t(CULTURE.aboutIntro))}</p>
     </div>
-    <div class="grid grid--2 grid--tight people-strip">
-      ${[["training-01", "公司内部培训", "In-house training"], ["training-02", "内部技术交流会议", "Internal technical review meeting"]].map(([n, zh, en]) => `
-      <figure class="gallery__item">
-        <button class="gallery__btn" type="button" data-lb-group="people" data-lb-src="${c.a(`img/people/${n}.jpg`)}" data-lb-cap="${esc(c.isZh ? zh : en)}">
-          ${img(c, `people/${n}`, c.isZh ? zh : en, { w: 1200, h: 900, thumb: true, cls: "", sizes: "(max-width:760px) 92vw, 46vw" })}
-        </button>
-      </figure>`).join("\n      ")}
+    <div class="grid grid--5">
+      ${CULTURE.values.map((v, i) => `<article class="card card--plain reveal reveal--pop" style="--d:${i * 70}ms"><span class="card__label">${esc(c.t(v))}</span><p class="card__text">${esc(c.isZh ? v.textZh : v.textEn)}</p></article>`).join("\n      ")}
     </div>
+    <p class="center-cta">
+      <a class="btn btn--outline" href="${c.u(s.summaryLink)}">${esc(c.t(CULTURE.aboutLink))}<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    </p>
   </div>
 </section>`;
     }
@@ -873,9 +915,127 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "about.html",
-    active: NAV[1],
+    active: nav("about"),
     title: c.t(ABOUT.metaTitle),
     desc: c.t(ABOUT.metaDesc),
+    ogImage: "banner/banner-about",
+    body,
+  });
+}
+
+/* ---------------------------------------------------------------- 企业文化 */
+
+function pageCulture(c) {
+  const photos = [
+    ["training-01", "公司内部培训", "In-house training session"],
+    ["training-02", "内部技术交流会", "Internal technical review"],
+  ].map(([n, zh, en]) => `
+      <figure class="gallery__item">
+        <button class="gallery__btn" type="button" data-lb-group="culture" data-lb-src="${c.a(`img/people/${n}.jpg`)}" data-lb-cap="${esc(c.isZh ? zh : en)}">
+          ${img(c, `people/${n}`, c.isZh ? zh : en, { w: 1200, h: 900, thumb: true, cls: "", sizes: "(max-width:760px) 92vw, (max-width:1024px) 46vw, 30vw" })}
+        </button>
+      </figure>`).join("");
+
+  /* 数字带只在确有数字时出现，避免页面上留一排"—" */
+  const statsFilled = CULTURE.stats.filter((s) => String(s.value || "").trim() !== "");
+
+  const creed = (label, text, note, delay) => `
+    <div class="creed__col reveal reveal--pop" style="--d:${delay}ms">
+      <p class="creed__label">${esc(label)}</p>
+      <p class="creed__text">${stacked(text)}</p>
+      <p class="creed__note">${multi(note)}</p>
+    </div>`;
+
+  const body = `
+${banner(c, { title: c.t(CULTURE.title), sub: c.t(CULTURE.lead), base: "banner/banner-about", file: "culture.html", crumbs: [{ file: "about.html", label: c.t(ABOUT.title) }] })}
+<nav class="subnav" aria-label="${c.isZh ? "本页目录" : "On this page"}">
+  <div class="wrap subnav__inner">
+    <a class="subnav__link" href="#creed">${esc(c.isZh ? "使命与愿景" : "Mission and vision")}</a>
+    <a class="subnav__link" href="#habits">${esc(c.t(CULTURE.valuesTitle))}</a>
+    <a class="subnav__link" href="#rules">${esc(c.t(CULTURE.principlesTitle))}</a>
+    <a class="subnav__link" href="#people">${esc(c.t(CULTURE.peopleTitle))}</a>
+    <a class="subnav__link" href="#hse">${esc(c.t(CULTURE.hseTitle))}</a>
+  </div>
+</nav>
+
+<section class="section" id="creed">
+  <div class="wrap">
+    <div class="creed">
+      ${creed(c.t(CULTURE.missionTitle), c.t(CULTURE.mission), c.t(CULTURE.missionNote), 0)}
+      ${creed(c.t(CULTURE.visionTitle), c.t(CULTURE.vision), c.t(CULTURE.visionNote), 150)}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="habits">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title">${esc(c.t(CULTURE.valuesTitle))}</h2>
+      <p class="section__sub">${esc(c.t(CULTURE.valuesNote))}</p>
+    </div>
+    <div class="grid grid--5">
+      ${CULTURE.values.map((v, i) => `<article class="card card--plain reveal reveal--pop" style="--d:${i * 70}ms"><span class="card__label">${esc(c.t(v))}</span><p class="card__text">${esc(c.isZh ? v.textZh : v.textEn)}</p></article>`).join("\n      ")}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title">${esc(c.t(CULTURE.principlesTitle))}</h2>
+      <p class="section__sub">${esc(c.t(CULTURE.principlesNote))}</p>
+    </div>
+    <div class="grid grid--3">
+      ${CULTURE.principles.map((p, i) => `<article class="card card--plain card--rule reveal reveal--pop" style="--d:${(i % 3) * 90}ms">
+        <span class="card__ico"><svg class="ico" aria-hidden="true"><use href="#${p.icon}"></use></svg></span>
+        <h3 class="card__title">${esc(c.t(p))}</h3>
+        <p class="card__text">${esc(c.isZh ? p.textZh : p.textEn)}</p>
+      </article>`).join("\n      ")}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="people">
+  <div class="wrap split">
+    <div class="split__media">
+      <div class="people-photos reveal reveal--pop">${photos}</div>
+    </div>
+    <div class="split__body">
+      <h2 class="section__title">${esc(c.t(CULTURE.peopleTitle))}</h2>
+      <p>${esc(c.t(CULTURE.peopleText))}</p>
+      ${statsFilled.length ? `<div class="numband reveal reveal--pop" style="--d:120ms">
+        ${statsFilled.map((s) => `<div class="numband__item"><span class="numband__v">${esc(s.value)}</span><span class="numband__l">${esc(c.t({ en: s.labelEn, zh: s.labelZh }))}</span></div>`).join("\n        ")}
+      </div>
+      <p class="numband__note">${esc(c.t(CULTURE.peopleNote))}</p>` : ""}
+      <h3 class="mini-title">${esc(c.t(CULTURE.trainingTitle))}</h3>
+      <ul class="ticklist reveal reveal--pop" style="--d:200ms">
+        ${CULTURE.training.map((x) => `<li>${esc(c.t(x))}</li>`).join("\n        ")}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hse">
+  <div class="wrap split">
+    <div class="split__body">
+      <h2 class="section__title">${esc(c.t(CULTURE.hseTitle))}</h2>
+      <p>${esc(c.t(CULTURE.hseText))}</p>
+    </div>
+    <div class="split__media">
+      <ul class="ticklist ticklist--lg reveal reveal--pop" style="--d:120ms">
+        ${CULTURE.hse.map((x) => `<li>${esc(c.t(x))}</li>`).join("\n        ")}
+      </ul>
+    </div>
+  </div>
+</section>
+
+${ctaBand(c, { title: c.t(CULTURE.ctaTitle), text: c.t(CULTURE.ctaText), btnLabel: c.t(CULTURE.ctaBtn) })}`;
+
+  return page(c, {
+    file: "culture.html",
+    active: nav("culture"),
+    title: c.t(CULTURE.metaTitle),
+    desc: c.t(CULTURE.metaDesc),
     ogImage: "banner/banner-about",
     body,
   });
@@ -923,7 +1083,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "products.html",
-    active: NAV[2],
+    active: nav("products"),
     title: c.isZh ? "产品中心 | 铸造与机加工零部件 — 菲美得泊头基地" : "Products | Castings & Machined Parts — FAMED Botou Plant",
     desc: c.t(CATEGORIES_LEAD),
     ogImage: "banner/banner-products",
@@ -1060,7 +1220,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}
 
   return page(c, {
     file: `product-${p.slug}.html`,
-    active: NAV[2],
+    active: nav("products"),
     title: `${c.t(p.name)} | ${c.isZh ? SITE.nameZh : SITE.nameEn}`,
     desc: `${c.t(p.tagline)} — ${c.t(p.intro[0]).slice(0, 110)}`,
     ogImage: `products/${p.slug}/01`,
@@ -1159,7 +1319,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "capabilities.html",
-    active: NAV[3],
+    active: nav("capabilities"),
     title: c.t(CAPABILITIES.metaTitle),
     desc: c.t(CAPABILITIES.metaDesc),
     ogImage: "banner/banner-capabilities",
@@ -1247,7 +1407,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "quality.html",
-    active: NAV[4],
+    active: nav("quality"),
     title: c.t(QUALITY.metaTitle),
     desc: c.t(QUALITY.metaDesc),
     ogImage: "banner/banner-quality",
@@ -1299,7 +1459,7 @@ ${ctaBand(c, { title: c.t(APPLICATIONS.ctaTitle), text: c.t(APPLICATIONS.ctaText
 
   return page(c, {
     file: "applications.html",
-    active: NAV[5],
+    active: nav("applications"),
     title: c.t(APPLICATIONS.metaTitle),
     desc: c.t(APPLICATIONS.metaDesc),
     ogImage: "banner/banner-applications",
@@ -1388,7 +1548,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "certificates.html",
-    active: NAV[6],
+    active: nav("certificates"),
     title: c.t(CERTIFICATES.metaTitle),
     desc: c.t(CERTIFICATES.metaDesc),
     ogImage: "banner/banner-certificates",
@@ -1439,7 +1599,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: "news.html",
-    active: NAV[7],
+    active: nav("news"),
     title: c.t(NEWS_META.metaTitle),
     desc: c.t(NEWS_META.metaDesc),
     ogImage: "banner/banner-news",
@@ -1538,7 +1698,7 @@ ${ctaBand(c, { title: c.t(HOME.ctaTitle), text: c.t(HOME.ctaText) })}`;
 
   return page(c, {
     file: `news-${n.slug}.html`,
-    active: NAV[7],
+    active: nav("news"),
     title: `${c.t(n.title)} | ${c.isZh ? SITE.nameZh : "FAMED"}`,
     desc: c.t(n.summary).slice(0, 158),
     ogImage: n.image,
@@ -1597,7 +1757,7 @@ ${items}
 
   return page(c, {
     file: "faq.html",
-    active: NAV[8],
+    active: nav("faq"),
     title: c.t(FAQ.metaTitle),
     desc: c.t(FAQ.metaDesc),
     ogImage: "banner/banner-faq",
@@ -1697,7 +1857,7 @@ ${banner(c, { title: c.t(CONTACT.title), sub: c.t(CONTACT.lead), base: "banner/b
 
   return page(c, {
     file: "contact.html",
-    active: NAV[9],
+    active: nav("contact"),
     title: c.t(CONTACT.metaTitle),
     desc: c.t(CONTACT.metaDesc),
     ogImage: "banner/banner-contact",
@@ -1759,6 +1919,7 @@ function page404(c) {
 const ROUTES = [
   { file: "index.html", render: pageHome, priority: "1.0", freq: "weekly" },
   { file: "about.html", render: pageAbout, priority: "0.8", freq: "monthly" },
+  { file: "culture.html", render: pageCulture, priority: "0.7", freq: "monthly" },
   { file: "products.html", render: pageProducts, priority: "0.9", freq: "monthly" },
   { file: "capabilities.html", render: pageCapabilities, priority: "0.8", freq: "monthly" },
   { file: "quality.html", render: pageQuality, priority: "0.7", freq: "monthly" },

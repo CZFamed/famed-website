@@ -30,9 +30,9 @@ node tools/serve.mjs          # 然后浏览器打开 http://localhost:5173/
 
 | 目录 / 文件 | 说明 |
 |---|---|
-| `index.html` 等 19 个 `.html` | **英文站**（默认，主入口） |
-| `zh\*.html` | **中文站**（19 个页面，与英文站一一对应） |
-| `assets\css\site.css` | 全站样式（设计系统 + 组件，无第三方依赖）。响应式断点集中在文件末尾 §9：1180 / 1080 / 760 / 480 / 420 / 360 |
+| `index.html` 等 20 个 `.html` | **英文站**（默认，主入口） |
+| `zh\*.html` | **中文站**（20 个页面，与英文站一一对应） |
+| `assets\css\site.css` | 全站样式（设计系统 + 组件，无第三方依赖）。响应式断点集中在文件末尾 §9：1240 / 1120 / 1080 / 1024 / 760 / 480 / 420 / 360 |
 | `assets\js\site.js` | 全站交互（导航、灯箱、手风琴、表单、Cookie 同意等） |
 | `assets\img\` | 已裁切压缩的图片素材（WebP + JPEG 双格式） |
 | `assets\img\brand\` | LOGO 与图标（由 `..\LOGO\` 同步而来，不要直接改这里） |
@@ -43,11 +43,12 @@ node tools/serve.mjs          # 然后浏览器打开 http://localhost:5173/
 | `_预览截图\` | 各页面预览截图：桌面端 13 张 + 手机端整页长图 10 张（**上线时不要上传**）；`旧版\` 是改版前的两张手机截图 |
 | `交付说明.md` | 设计说明、占位内容清单、待确认事项、上线清单 |
 
-### 页面清单（中英各 19 页）
+### 页面清单（中英各 20 页）
 
 ```
 首页                    index.html
-关于我们                about.html           公司简介 / 发展历程 / 企业文化 / 工厂掠影
+关于我们                about.html           公司简介 / 发展历程 / 企业文化（摘要与入口）/ 工厂掠影
+企业文化                culture.html         使命与愿景 / 5 条价值观 / 6 条工作规矩 / 铸件背后的人 / 安全与环境
 产品中心                products.html
   ├ 机床零部件            product-machine-tool-parts.html
   ├ 工程机械零部件        product-construction-machinery-parts.html

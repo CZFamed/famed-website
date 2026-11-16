@@ -1,7 +1,7 @@
 {
   "windowDays": 180,
   "note": "由 node tools/news_images.mjs --sync 从 tools/news.mjs 自动生成，不要手改。",
-  "generated": "2026-10-07",
+  "generated": "2026-10-27",
   "entries": [
     {
       "img": "certs/hitech-enterprise",

@@ -27,6 +27,7 @@ DEFAULT_OUT = r"D:\agent开发\菲美得\公司网站\assets\img"
 # 槽位：目标尺寸 + 缩略图尺寸
 SLOTS = {
     "hero":   {"size": (2400, 1100), "thumb": None},
+    "office": {"size": (2400, 1350), "thumb": (800, 450)},
     "banner": {"size": (2000, 800),  "thumb": (800, 320)},
     "card":   {"size": (1200, 900),  "thumb": (600, 450)},
     "tall":   {"size": (900, 1200),  "thumb": (450, 600)},
@@ -46,6 +47,7 @@ ITEMS = [
     ("hero",   "hero/hero-home",            "厂区_场景/厂房/1.jpg",  (0.5, 0.45), "消失模铸造车间内景：蓝色除尘系统与黄色铸件周转区"),
     ("hero",   "hero/hero-home-alt",        "厂区_场景/厂房/2251dd58506fe701b09c608bb4f3e097.jpg", (0.5, 0.5), "铸造车间内部全景，通道两侧摆放蓝色金属箱体与排风管道"),
     ("banner", "banner/banner-about",       "厂区_场景/厂房/9a773cb3fc77360e98642d9f5703ba48.jpg", (0.5, 0.5), "大型钢结构厂房内地面堆放多件弧形铸件毛坯，工人戴安全帽在作业区旁活动"),
+    ("office", "scene/office-building",     "厂区_场景/厂房/feimeide-gate-hero-16x9-logo.jpg",   (0.5, 0.5), "公司办公大楼正面：四层浅色立面、厂区大门、石狮与「沧州菲美得」招牌墙，蓝天白云"),
     ("banner", "banner/banner-products",    "铸件/壳体/IMG_20241122_160745.jpg", (0.5, 0.5), "车间内大量灰色阀体成品整齐码放于木托盘"),
     ("banner", "banner/banner-capabilities","生产流程/机加工/IMG_20201012_094906.jpg", (0.5, 0.5), "机加工作业区一排大型数控加工中心整齐排列"),
     ("banner", "banner/banner-quality",     "铸件/箱体_支座/IMG_20231029_095938.jpg", (0.5, 0.5), "大型灰铁箱体铸件正在进行三维扫描检测"),

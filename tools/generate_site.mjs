@@ -319,9 +319,9 @@ function header(c, active) {
 </div>`;
 }
 
-function banner(c, { title, sub, base, file, crumbs = [], w = 2000, h = 800 }) {
+function banner(c, { title, sub, base, file, crumbs = [], w = 2000, h = 800, sectionCls = "" }) {
   return `
-<section class="banner">
+<section class="banner${sectionCls ? " " + sectionCls : ""}">
   <div class="banner__media">${img(c, base, title, { w, h, sizes: "100vw", lazy: false })}</div>
   <div class="banner__scrim"></div>
   <div class="wrap banner__inner">
@@ -947,7 +947,7 @@ function pageCulture(c) {
     </div>`;
 
   const body = `
-${banner(c, { title: c.t(CULTURE.title), sub: c.t(CULTURE.lead), base: "banner/banner-about", file: "culture.html", crumbs: [{ file: "about.html", label: c.t(ABOUT.title) }] })}
+${banner(c, { title: c.t(CULTURE.title), sub: c.t(CULTURE.lead), base: "scene/office-building", file: "culture.html", sectionCls: "banner--culture", w: 2400, h: 1350, crumbs: [{ file: "about.html", label: c.t(ABOUT.title) }] })}
 <nav class="subnav" aria-label="${c.isZh ? "本页目录" : "On this page"}">
   <div class="wrap subnav__inner">
     <a class="subnav__link" href="#creed">${esc(c.isZh ? "使命与愿景" : "Mission and vision")}</a>

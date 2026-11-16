@@ -604,6 +604,8 @@ dl, dd, dt, figure, blockquote { margin: 0; }
 .banner { position: relative; min-height: clamp(300px, 38vh, 420px); display: flex; align-items: flex-end; overflow: hidden; }
 .banner__media { position: absolute; inset: 0; }
 .banner__media img { width: 100%; height: 100%; object-fit: cover; }
+/* 企业文化页横幅与首页同图，取景偏下一点，让门楼与招牌墙落在可视带里 */
+.banner--culture .banner__media img { object-position: 50% 56%; }
 .banner__scrim {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(6, 20, 36, .92) 0%, rgba(7, 23, 41, .74) 48%, rgba(7, 23, 41, .44) 100%);

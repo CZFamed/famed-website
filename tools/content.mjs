@@ -385,8 +385,8 @@ export const CULTURE = {
 
   principlesTitle: { en: "Six rules we work to", zh: "六条工作规矩" },
   principlesNote: {
-    en: "The checkable version of the values above — the things a supplier audit can actually test.",
-    zh: "上面五条价值观的可检查版本——供应商审核时可以逐条核。",
+    en: "Six rules I set: the plant works to them, and customers can check them.",
+    zh: "这六条是我定的：厂里照着做，客户照着查。",
   },
   principles: [
     {

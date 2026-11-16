@@ -333,6 +333,25 @@ ssh root@43.172.68.85 "cd /var/www/famed-website && git pull --ff-only"
 
 拉取完即生效，静态文件不需要重启 nginx。
 
+### 自动拉取（2026-11-16 已配置）
+
+服务器上装了每分钟执行一次的同步任务，**push 到 `main` 之后不用再手动 pull**，
+最多 1 分钟内官网自动更新：
+
+| 项目 | 位置 |
+|---|---|
+| 同步脚本 | `/usr/local/bin/famed-site-pull.sh` |
+| cron 条目（root） | `* * * * * /usr/local/bin/famed-site-pull.sh` |
+| 运行日志 | `/var/log/famed-site-pull.log`（weekly 轮转，保留 4 份） |
+| 锁文件 | `/var/lock/famed-site-pull.lock`（上一轮没跑完就跳过） |
+
+脚本做三件事：`git fetch origin main` → 与本地 HEAD 比对 → 不一致就 `git reset --hard origin/main`。
+
+注意两点：
+
+1. **服务器目录是只读镜像**，不要在服务器上直接改文件——下次同步会被 GitHub 上的版本覆盖。
+2. 想临时停用：`crontab -e` 删掉那一行，或把脚本 `chmod -x`。
+
 ### 怎么确认上线成功
 
 1. 服务器上看版本：`cd /var/www/famed-website && git log --oneline -1`，应为刚推的提交；

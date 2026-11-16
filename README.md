@@ -314,78 +314,49 @@ powershell -File tools\publish_github.ps1 -IncludeNonSource
 
 ---
 
-## 十、部署到 Cloudflare Workers
+## 十、部署上线（腾讯云 Lighthouse + nginx）
 
-线上地址：<https://czfamed.czfamed1.workers.dev/>（英文在根目录，中文在 `/zh/`）。
+线上地址：<https://www.czfamed.com/>（英文在根目录，中文在 `/zh/`）。
+链路：**改内容 → 重新生成 → 推 GitHub → 服务器 `git pull`**。
 
-链路是：**改内容 → 重新生成 → 推 GitHub → Cloudflare 自动构建上线**。
-
-部署由 Cloudflare 控制台里的 **Git 集成（Workers Builds）** 完成：仓库连了 `main` 分支，
-每次 push 它会自动构建并部署，**不需要任何密钥，也不用额外敲命令**。
+服务器：腾讯云轻量应用服务器 `43.172.68.85`（OpenCloudOS），网站目录 `/var/www/famed-website`
+就是这个仓库的克隆；nginx 直接把它当网站根目录，配置在
+`/etc/nginx/conf.d/www.czfamed.com.conf`。
 
 ```powershell
-cd "D:\agent开发\菲美得\公司网站"
-node tools\generate_site.mjs                              # 重新生成 38 个页面
-powershell -File tools\publish_github.ps1 -Message "改了什么"   # 推送
-# 推完约 1 分钟自动上线
+cd "D:\agent开发\菲美得\网站源码-GitHub"
+node tools\generate_site.mjs                 # 重新生成整站（中英各 20 页）
+node tools\check_site.mjs                    # 上线前自检
+git add -A; git commit -m "改了什么"; git push origin main
+ssh root@43.172.68.85 "cd /var/www/famed-website && git pull --ff-only"
 ```
+
+拉取完即生效，静态文件不需要重启 nginx。
 
 ### 怎么确认上线成功
 
-1. GitHub 上这次提交旁边会有 `Workers Builds: czfamed` 的检查项，**success** 就是构建并部署成功；
-2. 想核对线上内容，抓 `https://czfamed.czfamed1.workers.dev/zh/`，在返回的 HTML 里搜
-   `id="i-group"`（图标是否齐全）或看页脚有没有多出来的东西。
-
-### 建议做一次的设置：让检查拦住坏版本
-
-完整性检查现在跑在 GitHub Actions 里，能在提交上看到红绿，但**拦不住 Cloudflare 的部署**——
-检查不通过时 Cloudflare 照样会把站点发出去。想让它真正挡住，去控制台做一次设置：
-
-> Workers & Pages → `czfamed` → Settings → Build → **Build command** 填
-> `node tools/check_site.mjs`（Deploy command 保持默认 `npx wrangler deploy`）
-
-之后每次构建会先跑这个检查，不通过就中止，坏版本上不了线。
-
-### 部署相关文件
-
-| 文件 | 作用 |
-|---|---|
-| `wrangler.jsonc` | Cloudflare 部署配置。`name` 必须与线上 Worker 同名（`czfamed`），否则会新建一个 Worker 而不是更新线上那个 |
-| `.assetsignore` | 决定哪些文件**不**上传：`tools\`、`_素材审阅\`、`_预览截图\`、`assets\video\`、`README.md`、`交付说明.md` 等 |
-| `tools/check_site.mjs` | 完整性检查，本地和 CI 都能跑，见下 |
-| `.github/workflows/deploy-cloudflare.yml` | **可选的备用部署路径**：默认只跑完整性检查、不部署（部署由 Cloudflare 负责）；哪天不用 Git 集成了，往仓库加 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 两个 secret，它就会自己接手部署 |
-
-### 完整性检查（`tools/check_site.mjs`）
-
-本地随时可以手动跑，GitHub Actions 每次 push 也会跑：
-
-```powershell
-node tools\check_site.mjs
-```
-
-它检查三件事，任一不通过就**中断部署**（退出码 1）：
-
-1. 每个页面的 `<use href="#图标">` 都能在本页找到对应 `<symbol>` 定义。
-   SVG 引用未定义符号时不报错、只渲染成空白，2026-09-14 首页「为什么选择」三格
-   图标就是这么坏掉的，这条专门防它。
-2. 各页 sprite 完全一致（防止个别页面停留在旧版本生成结果）。
-3. 页面与 CSS 里引用的本地文件都存在。
-
-### 本地手动部署（可选）
-
-不想走 GitHub 也可以在本地直接推：
-
-```powershell
-cd "D:\agent开发\菲美得\公司网站"
-npx wrangler@4 login      # 首次会开浏览器登录 Cloudflare
-npx wrangler@4 deploy
-```
+1. 服务器上看版本：`cd /var/www/famed-website && git log --oneline -1`，应为刚推的提交；
+2. 线上探活：`curl -s -o /dev/null -w "%{http_code}\n" https://www.czfamed.com/`；
+3. 浏览器 `Ctrl+F5` 强刷（CSS/JS 有缓存）。
 
 ### 出问题时先看这里
 
 | 现象 | 处理 |
 |---|---|
-| 推送后线上没变化 | 看 GitHub 提交旁边的 `Workers Builds: czfamed` 检查项：失败就点进去看构建日志；成功但页面没变，先 Ctrl+F5 强制刷新排除浏览器缓存 |
-| 构建失败但看不懂 | 常见原因是 `wrangler.jsonc` 里的 `name` 与线上 Worker 名不一致，或 `.assetsignore` 把必需文件排除了 |
-| 想确认线上是哪一版 | 抓 `https://czfamed.czfamed1.workers.dev/zh/`，搜 `id="i-group"`；再看页脚有没有已删除的链接 |
-| 找不到控制台入口 | Workers & Pages → `czfamed`（账户子域 `czfamed1`）→ Deployments 能看到每次构建对应的提交 |
+| 推了但线上没变 | 服务器没拉：`cd /var/www/famed-website && git pull --ff-only` |
+| pull 报冲突 | 服务器上有手工改过的文件：`git status` 看清后备份，再 `git checkout -- .` 或 `git reset --hard origin/main` |
+| 页面 404 | 确认 nginx 的 `root` 仍是 `/var/www/famed-website`；改过配置就 `nginx -t && nginx -s reload` |
+| 样式没更新 | 强刷页面；再确认 `/assets/css/site.css` 返回的是新文件 |
+| 证书到期 | 证书在 `/etc/nginx/ssl/czfamed/`，换文件后 `nginx -s reload` |
+
+### 安全性：仓库内部文件不对外
+
+站点根目录就是仓库，所以 nginx 里做了拦截（2026-11-16）：`/tools/`、`/.github/`、点文件、
+`*.md`、`*.bak`、`*.mjs`、`*.py`、`*.yml` 一律返回 404。改配置前的原件备份在
+`/root/www.czfamed.com.conf.bak-20261116`。
+
+### Cloudflare Workers（历史方案，已不用于主站）
+
+早期计划过 Cloudflare Workers 部署，`wrangler.jsonc`、`.assetsignore` 和
+`czfamed.czfamed1.workers.dev` 都还留在仓库里，但主站现在走腾讯云，这些只作历史保留。
+`.github/workflows/deploy-cloudflare.yml` 默认只跑完整性检查，不做部署。

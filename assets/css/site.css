@@ -308,6 +308,9 @@ dl, dd, dt, figure, blockquote { margin: 0; }
   margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
   font-size: 14px; font-weight: 600;
 }
+/* 普通下拉（关于我们 / 制造能力）：单列窄面板 */
+.nav__panel--list { width: 252px; padding: 10px; }
+.nav__panel--list .nav__panel-list { grid-template-columns: 1fr; }
 
 .header__actions { display: flex; align-items: center; gap: 12px; flex: none; }
 

@@ -57,17 +57,27 @@ export const SITE = {
 /** 一级导航 */
 export const NAV = [
   { id: "home", file: "index.html", en: "Home", zh: "首页" },
-  { id: "about", file: "about.html", en: "About Us", zh: "关于我们" },
-  { id: "culture", file: "culture.html", en: "Culture", zh: "企业文化" },
+  {
+    id: "about", file: "about.html", en: "About", zh: "关于我们",
+    children: [
+      { id: "about", file: "about.html", en: "About us", zh: "关于我们" },
+      { id: "culture", file: "culture.html", en: "Culture", zh: "企业文化" },
+      { id: "certificates", file: "certificates.html", en: "Certificates", zh: "资质荣誉" },
+      { id: "news", file: "news.html", en: "News", zh: "新闻资讯" },
+    ],
+  },
   {
     id: "products", file: "products.html", en: "Products", zh: "产品中心",
     children: "products",
   },
-  { id: "capabilities", file: "capabilities.html", en: "Capabilities", zh: "制造能力" },
-  { id: "quality", file: "quality.html", en: "Quality", zh: "质量控制" },
-  { id: "applications", file: "applications.html", en: "Applications", zh: "应用领域" },
-  { id: "certificates", file: "certificates.html", en: "Certificates", zh: "资质荣誉" },
-  { id: "news", file: "news.html", en: "News", zh: "新闻资讯" },
+  {
+    id: "capabilities", file: "capabilities.html", en: "Capabilities", zh: "制造能力",
+    children: [
+      { id: "capabilities", file: "capabilities.html", en: "Manufacturing", zh: "制造能力" },
+      { id: "quality", file: "quality.html", en: "Quality control", zh: "质量控制" },
+      { id: "applications", file: "applications.html", en: "Applications", zh: "应用领域" },
+    ],
+  },
   { id: "faq", file: "faq.html", en: "FAQ", zh: "常见问题" },
   { id: "contact", file: "contact.html", en: "Contact", zh: "联系我们" },
 ];

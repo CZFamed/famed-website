@@ -62,8 +62,17 @@
     <nav class="nav" aria-label="Main navigation">
       <ul class="nav__list">
     <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
-    <li class="nav__item"><a class="nav__link is-active" href="about.html" aria-current="page">About Us</a></li>
-    <li class="nav__item"><a class="nav__link" href="culture.html">Culture</a></li>
+    <li class="nav__item nav__item--has-panel">
+      <a class="nav__link is-active" href="about.html" aria-haspopup="true" aria-expanded="false">About<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
+      <div class="nav__panel nav__panel--list" role="group">
+        <ul class="nav__panel-list">
+          <li><a class="nav__panel-link" href="about.html">About us</a></li>
+          <li><a class="nav__panel-link" href="culture.html">Culture</a></li>
+          <li><a class="nav__panel-link" href="certificates.html">Certificates</a></li>
+          <li><a class="nav__panel-link" href="news.html">News</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="nav__item nav__item--has-panel">
       <a class="nav__link" href="products.html" aria-haspopup="true" aria-expanded="false">Products<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
       <div class="nav__panel" role="group">
@@ -75,11 +84,16 @@
         <a class="nav__panel-all" href="products.html">All products<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
       </div>
     </li>
-    <li class="nav__item"><a class="nav__link" href="capabilities.html">Capabilities</a></li>
-    <li class="nav__item"><a class="nav__link" href="quality.html">Quality</a></li>
-    <li class="nav__item"><a class="nav__link" href="applications.html">Applications</a></li>
-    <li class="nav__item"><a class="nav__link" href="certificates.html">Certificates</a></li>
-    <li class="nav__item"><a class="nav__link" href="news.html">News</a></li>
+    <li class="nav__item nav__item--has-panel">
+      <a class="nav__link" href="capabilities.html" aria-haspopup="true" aria-expanded="false">Capabilities<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
+      <div class="nav__panel nav__panel--list" role="group">
+        <ul class="nav__panel-list">
+          <li><a class="nav__panel-link" href="capabilities.html">Manufacturing</a></li>
+          <li><a class="nav__panel-link" href="quality.html">Quality control</a></li>
+          <li><a class="nav__panel-link" href="applications.html">Applications</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="nav__item"><a class="nav__link" href="faq.html">FAQ</a></li>
     <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
       </ul>
@@ -104,14 +118,9 @@
   <nav class="drawer__nav" aria-label="Mobile navigation">
     <ul class="drawer__list">
       <li class="drawer__item"><a class="drawer__link" href="index.html">Home</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="about.html">About Us</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="culture.html">Culture</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="about.html">About</a><ul class="drawer__sub"><li><a href="culture.html">Culture</a></li><li><a href="certificates.html">Certificates</a></li><li><a href="news.html">News</a></li></ul></li>
       <li class="drawer__item"><a class="drawer__link" href="products.html">Products</a><ul class="drawer__sub"><li><a href="product-machine-tool-parts.html">Machine Tool Parts</a></li><li><a href="product-construction-machinery-parts.html">Construction Machinery Parts</a></li><li><a href="product-pump-valve-parts.html">Pump &amp; Valve Housings and Bodies</a></li></ul></li>
-      <li class="drawer__item"><a class="drawer__link" href="capabilities.html">Capabilities</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="quality.html">Quality</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="applications.html">Applications</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="certificates.html">Certificates</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="news.html">News</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="capabilities.html">Capabilities</a><ul class="drawer__sub"><li><a href="quality.html">Quality control</a></li><li><a href="applications.html">Applications</a></li></ul></li>
       <li class="drawer__item"><a class="drawer__link" href="faq.html">FAQ</a></li>
       <li class="drawer__item"><a class="drawer__link" href="contact.html">Contact</a></li>
     </ul>
@@ -380,13 +389,13 @@
     <div class="footer__col">
       <h3 class="footer__title">Quick links</h3>
       <ul class="footer__list">
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About us</a></li>
         <li><a href="culture.html">Culture</a></li>
-        <li><a href="capabilities.html">Capabilities</a></li>
-        <li><a href="quality.html">Quality</a></li>
-        <li><a href="applications.html">Applications</a></li>
         <li><a href="certificates.html">Certificates</a></li>
         <li><a href="news.html">News</a></li>
+        <li><a href="capabilities.html">Manufacturing</a></li>
+        <li><a href="quality.html">Quality control</a></li>
+        <li><a href="applications.html">Applications</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>

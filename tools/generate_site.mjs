@@ -39,9 +39,13 @@ const t = (o, lang) => (o && typeof o === "object" ? o[lang] ?? o.en : o ?? "");
 
 const pad2 = (n) => String(n).padStart(2, "0");
 
-/** 按 id 取导航项（用于 page() 的 active 高亮） */
+/** 导航项拍平（一级 + 下拉子项），下拉里可能还带 "products" 这种特殊标记 */
+const navLeaves = (n) => (Array.isArray(n.children) ? n.children : [n]);
+const NAV_FLAT = NAV.flatMap(navLeaves);
+
+/** 按 id 取导航项（用于 page() 的 active 高亮）；子项也能取到 */
 const nav = (id) => {
-  const item = NAV.find((n) => n.id === id);
+  const item = NAV_FLAT.find((n) => n.id === id);
   if (!item) throw new Error(`NAV 中没有 id 为 ${id} 的项`);
   return item;
 };
@@ -253,8 +257,14 @@ function topbar(c, active) {
 }
 
 function header(c, active) {
+  /* 一级项高亮：自己在当前页，或它下拉里的某一页是当前页 */
+  const isOn = (n) =>
+    n.id === active.id ||
+    n.file === active.file ||
+    (Array.isArray(n.children) && n.children.some((ch) => ch.id === active.id || ch.file === active.file));
+
   const items = NAV.map((n) => {
-    const on = n.id === active.id;
+    const on = isOn(n);
     if (n.children === "products") {
       return `<li class="nav__item nav__item--has-panel">
       <a class="nav__link${on ? " is-active" : ""}" href="${c.u(n.file)}" aria-haspopup="true" aria-expanded="false">${esc(c.t(n))}<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
@@ -266,7 +276,17 @@ function header(c, active) {
       </div>
     </li>`;
     }
-    return `<li class="nav__item"><a class="nav__link${on ? " is-active" : ""}" href="${c.u(n.file)}"${on ? ' aria-current="page"' : ""}>${esc(c.t(n))}</a></li>`;
+    if (Array.isArray(n.children)) {
+      return `<li class="nav__item nav__item--has-panel">
+      <a class="nav__link${on ? " is-active" : ""}" href="${c.u(n.file)}" aria-haspopup="true" aria-expanded="false">${esc(c.t(n))}<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
+      <div class="nav__panel nav__panel--list" role="group">
+        <ul class="nav__panel-list">
+          ${n.children.map((ch) => `<li><a class="nav__panel-link" href="${c.u(ch.file)}">${esc(c.t(ch))}</a></li>`).join("\n          ")}
+        </ul>
+      </div>
+    </li>`;
+    }
+    return `<li class="nav__item"><a class="nav__link${on ? " is-active" : ""}" href="${c.u(n.file)}"${on && n.id === active.id ? ' aria-current="page"' : ""}>${esc(c.t(n))}</a></li>`;
   }).join("\n    ");
 
   return `
@@ -307,7 +327,9 @@ function header(c, active) {
       ${NAV.map((n) => {
         const sub = n.children === "products"
           ? `<ul class="drawer__sub">${PRODUCTS.map((p) => `<li><a href="${c.u(`product-${p.slug}.html`)}">${esc(c.t(p.name))}</a></li>`).join("")}</ul>`
-          : "";
+          : Array.isArray(n.children)
+            ? `<ul class="drawer__sub">${n.children.filter((ch) => ch.file !== n.file).map((ch) => `<li><a href="${c.u(ch.file)}">${esc(c.t(ch))}</a></li>`).join("")}</ul>`
+            : "";
         return `<li class="drawer__item"><a class="drawer__link" href="${c.u(n.file)}">${esc(c.t(n))}</a>${sub}</li>`;
       }).join("\n      ")}
     </ul>
@@ -451,7 +473,7 @@ function footer(c) {
     <div class="footer__col">
       <h3 class="footer__title">${c.isZh ? "快速链接" : "Quick links"}</h3>
       <ul class="footer__list">
-        ${NAV.filter((n) => !["home", "products"].includes(n.id)).map((n) => `<li><a href="${c.u(n.file)}">${esc(c.t(n))}</a></li>`).join("\n        ")}
+        ${NAV.filter((n) => !["home", "products"].includes(n.id)).flatMap(navLeaves).map((n) => `<li><a href="${c.u(n.file)}">${esc(c.t(n))}</a></li>`).join("\n        ")}
         <li><a href="${c.u("privacy.html")}">${esc(c.t(PRIVACY.title))}</a></li>
       </ul>
     </div>

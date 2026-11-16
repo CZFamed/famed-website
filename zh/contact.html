@@ -62,8 +62,17 @@
     <nav class="nav" aria-label="主导航">
       <ul class="nav__list">
     <li class="nav__item"><a class="nav__link" href="index.html">首页</a></li>
-    <li class="nav__item"><a class="nav__link" href="about.html">关于我们</a></li>
-    <li class="nav__item"><a class="nav__link" href="culture.html">企业文化</a></li>
+    <li class="nav__item nav__item--has-panel">
+      <a class="nav__link" href="about.html" aria-haspopup="true" aria-expanded="false">关于我们<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
+      <div class="nav__panel nav__panel--list" role="group">
+        <ul class="nav__panel-list">
+          <li><a class="nav__panel-link" href="about.html">关于我们</a></li>
+          <li><a class="nav__panel-link" href="culture.html">企业文化</a></li>
+          <li><a class="nav__panel-link" href="certificates.html">资质荣誉</a></li>
+          <li><a class="nav__panel-link" href="news.html">新闻资讯</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="nav__item nav__item--has-panel">
       <a class="nav__link" href="products.html" aria-haspopup="true" aria-expanded="false">产品中心<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
       <div class="nav__panel" role="group">
@@ -75,11 +84,16 @@
         <a class="nav__panel-all" href="products.html">全部产品<svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
       </div>
     </li>
-    <li class="nav__item"><a class="nav__link" href="capabilities.html">制造能力</a></li>
-    <li class="nav__item"><a class="nav__link" href="quality.html">质量控制</a></li>
-    <li class="nav__item"><a class="nav__link" href="applications.html">应用领域</a></li>
-    <li class="nav__item"><a class="nav__link" href="certificates.html">资质荣誉</a></li>
-    <li class="nav__item"><a class="nav__link" href="news.html">新闻资讯</a></li>
+    <li class="nav__item nav__item--has-panel">
+      <a class="nav__link" href="capabilities.html" aria-haspopup="true" aria-expanded="false">制造能力<svg class="ico ico--chev" aria-hidden="true"><use href="#i-chev"></use></svg></a>
+      <div class="nav__panel nav__panel--list" role="group">
+        <ul class="nav__panel-list">
+          <li><a class="nav__panel-link" href="capabilities.html">制造能力</a></li>
+          <li><a class="nav__panel-link" href="quality.html">质量控制</a></li>
+          <li><a class="nav__panel-link" href="applications.html">应用领域</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="nav__item"><a class="nav__link" href="faq.html">常见问题</a></li>
     <li class="nav__item"><a class="nav__link is-active" href="contact.html" aria-current="page">联系我们</a></li>
       </ul>
@@ -104,14 +118,9 @@
   <nav class="drawer__nav" aria-label="移动端导航">
     <ul class="drawer__list">
       <li class="drawer__item"><a class="drawer__link" href="index.html">首页</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="about.html">关于我们</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="culture.html">企业文化</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="about.html">关于我们</a><ul class="drawer__sub"><li><a href="culture.html">企业文化</a></li><li><a href="certificates.html">资质荣誉</a></li><li><a href="news.html">新闻资讯</a></li></ul></li>
       <li class="drawer__item"><a class="drawer__link" href="products.html">产品中心</a><ul class="drawer__sub"><li><a href="product-machine-tool-parts.html">机床零部件</a></li><li><a href="product-construction-machinery-parts.html">工程机械零部件</a></li><li><a href="product-pump-valve-parts.html">泵阀壳体与本体零部件</a></li></ul></li>
-      <li class="drawer__item"><a class="drawer__link" href="capabilities.html">制造能力</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="quality.html">质量控制</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="applications.html">应用领域</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="certificates.html">资质荣誉</a></li>
-      <li class="drawer__item"><a class="drawer__link" href="news.html">新闻资讯</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="capabilities.html">制造能力</a><ul class="drawer__sub"><li><a href="quality.html">质量控制</a></li><li><a href="applications.html">应用领域</a></li></ul></li>
       <li class="drawer__item"><a class="drawer__link" href="faq.html">常见问题</a></li>
       <li class="drawer__item"><a class="drawer__link" href="contact.html">联系我们</a></li>
     </ul>
@@ -314,11 +323,11 @@
       <ul class="footer__list">
         <li><a href="about.html">关于我们</a></li>
         <li><a href="culture.html">企业文化</a></li>
+        <li><a href="certificates.html">资质荣誉</a></li>
+        <li><a href="news.html">新闻资讯</a></li>
         <li><a href="capabilities.html">制造能力</a></li>
         <li><a href="quality.html">质量控制</a></li>
         <li><a href="applications.html">应用领域</a></li>
-        <li><a href="certificates.html">资质荣誉</a></li>
-        <li><a href="news.html">新闻资讯</a></li>
         <li><a href="faq.html">常见问题</a></li>
         <li><a href="contact.html">联系我们</a></li>
         <li><a href="privacy.html">隐私政策</a></li>
